@@ -1036,7 +1036,11 @@
       "position": "redazione",
       "description": [
         "Marcello Vinelli ha pochi anni più di te e la fretta di dieci uomini. Gira con le maniche della camicia arrotolate, una matita dietro l'orecchio e un'altra in mano. Ha portato il giornale a uscire tutti i giorni, e adesso deve riempirlo tutti i giorni."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-vinelli.png",
+        "alt": "Il direttore Vinelli, giovane, con le maniche arrotolate e una matita dietro l'orecchio"
+      }
     },
     {
       "visible": true,
@@ -1046,7 +1050,11 @@
       "position": "redazione",
       "description": [
         "Peppino compone le pagine lettera per lettera, al rovescio, più svelto di quanto tu riesca a leggerle al dritto. Ha sessant'anni, ha lavorato in tutti i giornali di Cagliari e li ha visti morire quasi tutti."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-peppino.png",
+        "alt": "Peppino, il vecchio tipografo, con il grembiule e le mani sporche d'inchiostro"
+      }
     },
     {
       "visible": true,
@@ -1082,7 +1090,11 @@
       "position": "molo",
       "description": [
         "Una guardia giovane, con un cappotto che gli arriva quasi alle caviglie e un'aria di chi non ha ancora deciso se questo mestiere gli piace."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-guardia.png",
+        "alt": "Una giovane guardia di pubblica sicurezza, con il cappotto troppo grande"
+      }
     },
     {
       "visible": true,
@@ -1102,7 +1114,11 @@
       "position": "offstage",
       "description": [
         "Un piemontese alto e magro, con i baffi grigi e il tricorno in testa anche al chiuso. È in Sardegna da quindici anni e ancora non ha imparato a sudare. Ascolta tutto, non crede a niente, e annota."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-brigadiere.png",
+        "alt": "Il brigadiere dei Carabinieri, alto e magro, con i baffi grigi e il cappello a lucerna"
+      }
     },
     {
       "visible": true,
@@ -1134,7 +1150,11 @@
             "at": "corsia"
           }
         }
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-teresa.png",
+        "alt": "Teresa, una ragazza con il fazzoletto in testa e gli occhi stanchi"
+      }
     },
     {
       "visible": true,
@@ -1144,7 +1164,11 @@
       "position": "mercato",
       "description": [
         "Un vecchietto seduto su una cassetta, all'imbocco di via Manno, con le spazzole, il lucido e un panno che è stato bianco. Guarda le scarpe della gente prima delle facce."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-lustrascarpe.png",
+        "alt": "Il vecchio lustrascarpe, con una spazzola in mano"
+      }
     },
     {
       "visible": true,
@@ -1164,7 +1188,11 @@
       "position": "mercato",
       "description": [
         "Un ragazzino scalzo con una cesta di canne più grande di lui, che aspetta una signora da servire. Sa tutto quello che succede nel mercato, e anche un po' di quello che succede fuori."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-picciocu.png",
+        "alt": "Un picciocu de crobi, un ragazzino con la cesta di canne sulla testa"
+      }
     },
     {
       "visible": true,
@@ -1174,7 +1202,11 @@
       "position": "studio",
       "description": [
         "Antonio Cadoni ha la barba a punta e le dita macchiate di nero dal nitrato d'argento. Parla dei suoi clienti come un sarto: «la contessa ha un profilo difficile», «il canonico non sta mai fermo»."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-cadoni.png",
+        "alt": "Il fotografo Cadoni, con la barba a punta e le dita macchiate"
+      }
     },
     {
       "visible": true,
@@ -1194,7 +1226,11 @@
       "position": "ospedale",
       "description": [
         "Una Figlia della Carità con la cuffia inamidata ad ali di gabbiano e un mazzo di chiavi alla cintura che annuncia il suo arrivo da lontano. Gentile con tutti, inflessibile con chiunque."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-suora.png",
+        "alt": "Suor Annetta, con la grande cuffia bianca ad ali delle Figlie della Carità"
+      }
     },
     {
       "visible": true,
@@ -1204,7 +1240,11 @@
       "position": "ospedale",
       "description": [
         "Un medico sui cinquanta, il camice sopra il panciotto, gli occhiali spinti sulla fronte. Fa il giro dei letti la mattina e le visite a domicilio il pomeriggio, e si lamenta del cantiere tutto il resto del tempo."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-ledda.png",
+        "alt": "Il dottor Ledda, con gli occhiali sulla fronte e il camice sopra il panciotto"
+      }
     },
     {
       "visible": true,
@@ -1227,6 +1267,19 @@
             "flag": "ch2"
           }
         }
+      ],
+      "portrait": [
+        {
+          "src": "img/ritratto-gavino-1.png",
+          "alt": "Lo stesso giovane con la testa fasciata, ora sveglio, con gli occhi aperti",
+          "when": {
+            "flag": "ch2"
+          }
+        },
+        {
+          "src": "img/ritratto-gavino-0.png",
+          "alt": "Un giovane con la testa fasciata, gli occhi chiusi per la febbre"
+        }
       ]
     },
     {
@@ -1237,7 +1290,11 @@
       "position": "stazione",
       "description": [
         "Un omone con il berretto delle Ferrovie e la placca d'ottone, dietro lo sportello del deposito. Alle sue spalle, scaffali di bauli, valigie e ceste legate con lo spago."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-facchino.png",
+        "alt": "Il facchino del deposito bagagli, un omone con il berretto delle Ferrovie"
+      }
     },
     {
       "visible": false,
@@ -1257,7 +1314,11 @@
       "position": "torre",
       "description": [
         "Un vecchio in divisa sbiadita, seduto su uno sgabello sotto la porta, con la stampella appoggiata al muro. Fa il custode di una porta che non chiude più nessuno, e ne parla come di una ferita."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-custode.png",
+        "alt": "Il vecchio custode della torre, in una divisa sbiadita"
+      }
     },
     {
       "visible": true,
@@ -1279,7 +1340,11 @@
             "at": "locanda"
           }
         }
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-usai.png",
+        "alt": "Il signor Usai, grigio e curato, con il cappello duro e i guanti"
+      }
     },
     {
       "visible": true,
@@ -1289,7 +1354,11 @@
       "position": "notaio",
       "description": [
         "Un giovane con le mezze maniche di lustrino nero e la penna d'oca dietro l'orecchio, che fa da guardia allo studio come un cane alla cuccia."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-scrivano.png",
+        "alt": "Lo scrivano del notaio, con le mezze maniche nere e una penna dietro l'orecchio"
+      }
     },
     {
       "visible": true,
@@ -1361,7 +1430,11 @@
       "position": "buoncammino",
       "description": [
         "Una vecchia vestita di nero, con lo scialle tirato fin sugli occhi, seduta su un muretto. Non guarda nessuno. Ascolta."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-vecchia.png",
+        "alt": "Una vecchia vestita di nero, con lo scialle tirato fin sugli occhi"
+      }
     },
     {
       "visible": true,
@@ -1371,7 +1444,11 @@
       "position": "villanova",
       "description": [
         "Maddalena Serra, che tutti chiamano Tzia Mallena, ha servito in casa Pinna per trentun anni. Ora è seduta sulla panca della confraternita, con le mani in grembo e gli occhi rossi, a cucire l'orlo di un gonfalone. Accanto a lei, un fagotto con tutto quello che possiede."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-mallena.png",
+        "alt": "Tzia Mallena, l'anziana governante, con il fazzoletto nero e gli occhi rossi"
+      }
     },
     {
       "visible": true,
@@ -1381,7 +1458,11 @@
       "position": "villanova",
       "description": [
         "Due anziani con la mantellina della confraternita, che si scaldano le mani alla stufa e commentano tutto il quartiere, casa per casa."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-confratelli.png",
+        "alt": "Due anziani confratelli con la mantellina della confraternita"
+      }
     },
     {
       "visible": true,
@@ -1391,7 +1472,11 @@
       "position": "mattatoio",
       "description": [
         "Un uomo largo e corto, con la berritta calata su un orecchio e la faccia cotta dal sole. Sta strigliando il mulo come se fosse l'unica cosa importante al mondo. Forse lo è."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-bachis.png",
+        "alt": "Tziu Bachis, il carrettiere, con la berritta calata su un orecchio"
+      }
     },
     {
       "visible": true,
@@ -1401,7 +1486,11 @@
       "position": "dogana",
       "description": [
         "Un uomo con la visiera lucida e gli occhiali a molla, che timbra moduli con la regolarità di un orologio. Sopra lo sportello, un cartello: «Si parla solo per servizio»."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-doganiere.png",
+        "alt": "Il doganiere, con il berretto a visiera lucida e gli occhiali a molla"
+      }
     },
     {
       "visible": true,
@@ -1447,7 +1536,11 @@
       "position": "locanda",
       "description": [
         "Un uomo sui trent'anni, bello e già sciupato, con il colletto slacciato e un bicchiere vuoto che continua a girare fra le dita. Al Circolo di Castello dicono che abbia perso a carte anche la camicia. Alla Marina dicono peggio."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-vittorio.png",
+        "alt": "Vittorio Pinna, elegante e sciupato, con il colletto slacciato e un bicchiere vuoto"
+      }
     },
     {
       "visible": true,
@@ -1549,7 +1642,11 @@
       "position": "locanda",
       "description": [
         "Un genovese grasso e lento che fa l'oste alla Marina da vent'anni e parla un sardo con l'accento di Sampierdarena."
-      ]
+      ],
+      "portrait": {
+        "src": "img/ritratto-oste.png",
+        "alt": "L'oste, un genovese grasso con il grembiule e uno strofinaccio sulla spalla"
+      }
     }
   ],
   "actions": [

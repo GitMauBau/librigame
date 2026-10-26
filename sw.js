@@ -82,7 +82,7 @@ define(['./workbox-f0c192c2'], (function (workbox) { 'use strict';
    */
   workbox.precacheAndRoute([{
     "url": "index.html",
-    "revision": "ab55afc160a9dd71cc10bff40d4ebf38"
+    "revision": "cd2b776d15875f8109f6f369caf18226"
   }, {
     "url": "icon.svg",
     "revision": "05ff98e706e586c24aedd8ce0ac989fe"
@@ -190,7 +190,7 @@ define(['./workbox-f0c192c2'], (function (workbox) { 'use strict';
     "revision": "4c972469f38e250dc31550ab93d644c8"
   }, {
     "url": "stories/cagliari-1889/story.json",
-    "revision": "28a293ed98d971f01c15ebe7e96b2d9d"
+    "revision": "64678fa7e10ce21856fe8cb0790f23cc"
   }, {
     "url": "stories/cagliari-1889/img/villanova.png",
     "revision": "c075954ceea6757cccced477d39d3f45"
@@ -233,6 +233,75 @@ define(['./workbox-f0c192c2'], (function (workbox) { 'use strict';
   }, {
     "url": "stories/cagliari-1889/img/sigaro.png",
     "revision": "63a6a48a4944fc1060e504a2764515ce"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-vittorio.png",
+    "revision": "9181d8db7460567d4aaee65f37028724"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-vinelli.png",
+    "revision": "4a9560a0d0b3ac46c8a2c370a2342b5d"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-vecchia.png",
+    "revision": "e7d3170967d2a26089c16fdc7f70096f"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-usai.png",
+    "revision": "30cdf08b63b74924667b8465094b146a"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-teresa.png",
+    "revision": "2b8f36e7d87a28d908080ab40103feac"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-suora.png",
+    "revision": "cd45584ec50e457305e9e7504f3ed90e"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-scrivano.png",
+    "revision": "c99241608389a482732e10052b63a485"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-picciocu.png",
+    "revision": "18fc9cc8903933fa2630dc6cd9ec9f30"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-peppino.png",
+    "revision": "40ec37c5922119d77057b215fd47e47c"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-oste.png",
+    "revision": "0bf08d8282ef2bdbdbf0213b3c0702a8"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-mallena.png",
+    "revision": "eecf5053df13aa4b6bf5fc4bc71f9cec"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-lustrascarpe.png",
+    "revision": "566ebaa1b47d21ed2e2576afca94e183"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-ledda.png",
+    "revision": "fac3656b9cb28bb8b86480ee7ec3768e"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-guardia.png",
+    "revision": "a7f308165e15b123d5d0faa95967d115"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-gavino-1.png",
+    "revision": "9a12ad6f41e45b23a9528ceb1f3cc8c5"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-gavino-0.png",
+    "revision": "75895576747e0512ddd139fb8890245f"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-facchino.png",
+    "revision": "183ca767975b940eec762647ad0ade0f"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-doganiere.png",
+    "revision": "f9063ddc0aa1a4dff19deeccef786a43"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-custode.png",
+    "revision": "cc1f772be733fd783123183572c1b1f8"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-confratelli.png",
+    "revision": "4241a661fb086867962830869512eb01"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-cadoni.png",
+    "revision": "06f627bc6894336b992ac05e1e29cf96"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-brigadiere.png",
+    "revision": "bf224d7d97c41ca2d4ad91de4eafed7e"
+  }, {
+    "url": "stories/cagliari-1889/img/ritratto-bachis.png",
+    "revision": "bcd69221b4cfffb9a6b6cf3acb2153a9"
   }, {
     "url": "stories/cagliari-1889/img/ricevuta.png",
     "revision": "38aa2c40f50896df331531acf3ad5c6c"
@@ -315,13 +384,13 @@ define(['./workbox-f0c192c2'], (function (workbox) { 'use strict';
     "url": "assets/workbox-window.prod.es5-BqEJf4Xk.js",
     "revision": null
   }, {
-    "url": "assets/web-DIzcaWkH.js",
+    "url": "assets/web-NSK8Yy90.js",
     "revision": null
   }, {
-    "url": "assets/index-CtaG6RbA.js",
+    "url": "assets/index-DaiUEEnN.js",
     "revision": null
   }, {
-    "url": "assets/index-CtS1j-ED.css",
+    "url": "assets/index-C83RCDkN.css",
     "revision": null
   }, {
     "url": "icon.svg",
