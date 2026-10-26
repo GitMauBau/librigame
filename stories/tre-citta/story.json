@@ -1,0 +1,1904 @@
+{
+  "format": 1,
+  "id": "canzone-tre-citta",
+  "version": "1.0.0",
+  "title": "La canzone delle tre città",
+  "subtitle": "Cagliari, Berlino, Tokyo: un anello da riportare",
+  "author": "GameBooks",
+  "language": "it",
+  "start": "casa",
+  "locations": [
+    {
+      "id": "casa",
+      "illustration": {"src": "img/casa.svg", "alt": "La finestra di Castello con le persiane aperte, i panni stesi e la Torre dell'Elefante lontana"},
+      "title": "La casa di nonna Efisia",
+      "eyebrow": "Cagliari · Castello",
+      "description": [
+        "La casa della nonna è in cima a Castello, in un vicolo così stretto che i panni stesi passano da una finestra all'altra. Dalla finestra si vede la Torre dell'Elefante e, più in basso, il golfo degli Angeli che luccica.",
+        "Da quando è tornata dall'ospedale, nonna Efisia governa la casa da una poltrona di velluto verde, con una coperta sulle ginocchia e il telefono sempre in mano.",
+        { "text": "Sulla mensola, tra le foto dei nipoti, c'è una scatolina di legno dipinta.", "when": { "not": { "has": "carillon" } } }
+      ],
+      "exits": [{ "to": "bastione", "label": "Scendi al Bastione di Saint Remy" }]
+    },
+    {
+      "id": "bastione",
+      "illustration": {"src": "img/bastione.svg", "alt": "La facciata del Bastione di Saint Remy, con l'arco e la scalinata"},
+      "title": "Il Bastione di Saint Remy",
+      "eyebrow": "Cagliari · Terrazza Umberto I",
+      "description": [
+        "Dalla terrazza di pietra chiara la città scende a gradoni verso il porto: tetti, cupole, gru. A est la spiaggia del Poetto si allunga fino alla Sella del Diavolo, e negli stagni brillano macchie rosa: i fenicotteri.",
+        "Un gruppo di turisti fotografa la scalinata monumentale. Un venditore di palloncini sbadiglia all'ombra di un'arcata."
+      ],
+      "exits": [
+        { "to": "casa", "label": "Risali in Castello, a casa della nonna" },
+        { "to": "marina", "label": "Scendi alla Marina, sotto i portici di via Roma" },
+        { "to": "mercato", "label": "Mercato di San Benedetto" },
+        { "to": "poetto", "label": "Prendi il bus per il Poetto" }
+      ]
+    },
+    {
+      "id": "marina",
+      "illustration": {"src": "img/marina.svg", "alt": "I portici di via Roma con l'insegna dell'orologeria a cui mancano due lettere"},
+      "title": "I portici di via Roma",
+      "eyebrow": "Cagliari · Marina",
+      "description": [
+        "Sotto i portici di via Roma i tavolini dei caffè guardano il porto e i traghetti per Civitavecchia. Il Palazzo Civico, bianco e merlato come una torta nuziale, fa da sentinella all'angolo.",
+        "Nei vicoli della Marina, dietro i portici, c'è il laboratorio di Antioco. L'insegna dice «Orologeria · Riparazioni», con due lettere ormai cadute."
+      ],
+      "exits": [{ "to": "bastione", "label": "Risali al Bastione" }]
+    },
+    {
+      "id": "mercato",
+      "illustration": {"src": "img/mercato.svg", "alt": "Un banco del mercato con cassette di carciofi e cartellini dei prezzi"},
+      "title": "Il mercato di San Benedetto",
+      "eyebrow": "Cagliari · Via Cocco Ortu",
+      "description": [
+        "Due piani di cemento e di voci. Al piano di sotto c'è il pesce: ricci, orate, aragoste che agitano le antenne. Di sopra formaggi, salumi e dolci, e un profumo di mirto che fa girare la testa.",
+        "Una signora contratta sul prezzo dei carciofi come se ne andasse dell'onore della famiglia."
+      ],
+      "exits": [{ "to": "bastione", "label": "Torna al Bastione" }]
+    },
+    {
+      "id": "poetto",
+      "illustration": {"src": "img/poetto.svg", "alt": "Il chiosco del Poetto con il cartello «Oggi panadas» e la Sella del Diavolo"},
+      "title": "Il chiosco del Poetto",
+      "eyebrow": "Cagliari · Poetto",
+      "description": [
+        "La sabbia del Poetto è chiara e fine, e la spiaggia è così lunga che la fine non si vede. Da un lato c'è la Sella del Diavolo, il promontorio a forma di sella, dall'altro lo stagno dei fenicotteri.",
+        "Il chiosco ha i tavolini di legno, una radio accesa e un cartello scritto a mano: «Oggi panadas»."
+      ],
+      "exits": [{ "to": "bastione", "label": "Riprendi il bus per il centro" }]
+    },
+    {
+      "id": "alexanderplatz",
+      "illustration": {"src": "img/alexanderplatz.svg", "alt": "L'Orologio del Mondo, con il cilindro delle città e i pianeti in cima"},
+      "title": "Alexanderplatz",
+      "eyebrow": "Berlino · Mitte",
+      "description": [
+        "Esci dalla stazione e la torre della televisione ti sovrasta: un ago d'acciaio con una palla d'argento infilata a metà. I tram gialli scampanellano attraverso la piazza enorme.",
+        "Accanto alla fontana, l'Orologio del Mondo gira lento: un cilindro con i nomi delle città e, in cima, un sistema di pianeti di metallo.",
+        { "text": "È sabato pomeriggio, il cielo è basso e grigio e la gente cammina con il bavero alzato.", "when": { "flag": "sunday", "value": false } },
+        { "text": "È domenica mattina. Il cielo si è aperto: un azzurro freddo e pulito.", "when": { "flag": "sunday" } }
+      ],
+      "exits": [
+        { "to": "brandenburger", "label": "Porta di Brandeburgo, con la U5" },
+        { "to": "eastside", "label": "East Side Gallery, lungo la Sprea" },
+        {
+          "to": "kreuzberg",
+          "label": "Kreuzberg, sul Landwehrkanal",
+          "when": { "flag": "knowsStudio" },
+          "locked": "Kreuzberg è grande. Senza un indirizzo preciso non sapresti nemmeno da dove cominciare."
+        },
+        { "to": "mauerpark", "label": "Mauerpark, con il tram M10" }
+      ]
+    },
+    {
+      "id": "brandenburger",
+      "illustration": {"src": "img/brandenburger.svg", "alt": "La Porta di Brandeburgo, con la doppia fila di cubetti del Muro e un organetto"},
+      "title": "La Porta di Brandeburgo",
+      "eyebrow": "Berlino · Pariser Platz",
+      "description": [
+        "Le sei colonne della Porta si alzano in fondo alla piazza, con la quadriga di rame verde in cima. È la porta della fotografia, solo più pulita, e senza la folla in festa.",
+        "Sul selciato una doppia fila di cubetti di pietra attraversa la strada: segna il punto dove passava il Muro.",
+        "Vicino alle colonne, un vecchio con il cappello di feltro gira la manovella di un organetto. Sulla cassa dipinta c'è scritto «Seit 1975»."
+      ],
+      "exits": [{ "to": "alexanderplatz", "label": "Torna ad Alexanderplatz" }]
+    },
+    {
+      "id": "eastside",
+      "illustration": {"src": "img/eastside.svg", "alt": "Lastre del Muro dipinte lungo la Sprea, con le torri dell'Oberbaumbrücke"},
+      "title": "L'East Side Gallery",
+      "eyebrow": "Berlino · Friedrichshain",
+      "description": [
+        "Il tratto di Muro più lungo rimasto in piedi corre lungo la Sprea per più di un chilometro, coperto di murales. Il più fotografato è il bacio tra Brežnev e Honecker, con la scritta in cirillico.",
+        "In fondo, l'Oberbaumbrücke scavalca il fiume con le sue torri di mattoni rossi, e la metropolitana gialla ci passa sopra sferragliando."
+      ],
+      "exits": [{ "to": "alexanderplatz", "label": "Torna ad Alexanderplatz" }]
+    },
+    {
+      "id": "kreuzberg",
+      "illustration": {"src": "img/kreuzberg.svg", "alt": "La porta di ferro dello Studio Kirschblüte con il ramo di ciliegio dipinto, e lo Späti"},
+      "title": "Studio Kirschblüte",
+      "eyebrow": "Berlino · Kreuzberg",
+      "description": [
+        "Lungo il Landwehrkanal i castagni lasciano cadere le foglie sull'acqua. Lo studio è in un cortile interno, dietro uno Späti che vende birra, giornali e caramelle sfuse: una porta di ferro con un ramo di ciliegio dipinto sopra.",
+        "Dentro, pareti foderate di gommapiuma, un mixer pieno di lucine e una macchinetta del caffè che borbotta. Su una sedia è abbandonata una sciarpa rossa e bianca dell'Union Berlin."
+      ],
+      "exits": [{ "to": "alexanderplatz", "label": "Torna ad Alexanderplatz" }]
+    },
+    {
+      "id": "mauerpark",
+      "illustration": {"src": "img/mauerpark.svg", "alt": "I gradoni di pietra dell'anfiteatro del Mauerpark, con la cassa del karaoke"},
+      "title": "Il Mauerpark",
+      "eyebrow": "Berlino · Prenzlauer Berg",
+      "description": [
+        "Un prato lungo e spelacchiato, dove un tempo c'era la striscia della morte. Su un lato resta un tratto di Muro coperto di graffiti, che qualcuno ridipinge ogni settimana.",
+        { "text": "È sabato e il prato è quasi vuoto: qualche cane, qualche skater, e l'anfiteatro di pietra, deserto. Un cartello annuncia: «Flohmarkt · Sonntag 8–18 Uhr».", "when": { "flag": "sunday", "value": false } },
+        { "text": "È domenica e il mercatino delle pulci occupa tutto il piazzale: dischi, biciclette, lampade sovietiche, cappotti militari. Dall'anfiteatro arriva una voce stonata al microfono. È il karaoke del Bearpit, e cento persone applaudono lo stesso.", "when": { "flag": "sunday" } }
+      ],
+      "exits": [{ "to": "alexanderplatz", "label": "Torna ad Alexanderplatz" }]
+    },
+    {
+      "id": "shibuya",
+      "illustration": {"src": "img/shibuya.svg", "alt": "I semafori pedonali e il maxischermo sull'incrocio di Shibuya"},
+      "title": "Hachikō, a Shibuya",
+      "eyebrow": "Tokyo · Shibuya",
+      "description": [
+        "Davanti alla stazione, il grande incrocio si svuota e si riempie a ogni verde: migliaia di persone attraversano in tutte le direzioni senza mai urtarsi. Dai maxischermi una ragazza canta una pubblicità di tè freddo.",
+        "In un angolo della piazza, la statua di bronzo di Hachikō aspetta. È il cane che per dieci anni è tornato qui ad aspettare il suo padrone, ed è il punto d'incontro di mezza Tokyo."
+      ],
+      "exits": [
+        {
+          "to": "yamanote",
+          "label": "Sali sulla linea Yamanote",
+          "when": { "flag": "metMei" },
+          "locked": "Mei ti ha scritto di aspettarla qui, davanti a Hachikō. Senza di lei non sai nemmeno dove abita Hiroko."
+        }
+      ]
+    },
+    {
+      "id": "yamanote",
+      "illustration": {"src": "img/yamanote.svg", "alt": "L'interno del treno della Yamanote, con le maniglie e l'adesivo dei posti prioritari"},
+      "title": "Sulla linea Yamanote",
+      "eyebrow": "Tokyo · Il treno verde",
+      "description": [
+        "Il treno verde chiaro gira in tondo intorno al centro di Tokyo, senza capolinea. Dentro è silenzioso: nessuno parla al telefono e tutti guardano lo schermo, o dormono.",
+        "Hai trovato un posto vicino alla porta, sotto un adesivo arancione. A ogni stazione suona una piccola melodia diversa, come un carillon.",
+        { "text": "Alla fermata di Shinjuku sale un uomo anziano con una custodia di chitarra. Si guarda intorno: non c'è un posto libero.", "when": { "flag": "metKenji", "value": false } },
+        { "text": "Sei in piedi, aggrappato a una maniglia. Il posto che hai lasciato è ancora caldo.", "when": { "flag": "metKenji" } }
+      ],
+      "exits": [
+        { "to": "asakusa", "label": "Scendi a Ueno e prendi la metro Ginza fino ad Asakusa" },
+        { "to": "yanaka", "label": "Scendi a Nippori, verso Yanaka" },
+        { "to": "shibuya", "label": "Torna a Shibuya" }
+      ]
+    },
+    {
+      "id": "asakusa",
+      "illustration": {"src": "img/asakusa.svg", "alt": "Il Kaminarimon con la grande lanterna di carta"},
+      "title": "Il tempio di Sensō-ji",
+      "eyebrow": "Tokyo · Asakusa",
+      "description": [
+        "Sotto il Kaminarimon, la Porta del Tuono, pende una lanterna di carta rossa alta come una casa. Oltre la porta, la via di Nakamise è un corridoio di bancarelle: ventagli, dolcetti, gatti che salutano con la zampa.",
+        "In fondo c'è il tempio, con il tetto scuro e ricurvo. Davanti, da un grande braciere di bronzo sale il fumo dell'incenso, e la gente se lo spinge sulla testa con le mani."
+      ],
+      "exits": [{ "to": "yamanote", "label": "Torna alla stazione" }]
+    },
+    {
+      "id": "yanaka",
+      "illustration": {"src": "img/yanaka.svg", "alt": "La scala del tramonto e le botteghe con le tende di stoffa"},
+      "title": "Yanaka Ginza",
+      "eyebrow": "Tokyo · Yanaka",
+      "description": [
+        "Scendi dalla scalinata Yūyake Dandan, la «scala del tramonto», e sei in un'altra Tokyo: case basse di legno, biciclette appoggiate ai muri, botteghe con le tende di stoffa. Il sole è già basso.",
+        "Lungo la via, gatti di ogni colore dormono sui davanzali, sulle sedie, sui tetti delle auto. Uno è seduto in mezzo alla strada e nessuno osa spostarlo."
+      ],
+      "exits": [
+        { "to": "yamanote", "label": "Torna alla stazione di Nippori" },
+        {
+          "to": "casa-hiroko",
+          "label": "Il vicolo della casa di Hiroko",
+          "when": { "all": [{ "flag": "metKenji" }, { "has": "omikuji" }] },
+          "locked": "Mei ti ha scritto: «Senza la sua おみくじ, per la nonna il compleanno non comincia nemmeno. E ci serve qualcuno che sappia suonare.»"
+        }
+      ]
+    },
+    {
+      "id": "casa-hiroko",
+      "illustration": {"src": "img/casa-hiroko.svg", "alt": "La casa di legno di Hiroko con la porta scorrevole, il citofono e la lanterna di pietra"},
+      "title": "La casa di Hiroko",
+      "eyebrow": "Tokyo · Yanaka",
+      "description": [
+        "In fondo al vicolo c'è una casa di legno scuro con un piccolo giardino: un acero rosso, una lanterna di pietra, un vaso di crisantemi gialli. Accanto alla porta scorrevole c'è un citofono moderno, che sembra lì per sbaglio.",
+        { "text": "Le tende sono tirate. Dentro c'è una luce accesa, ma nessun rumore.", "when": { "flag": "doorOpen", "value": false } },
+        { "text": "La porta è aperta, e dalla soglia esce il profumo del tè.", "when": { "flag": "doorOpen" } }
+      ],
+      "exits": [{ "to": "yanaka", "label": "Torna su Yanaka Ginza" }]
+    }
+  ],
+  "entities": [
+    {
+      "id": "phone",
+      "illustration": {"src": "img/phone.svg", "alt": "Il telefono con i messaggi della nonna, pieni di punti esclamativi"},
+      "name": "Il tuo telefono",
+      "hint": "Per scrivere alla nonna.",
+      "description": [
+        "Batteria al sessanta per cento. La nonna risponde ai messaggi più in fretta di te, e con più punti esclamativi."
+      ],
+      "position": "player",
+      "visible": true
+    },
+    {
+      "id": "tickets",
+      "illustration": [{"src": "img/tickets-2.svg", "alt": "Due carte d'imbarco, tutte e due usate", "when": {"flag": "flewTokyo"}}, {"src": "img/tickets-1.svg", "alt": "Due carte d'imbarco: quella per Berlino è usata", "when": {"flag": "flewBerlin"}}, {"src": "img/tickets-0.svg", "alt": "Due carte d'imbarco: Cagliari–Berlino e Berlino–Tokyo"}],
+      "name": "I biglietti aerei",
+      "hint": "Cagliari–Berlino, poi Berlino–Tokyo.",
+      "description": [
+        "Due carte d'imbarco stampate dalla nonna, con la data scritta a penna sopra quella stampata, per sicurezza.",
+        { "text": "Il primo volo parte da Elmas, per Berlino.", "when": { "flag": "flewBerlin", "value": false } },
+        { "text": "Resta il volo da Berlino per Tokyo Haneda.", "when": { "all": [{ "flag": "flewBerlin" }, { "flag": "flewTokyo", "value": false }] } },
+        { "text": "Due carte d'imbarco usate. Le tieni per la nonna.", "when": { "flag": "flewTokyo" } }
+      ],
+      "position": "player",
+      "visible": true
+    },
+    {
+      "id": "nonna",
+      "name": "Nonna Efisia",
+      "hint": "Sulla poltrona, il bastone appoggiato al bracciolo.",
+      "description": [
+        { "text": "«Vieni qui, siediti. Devo chiederti un favore grande come il mare.»", "when": { "flag": "intro", "value": false } },
+        { "text": "La nonna ti guarda da sopra gli occhiali. «Il carillon, la lettera, Yuki. Una cosa per volta. Ma sbrigati: Hiroko compie ottant'anni tra una settimana.»", "when": { "all": [{ "flag": "intro" }, { "not": { "has": "ring" } }] } },
+        { "text": "La nonna guarda l'anello nel tuo palmo e si asciuga gli occhi in fretta, come se nessuno la vedesse. «Vai. E salutamela.»", "when": { "has": "ring" } }
+      ],
+      "position": "casa",
+      "visible": true
+    },
+    {
+      "id": "carillon",
+      "illustration": [{"src": "img/carillon-open.svg", "alt": "Il carillon con il cassettino aperto", "when": {"flag": "drawerOpen"}}, {"src": "img/carillon-playing.svg", "alt": "Il carillon che suona", "when": {"flag": "wound"}}, {"src": "img/carillon-closed.svg", "alt": "Il carillon riparato", "when": {"flag": "carillonRepaired"}}, {"src": "img/carillon-jammed.svg", "alt": "Il carillon inceppato: dentro qualcosa tintinna"}],
+      "name": "Il carillon",
+      "hint": "Legno dipinto, con la Porta di Brandeburgo sul coperchio.",
+      "description": [
+        "Una scatola di legno laccato, con la Porta di Brandeburgo dipinta sul coperchio. Sul fianco c'è un cassettino minuscolo, e sotto il fondo il foro per la chiavetta di carica.",
+        { "text": "Se lo scuoti, qualcosa tintinna dentro il meccanismo. È inceppato.", "when": { "flag": "carillonRepaired", "value": false } },
+        { "text": "Antioco l'ha rimesso a posto: il meccanismo è pulito e profuma d'olio.", "when": { "all": [{ "flag": "carillonRepaired" }, { "flag": "wound", "value": false }] } },
+        { "text": "Suona ancora, piano, «Berliner Luft».", "when": { "flag": "wound" } }
+      ],
+      "position": "casa",
+      "visible": true,
+      "openFlag": "drawerOpen"
+    },
+    {
+      "id": "ring",
+      "illustration": {"src": "img/ring.svg", "alt": "Un anello d'argento sottile con una piccola perla"},
+      "name": "L'anello di Hiroko",
+      "hint": "Argento sottile, una perla piccola.",
+      "description": [
+        "Una fascia d'argento sottile e una perla piccola come una lenticchia. All'interno è inciso un solo carattere: {宝|たから}."
+      ],
+      "position": "carillon",
+      "visible": false
+    },
+    {
+      "id": "tin",
+      "name": "La scatola di biscotti",
+      "hint": "Latta blu, biscotti al burro danesi. In teoria.",
+      "description": [
+        "Una latta blu con le casette danesi dipinte sul coperchio. In ogni casa del mondo c'è una scatola così, e in nessuna ci sono biscotti."
+      ],
+      "position": "casa",
+      "visible": true,
+      "openFlag": "tinOpen"
+    },
+    {
+      "id": "winder",
+      "illustration": {"src": "img/winder.svg", "alt": "Una chiavetta d'ottone a farfalla"},
+      "name": "La chiavetta del carillon",
+      "hint": "Ottone, a farfalla, piccola come un'unghia.",
+      "description": ["Una chiavetta d'ottone con l'impugnatura a farfalla. È fatta per girare, non per aprire."],
+      "position": "tin",
+      "visible": false
+    },
+    {
+      "id": "letter",
+      "illustration": {"src": "img/letter.svg", "alt": "Una busta azzurra con il francobollo del monte Fuji, indirizzata alla nonna"},
+      "name": "La lettera di Hiroko",
+      "hint": "Busta azzurra, francobollo con il monte Fuji.",
+      "description": [
+        "Carta sottilissima, caratteri ordinati, scritti con una penna stilografica.",
+        { "jp": "エフィジアさん、お{元気|げんき}ですか。あの{夜|よる}の{曲|きょく}を{思|おも}い{出|だ}すたびに、{笑|わら}ってしまいます。もう{一度|いちど}、{一緒|いっしょ}に{歌|うた}えるといいですね。", "translation": "Cara Efisia, come stai? Ogni volta che ripenso alla canzone di quella notte mi viene da ridere. Speriamo di poterla cantare ancora insieme.", "source": "L'ultima lettera di Hiroko" },
+        "In fondo al foglio, un disegnino: tre omini e una chitarra."
+      ],
+      "position": "nonna",
+      "visible": false
+    },
+    {
+      "id": "photo",
+      "illustration": {"src": "img/photo.svg", "alt": "Il retro della fotografia: «Berlino, 10 novembre 1989. Il giorno dopo il Muro.»"},
+      "name": "La fotografia di Berlino",
+      "hint": "Due ragazze davanti a una porta enorme.",
+      "description": [
+        "Due ragazze ridono abbracciate davanti alla Porta di Brandeburgo, illuminata a giorno. Una è la nonna, con i capelli cotonati; l'altra è minuta, con una sciarpa bianca. Dietro di loro c'è un ragazzo giapponese con la chitarra e, in un angolo, un uomo con un organetto a manovella.",
+        "Sul retro, a penna: «Berlino, 10 novembre 1989. Il giorno dopo il Muro.»"
+      ],
+      "position": "nonna",
+      "visible": false
+    },
+    {
+      "id": "antioco",
+      "name": "Antioco, l'orologiaio",
+      "hint": "Lente sull'occhio, cacciavite dietro l'orecchio.",
+      "description": [
+        "Ha riparato le sveglie di mezzo quartiere e conosce la nonna da cinquant'anni. Il laboratorio ticchetta da tutte le pareti, e nessun orologio segna la stessa ora."
+      ],
+      "position": "marina",
+      "visible": true
+    },
+    {
+      "id": "tourists",
+      "name": "Due turisti giapponesi",
+      "hint": "Fotografano la scalinata da ogni angolo.",
+      "description": ["Una coppia di pensionati con cappelli da sole identici. Lui fotografa, lei controlla la mappa e lo corregge."],
+      "position": "bastione",
+      "visible": true
+    },
+    {
+      "id": "fishmonger",
+      "name": "Il banco del pesce",
+      "hint": "Ricci, orate, un'aragosta indignata.",
+      "description": ["Il pescivendolo ha la voce di un tenore e le mani rosse dal freddo. Sul bancone di ghiaccio, un'aragosta agita le antenne in segno di protesta."],
+      "position": "mercato",
+      "visible": true
+    },
+    {
+      "id": "sweets",
+      "name": "Il banco dei dolci",
+      "hint": "Torrone, amaretti, papassini.",
+      "description": ["Piramidi di amaretti, papassini con la glassa bianca, pardulas ancora tiepide e blocchi di torrone avvolti nella carta."],
+      "position": "mercato",
+      "visible": true
+    },
+    {
+      "id": "torrone",
+      "illustration": {"src": "img/torrone.svg", "alt": "Un blocco di torrone incartato, con l'etichetta «Torrone di Tonara»"},
+      "name": "Il torrone di Tonara",
+      "hint": "Miele e mandorle, incartato a mano.",
+      "description": ["Un blocco di torrone al miele e mandorle, incartato nella carta bianca. Non va a male: per un viaggio fino a Tokyo è perfetto."],
+      "position": "sweets",
+      "visible": true
+    },
+    {
+      "id": "yuki",
+      "name": "Yuki",
+      "hint": "Serve caffè al chiosco tra un esame e l'altro.",
+      "description": [
+        "Yuki è arrivata da Sapporo per un anno di Erasmus e non se n'è più andata. Parla un italiano perfetto con un accento cagliaritano che fa ridere per prima lei.",
+        { "text": "«Salutami Hiroko-san. E anche Berlino!»", "when": { "flag": "letterRead" } }
+      ],
+      "position": "poetto",
+      "visible": true
+    },
+    {
+      "id": "fisherman",
+      "name": "Il pescatore",
+      "hint": "Canna lunga, secchio vuoto, pazienza infinita.",
+      "description": ["Un signore con il cappello di paglia, seduto su un secchio rovesciato in riva al mare. Dal pomeriggio non si è mosso, e nemmeno il galleggiante."],
+      "position": "poetto",
+      "visible": true
+    },
+    {
+      "id": "worldclock",
+      "name": "L'Orologio del Mondo",
+      "hint": "Tutte le ore del mondo, in una volta.",
+      "description": ["Ventiquattro facce, una per ogni fuso orario, con i nomi delle città incisi nell'alluminio. È stato costruito nel 1969, quando da qui la maggior parte di quelle città non si poteva raggiungere."],
+      "position": "alexanderplatz",
+      "visible": true
+    },
+    {
+      "id": "horst",
+      "name": "Il suonatore d'organetto",
+      "hint": "Gira la manovella da quasi cinquant'anni.",
+      "description": [
+        { "text": "Un uomo anziano con il cappello di feltro e un dente d'oro. L'organetto suona una vecchia canzone berlinese, e lui la canticchia a bocca chiusa.", "when": { "flag": "knowsStudio", "value": false } },
+        { "text": "Horst ti fa l'occhiolino tra un giro di manovella e l'altro. «Studio Kirschblüte, Kreuzberg. Digli che ti manda Horst!»", "when": { "flag": "knowsStudio" } }
+      ],
+      "position": "brandenburger",
+      "visible": true
+    },
+    {
+      "id": "guide",
+      "name": "Un gruppo di turisti giapponesi",
+      "hint": "Seguono una bandierina gialla.",
+      "description": ["Una ventina di persone dietro una guida con la bandierina gialla. Un bambino fotografa ogni murale con un tablet più grande di lui."],
+      "position": "eastside",
+      "visible": true
+    },
+    {
+      "id": "mural",
+      "name": "Il bacio fraterno",
+      "hint": "Il murale più famoso del Muro.",
+      "description": ["Due vecchi leader sovietici si baciano sulla bocca, enormi, dipinti nel 1990. Sotto, una scritta: «Mio Dio, aiutami a sopravvivere a questo amore mortale». Davanti, una fila di persone aspetta il turno per la foto."],
+      "position": "eastside",
+      "visible": true
+    },
+    {
+      "id": "taro",
+      "name": "Taro",
+      "hint": "Cuffie al collo, capelli raccolti in un codino.",
+      "description": [
+        "Taro è nato a Berlino da padre giapponese e madre berlinese. Con te insiste per parlare giapponese: «Così mi alleno. Con papà parlo solo di chitarre.»",
+        { "jp": "{今日|きょう}はもう{閉|し}まってる。{明日|あした}は…うーん、ちょっと…", "translation": "Oggi ormai è chiuso. Domani… mmh, domani è un po'…", "source": "Taro", "when": { "all": [{ "flag": "askedTomorrow" }, { "flag": "tomorrowUnderstood", "value": false }] } },
+        { "text": "«Mauerpark, domani mattina. Le cassette di papà sono quelle con l'etichetta in giapponese.»", "when": { "flag": "tomorrowUnderstood" } }
+      ],
+      "position": "kreuzberg",
+      "visible": true
+    },
+    {
+      "id": "lena",
+      "name": "Lena",
+      "hint": "La fonica dello studio. Mangia un Brezel.",
+      "description": ["Lena ha le cuffie su un orecchio solo e un Brezel nell'altra mano. Regola i cursori del mixer senza guardarli."],
+      "position": "kreuzberg",
+      "visible": true
+    },
+    {
+      "id": "walkman",
+      "illustration": {"src": "img/walkman.svg", "alt": "Un Walkman a cassette con le cuffie di spugna e il nome 森 健二"},
+      "name": "Il Walkman di Kenji",
+      "hint": "Giallo, a cassette, con le cuffie arancioni.",
+      "description": ["Un Walkman giallo degli anni Ottanta, con le cuffie di spugna arancione. Sul retro, con un pennarello: «森 健二». Mori Kenji."],
+      "position": "taro",
+      "visible": false
+    },
+    {
+      "id": "hostel",
+      "name": "L'ostello sopra lo Späti",
+      "hint": "Letti a castello, colazione a sei euro.",
+      "description": ["Una camerata da otto, con le tende a fiori e un termosifone che fischia. Dalla finestra si vede il canale."],
+      "position": "kreuzberg",
+      "visible": true
+    },
+    {
+      "id": "bearpit",
+      "name": "L'anfiteatro del Bearpit",
+      "hint": "Gradinate di pietra in mezzo al parco.",
+      "description": [
+        { "text": "Gradinate di pietra vuote, con qualche bottiglia dimenticata. Di domenica qui si fa il karaoke più famoso di Berlino.", "when": { "flag": "sunday", "value": false } },
+        { "text": "Le gradinate sono piene. Sul palco improvvisato, un ragazzo canta a squarciagola una canzone d'amore svedese, sbagliando tutte le parole.", "when": { "flag": "sunday" } }
+      ],
+      "position": "mauerpark",
+      "visible": true
+    },
+    {
+      "id": "stall",
+      "name": "La bancarella della signora Kowalski",
+      "hint": "Scatoloni, lampade, una gabbia vuota.",
+      "description": [
+        "La signora Kowalski è avvolta in un piumino viola e beve tè da un thermos. Vende di tutto: macinini, cartoline della DDR, una gabbia per uccelli vuota. In uno scatolone ci sono quattro cassette con l'etichetta scritta a mano, in giapponese."
+      ],
+      "position": "mauerpark",
+      "visible": false
+    },
+    {
+      "id": "tape-before",
+      "name": "La cassetta «{壁|かべ}が{崩|くず}れる{前|まえ}に»",
+      "hint": "Etichetta blu.",
+      "description": ["Una cassetta con l'etichetta blu, scritta a pennarello."],
+      "position": "stall",
+      "visible": true
+    },
+    {
+      "id": "tape-after",
+      "illustration": {"src": "img/tape-after.svg", "alt": "Una cassetta con l'etichetta rossa: 壁が崩れた後で"},
+      "name": "La cassetta «{壁|かべ}が{崩|くず}れた{後|あと}で»",
+      "hint": "Etichetta rossa.",
+      "description": ["Una cassetta con l'etichetta rossa, un po' sbiadita. Il nastro è stato riavvolto molte volte."],
+      "position": "stall",
+      "visible": true
+    },
+    {
+      "id": "tape-arrival",
+      "name": "La cassetta «ベルリンに{来|き}たとき»",
+      "hint": "Etichetta verde.",
+      "description": ["Una cassetta con l'etichetta verde e un disegnino della torre della televisione."],
+      "position": "stall",
+      "visible": true
+    },
+    {
+      "id": "tape-until",
+      "name": "La cassetta «{日本|にほん}に{帰|かえ}るまで»",
+      "hint": "Etichetta gialla.",
+      "description": ["Una cassetta con l'etichetta gialla. Qualcuno ci ha disegnato sopra un aereo."],
+      "position": "stall",
+      "visible": true
+    },
+    {
+      "id": "hachiko",
+      "name": "La statua di Hachikō",
+      "hint": "Un cane di bronzo che aspetta.",
+      "description": ["Un akita di bronzo seduto composto, con le orecchie dritte. Il muso è lucido: tutti lo accarezzano."],
+      "position": "shibuya",
+      "visible": true
+    },
+    {
+      "id": "crowd",
+      "name": "La gente attorno a Hachikō",
+      "hint": "Tutti aspettano qualcuno.",
+      "description": [
+        "Attorno alla statua tutti aspettano qualcuno, con gli occhi sul telefono. Fra loro, tre persone con qualcosa di rosso: una studentessa con lo zaino rosso, un impiegato con la cravatta rossa e una ragazza con una sciarpa rossa.",
+        { "text": "Mei è già corsa verso la stazione.", "when": { "flag": "metMei" } }
+      ],
+      "position": "shibuya",
+      "visible": true
+    },
+    {
+      "id": "priority-sign",
+      "name": "L'adesivo arancione",
+      "hint": "Sopra il tuo posto.",
+      "description": [
+        "Un adesivo arancione con quattro figurine: una persona con il bastone, una donna incinta, una persona con un braccio ingessato, una mamma con un bebè.",
+        { "jp": "{優先席|ゆうせんせき}：お{年寄|としよ}りや{体|からだ}の{不自由|ふじゆう}な{方|かた}に{席|せき}をお{譲|ゆず}りください。", "translation": "Posti prioritari: cedete il posto agli anziani e alle persone in difficoltà.", "source": "L'adesivo sul treno" }
+      ],
+      "position": "yamanote",
+      "visible": true
+    },
+    {
+      "id": "kenji",
+      "name": "L'anziano con la chitarra",
+      "hint": "Custodia consumata, sciarpa di lana.",
+      "description": [
+        { "text": "Un uomo magro, con i capelli bianchi lunghi fino alle spalle e una custodia di chitarra piena di adesivi sbiaditi. Uno dice «Berlin».", "when": { "flag": "metKenji", "value": false } },
+        { "text": "Kenji accorda la chitarra a orecchio, seduto sul muretto del giardino. Ogni tanto ride da solo.", "when": { "flag": "metKenji" } }
+      ],
+      "position": "yamanote",
+      "visible": true
+    },
+    {
+      "id": "lantern",
+      "name": "La grande lanterna rossa",
+      "hint": "Sotto la Porta del Tuono.",
+      "description": ["Una lanterna di carta rossa alta quasi quattro metri, con due grandi caratteri neri: {雷門|かみなりもん}, la Porta del Tuono. Tutti si fotografano lì sotto."],
+      "position": "asakusa",
+      "visible": true
+    },
+    {
+      "id": "temple-sign",
+      "name": "Il cartello del tempio",
+      "hint": "Bianco, con le istruzioni per i visitatori.",
+      "description": [
+        "Un cartello di legno bianco, scritto in giapponese e, più in piccolo, in un inglese incerto.",
+        { "jp": "お{参|まい}りする{前|まえ}に、{手|て}を{洗|あら}ってください。おみくじは、お{参|まい}りした{後|あと}で{引|ひ}きましょう。", "translation": "Prima di pregare, lavatevi le mani. La おみくじ si pesca dopo aver pregato.", "source": "Il cartello del tempio" }
+      ],
+      "position": "asakusa",
+      "visible": true
+    },
+    {
+      "id": "fountain",
+      "name": "La fontana di purificazione",
+      "hint": "Una vasca di pietra con i mestoli di legno.",
+      "description": ["Una vasca di pietra sotto una tettoia, con l'acqua che sgorga da un drago di bronzo. Sul bordo, una fila di mestoli di legno dal manico lungo."],
+      "position": "asakusa",
+      "visible": true
+    },
+    {
+      "id": "incense",
+      "name": "Il braciere dell'incenso",
+      "hint": "Fumo denso e profumato.",
+      "description": ["Un grande braciere di bronzo pieno di bastoncini accesi. Il fumo, dicono, fa bene a qualunque parte del corpo te lo spingi sopra."],
+      "position": "asakusa",
+      "visible": true
+    },
+    {
+      "id": "hall",
+      "name": "La sala principale",
+      "hint": "In cima alla scalinata, con la cassetta delle offerte.",
+      "description": ["Una scalinata di pietra porta alla sala principale. Davanti, una grande cassetta di legno a grata per le offerte: le monete cadono dentro con un rumore di pioggia."],
+      "position": "asakusa",
+      "visible": true
+    },
+    {
+      "id": "omikuji-stand",
+      "name": "Il banco delle おみくじ",
+      "hint": "Cilindri di metallo e cassettini numerati.",
+      "description": [
+        "Una parete di cassettini di legno numerati. Lasci cento yen, scuoti un cilindro di metallo finché esce un bastoncino con un numero, e nel cassettino con quel numero trovi il tuo destino scritto su un foglio.",
+        "Le おみくじ sfortunate si annodano a un filo lì accanto e si lasciano al tempio. Quelle fortunate si portano a casa."
+      ],
+      "position": "asakusa",
+      "visible": true
+    },
+    {
+      "id": "omikuji",
+      "illustration": {"src": "img/omikuji.svg", "alt": "Una おみくじ numero trentadue: grande fortuna"},
+      "name": "La おみくじ",
+      "hint": "Un foglio piegato, il destino di qualcun altro.",
+      "description": [
+        "Un foglietto sottile con il numero trentadue in cima.",
+        { "jp": "{大吉|だいきち}。{待|ま}ち{人|びと}：{必|かなら}ず{来|く}る。", "translation": "Grande fortuna. La persona che aspetti: arriverà di sicuro.", "source": "La おみくじ di Sensō-ji" }
+      ],
+      "position": "omikuji-stand",
+      "visible": false
+    },
+    {
+      "id": "cats",
+      "name": "I gatti di Yanaka",
+      "hint": "Ovunque. Dormono.",
+      "description": ["Un gatto tigrato, un gatto bianco con una macchia sull'occhio, un gatto grigio enorme che sembra un panettone. Nessuno di loro ti degna di uno sguardo."],
+      "position": "yanaka",
+      "visible": true
+    },
+    {
+      "id": "menchi",
+      "name": "La bottega delle menchi katsu",
+      "hint": "C'è la fila. Profumo di fritto.",
+      "description": ["Una piccola bottega con la vetrina piena di polpette impanate dorate. La fila arriva fino alla bottega accanto, e nessuno si lamenta."],
+      "position": "yanaka",
+      "visible": true
+    },
+    {
+      "id": "intercom",
+      "name": "Il citofono",
+      "hint": "Un pulsante e una piccola griglia.",
+      "description": [
+        "Un citofono con la telecamera, l'unica cosa moderna della casa.",
+        { "jp": "…{風邪|かぜ}をひいてるから、{今日|きょう}は{帰|かえ}ったほうがいいと{思|おも}う。", "translation": "…Ho il raffreddore, quindi penso che oggi sarebbe meglio che ve ne andaste.", "source": "Hiroko, dal citofono", "when": { "all": [{ "flag": "rang" }, { "flag": "doorOpen", "value": false }] } }
+      ],
+      "position": "casa-hiroko",
+      "visible": true
+    },
+    {
+      "id": "mei",
+      "name": "Mei",
+      "hint": "Sciarpa rossa, borsa piena di festoni.",
+      "description": [
+        "Mei ha vent'anni, studia design e ha una sciarpa rossa lunghissima. Ha organizzato tutto: i festoni, la torta, e te.",
+        { "text": "«La nonna è testarda. Molto testarda. Ma se c'è una cosa che non sa rifiutare, è una canzone.»", "when": { "flag": "doorOpen", "value": false } },
+        { "text": "Mei filma tutto con il telefono e piange, e finge di non piangere.", "when": { "flag": "doorOpen" } }
+      ],
+      "position": "casa-hiroko",
+      "visible": false
+    },
+    {
+      "id": "hiroko",
+      "name": "Hiroko",
+      "hint": "Ottant'anni oggi. Una sciarpa bianca.",
+      "description": [
+        "Piccola, dritta come un fuso, i capelli bianchi raccolti. Al collo ha una sciarpa bianca, e il naso rosso del raffreddore. Ti guarda come si guarda qualcuno che si conosce da molto tempo.",
+        { "text": "Tiene la おみくじ stretta tra le dita, come un biglietto del treno.", "when": { "flag": "omikujiGiven" } }
+      ],
+      "position": "casa-hiroko",
+      "visible": false
+    }
+  ],
+  "actions": [
+    {
+      "id": "listen-nonna",
+      "target": "nonna",
+      "label": "Ascolta la nonna",
+      "when": { "flag": "intro", "value": false },
+      "text": [
+        "«Tre settimane fa mi hanno operata all'anca. Un'operazione da niente, dicono loro.» Sbuffa. «Yuki dice che in giapponese si dice {手術|しゅじゅつ}. Sembra il nome di un dolce. Comunque, con quest'anca a Tokyo non ci arrivo.»",
+        "«Hiroko. Te ne ho parlato mille volte. Ci siamo conosciute a Berlino, nel novembre dell'Ottantanove, la notte dopo la caduta del Muro. Una sarda e una giapponese che non si conoscevano, a cantare in mezzo alla folla con un chitarrista di strada.»",
+        "«Prima di ripartire mi ha dato il suo {指輪|ゆびわ}, il suo anello. “Me lo ridarai quando canteremo di nuovo insieme”, mi ha detto. Non è mai successo. Tra una settimana compie ottant'anni.»",
+        "Ti mette in mano una busta azzurra e una fotografia. «Questa è la sua ultima lettera. È in giapponese e da sola non la so leggere: me le legge sempre Yuki, la ragazza giapponese del chiosco al Poetto. L'anello invece è chiuso nel carillon che mi ha regalato lei, e il carillon è bloccato da anni.»",
+        "«I biglietti li ho già comprati: Berlino, e poi Tokyo. Non guardarmi così. Una nonna deve pur avere i suoi segreti.»",
+        "La lettera e la fotografia sono nel tuo inventario."
+      ],
+      "effects": [
+        { "type": "flag", "id": "intro" },
+        { "type": "take", "id": "letter" },
+        { "type": "take", "id": "photo" },
+        { "type": "word", "id": "shujutsu" },
+        { "type": "word", "id": "yubiwa" },
+        { "type": "clue", "id": "promise" }
+      ]
+    },
+    {
+      "id": "nonna-berlin",
+      "target": "nonna",
+      "label": "Chiedi di quella notte a Berlino",
+      "when": { "all": [{ "flag": "intro" }, { "flag": "askedBerlin", "value": false }] },
+      "text": [
+        "La nonna ride. «Ero andata a trovare una cugina emigrata. La sera del nove dicono alla radio che il Muro è aperto. Il giorno dopo eravamo tutti alla Porta di Brandeburgo: tedeschi dell'Est, dell'Ovest, turisti, chiunque.»",
+        "«C'era un ragazzo giapponese con la chitarra e un registratore legato alla cintura. Hiroko gli stava accanto e cantava, e io mi sono messa a cantare con loro senza sapere le parole. Abbiamo riso per tutta la notte.»",
+        "«E c'era un vecchio con l'organetto. Be', vecchio… allora era più giovane di me adesso.»"
+      ],
+      "effects": [{ "type": "flag", "id": "askedBerlin" }]
+    },
+    {
+      "id": "show-ring-nonna",
+      "target": "nonna",
+      "item": "ring",
+      "label": "Mostra l'anello alla nonna",
+      "when": { "flag": "shownRing", "value": false },
+      "text": [
+        "La nonna lo prende tra due dita e lo guarda controluce. «Trentasette anni. Sembra ieri, e sembra un'altra vita.»",
+        "Te lo rimette in mano e ti chiude le dita sopra. «Yuki mi ha insegnato una parola: {届|とど}ける. Vuol dire far arrivare qualcosa a qualcuno, fino in fondo. Ecco: {届|とど}けて.»"
+      ],
+      "effects": [{ "type": "flag", "id": "shownRing" }, { "type": "word", "id": "todokeru" }]
+    },
+    {
+      "id": "take-carillon",
+      "target": "carillon",
+      "label": "Prendi il carillon",
+      "when": { "not": { "has": "carillon" } },
+      "text": ["Lo sollevi dalla mensola. Dentro qualcosa tintinna. La nonna, dalla poltrona: «Piano! È più vecchio di te.»"],
+      "effects": [{ "type": "take", "id": "carillon" }]
+    },
+    {
+      "id": "look-under-carillon",
+      "target": "carillon",
+      "label": "Guarda sotto la base",
+      "when": { "not": { "clue": "carillon-note" } },
+      "text": [
+        "Capovolgi il carillon. Sotto la base, a matita, qualcuno ha scritto in giapponese, con una grafia piccola e ordinata:",
+        { "jp": "ねじを{巻|ま}いてから、{引|ひ}き{出|だ}しを{開|あ}けてください。", "translation": "Dopo aver caricato la molla, aprite il cassetto.", "source": "Sotto il carillon" },
+        "Accanto, la nonna ha aggiunto a penna, anni fa: «てから = dopo aver… (me l'ha detto Hiroko)»."
+      ],
+      "effects": [{ "type": "clue", "id": "carillon-note" }, { "type": "word", "id": "te-kara" }]
+    },
+    {
+      "id": "wind-carillon",
+      "target": "carillon",
+      "item": "winder",
+      "label": "Carica il carillon con la chiavetta",
+      "when": { "flag": "wound", "value": false },
+      "requires": { "flag": "carillonRepaired" },
+      "text": [
+        "Infili la chiavetta nel foro sotto la base e giri: tre, quattro, cinque scatti. Il cilindro comincia a ruotare e le lamelle suonano «Berliner Luft», un po' stonate, un po' commoventi.",
+        "Dalla poltrona, la nonna canticchia."
+      ],
+      "failure": ["La chiavetta entra, ma gira a vuoto: dentro qualcosa è inceppato. Ci vorrebbe un orologiaio."],
+      "effects": [{ "type": "flag", "id": "wound" }]
+    },
+    {
+      "id": "open-drawer",
+      "target": "carillon",
+      "label": "Apri il cassettino",
+      "when": { "flag": "drawerOpen", "value": false },
+      "requires": { "flag": "wound" },
+      "text": [
+        "Mentre la musica suona, tiri il pomellino. Il cassettino scatta in avanti con un clic.",
+        "Dentro, su un cuscinetto di velluto rosso, c'è un anello d'argento con una piccola perla."
+      ],
+      "failure": [
+        { "text": "Il cassettino non si muove di un millimetro. Dentro il meccanismo qualcosa tintinna, inceppato.", "when": { "flag": "carillonRepaired", "value": false } },
+        { "text": "Tiri, ma il cassettino resta chiuso. Forse si sblocca solo quando il meccanismo è in moto.", "when": { "flag": "carillonRepaired" } }
+      ],
+      "effects": [{ "type": "flag", "id": "drawerOpen" }, { "type": "discover", "id": "ring" }]
+    },
+    {
+      "id": "take-ring",
+      "target": "ring",
+      "label": "Prendi l'anello",
+      "when": { "not": { "has": "ring" } },
+      "text": [
+        "È leggerissimo. Dentro la fascia è inciso un carattere: {宝|たから}, tesoro.",
+        "La nonna, senza voltarsi: «Lo vedi? Te l'avevo detto che non era un regalo qualsiasi.»"
+      ],
+      "effects": [{ "type": "take", "id": "ring" }, { "type": "word", "id": "takara" }]
+    },
+    {
+      "id": "open-tin",
+      "target": "tin",
+      "label": "Apri la scatola di biscotti",
+      "when": { "flag": "tinOpen", "value": false },
+      "text": [
+        "Niente biscotti, naturalmente: aghi, rocchetti, bottoni spaiati, un metro da sarta. E in mezzo ai bottoni c'è una chiavetta d'ottone a farfalla, piccola come un'unghia.",
+        "La nonna: «Ah, eccola! Lo dicevo io che l'avevo messa al sicuro.»"
+      ],
+      "effects": [{ "type": "flag", "id": "tinOpen" }, { "type": "discover", "id": "winder" }]
+    },
+    {
+      "id": "take-winder",
+      "target": "winder",
+      "label": "Prendi la chiavetta",
+      "when": { "not": { "has": "winder" } },
+      "text": ["La infili nel taschino, dove non la perderai. Forse."],
+      "effects": [{ "type": "take", "id": "winder" }]
+    },
+    {
+      "id": "fly-berlin",
+      "target": "tickets",
+      "label": "Parti per Berlino",
+      "when": { "flag": "flewBerlin", "value": false },
+      "requires": { "all": [{ "has": "ring" }, { "flag": "letterRead" }] },
+      "text": [
+        "All'aeroporto di Elmas la nonna ti chiama tre volte, per ricordarti tre cose diverse che hai già in valigia. Dal finestrino guardi la Sardegna diventare piccola, poi le Alpi, poi solo nuvole.",
+        "Due ore dopo atterri a Berlino. Fa freddo, e il cielo è grigio e basso: どんより, direbbe Yuki.",
+        "Prendi il treno per il centro e scendi ad Alexanderplatz."
+      ],
+      "failure": [
+        "Non puoi ancora partire.",
+        { "text": "L'anello è ancora chiuso nel carillon: senza quello, il viaggio non ha senso.", "when": { "not": { "has": "ring" } } },
+        { "text": "E la lettera di Hiroko? Prima di partire vorresti sapere cosa dice. Yuki, al Poetto, potrebbe leggertela.", "when": { "flag": "letterRead", "value": false } }
+      ],
+      "effects": [{ "type": "flag", "id": "flewBerlin" }, { "type": "word", "id": "donyori" }, { "type": "goto", "to": "alexanderplatz" }]
+    },
+    {
+      "id": "fly-tokyo",
+      "target": "tickets",
+      "label": "Parti per Tokyo",
+      "when": { "all": [{ "flag": "flewBerlin" }, { "flag": "flewTokyo", "value": false }] },
+      "requires": { "all": [{ "has": "tape-after" }, { "has": "walkman" }] },
+      "text": [
+        "Dodici ore di volo. Ascolti la cassetta tre volte, poi ti addormenti sopra la Siberia con le cuffie arancioni ancora in testa.",
+        "A Haneda è mattina. Il telefono si riaccende e vibra subito: un messaggio della nonna («Sei arrivato??? Mangia!!!») e uno di un numero giapponese.",
+        { "jp": "ハチ{公|こう}の{前|まえ}にいます。{赤|あか}いマフラーをしています。メイ", "translation": "Sono davanti a Hachikō. Porto una sciarpa rossa. Mei", "source": "Messaggio di Mei, la nipote di Hiroko" },
+        "Un'ora di treno dopo, sei a Shibuya."
+      ],
+      "failure": [
+        "Non puoi ancora partire.",
+        { "text": "Senza la canzone, a Tokyo arriveresti a mani mezze vuote.", "when": { "not": { "has": "tape-after" } } },
+        { "text": "E poi ti serve qualcosa per farla ascoltare.", "when": { "not": { "has": "walkman" } } }
+      ],
+      "effects": [{ "type": "flag", "id": "flewTokyo" }, { "type": "word", "id": "mafura" }, { "type": "clue", "id": "mei-message" }, { "type": "goto", "to": "shibuya" }]
+    },
+    {
+      "id": "hint-letter",
+      "target": "phone",
+      "label": "Chiedi alla nonna della lettera",
+      "when": { "all": [{ "flag": "intro" }, { "flag": "letterRead", "value": false }, { "flag": "hintLetter", "value": false }] },
+      "text": ["«Yuki! Al chiosco del Poetto. Prendi il bus dal Bastione. E portale due amaretti da parte mia!!!»"],
+      "effects": [{ "type": "flag", "id": "hintLetter" }]
+    },
+    {
+      "id": "hint-carillon",
+      "target": "phone",
+      "label": "Chiedi alla nonna del carillon",
+      "when": { "all": [{ "flag": "intro" }, { "flag": "carillonRepaired", "value": false }, { "flag": "hintCarillon", "value": false }] },
+      "text": ["«Antioco, l'orologiaio della Marina, aggiusta tutto quello che ticchetta. Anche il suo cuore, diceva la buonanima di sua moglie.»"],
+      "effects": [{ "type": "flag", "id": "hintCarillon" }]
+    },
+    {
+      "id": "hint-winder",
+      "target": "phone",
+      "label": "Chiedi alla nonna della chiavetta",
+      "when": { "all": [{ "flag": "carillonRepaired" }, { "flag": "tinOpen", "value": false }, { "flag": "hintWinder", "value": false }] },
+      "text": ["«La chiavetta? L'ho messa al sicuro. Dove metto le cose al sicuro? Con il cucito, ovvio!!»"],
+      "effects": [{ "type": "flag", "id": "hintWinder" }]
+    },
+    {
+      "id": "hint-drawer",
+      "target": "phone",
+      "label": "Chiedi alla nonna del cassettino",
+      "when": { "all": [{ "flag": "carillonRepaired" }, { "flag": "drawerOpen", "value": false }, { "flag": "hintDrawer", "value": false }] },
+      "text": ["«Hiroko ha scritto qualcosa sotto la base, me lo ricordo. Prima una cosa, poi l'altra: con lei c'era sempre un ordine.»"],
+      "effects": [{ "type": "flag", "id": "hintDrawer" }]
+    },
+    {
+      "id": "hint-horst",
+      "target": "phone",
+      "label": "Scrivi alla nonna da Berlino",
+      "when": { "all": [{ "flag": "flewBerlin" }, { "flag": "knowsStudio", "value": false }, { "flag": "hintHorst", "value": false }] },
+      "text": ["«Il vecchio dell'organetto! Quello della foto! Suonava alla Porta di Brandeburgo. Se è ancora vivo, sarà ancora lì: quelli come lui non vanno in pensione.»"],
+      "effects": [{ "type": "flag", "id": "hintHorst" }]
+    },
+    {
+      "id": "hint-taro",
+      "target": "phone",
+      "label": "Racconta alla nonna dello studio",
+      "when": { "all": [{ "flag": "knowsStudio" }, { "flag": "tapeLead", "value": false }, { "flag": "hintTaro", "value": false }] },
+      "text": ["«Il figlio di Kenji! Vai subito a Kreuzberg e chiedigli delle cassette del papà. Kenji registrava tutto, anche i suoi starnuti.»"],
+      "effects": [{ "type": "flag", "id": "hintTaro" }]
+    },
+    {
+      "id": "hint-chotto",
+      "target": "phone",
+      "label": "Chiedi alla nonna come rispondere a Taro",
+      "when": { "all": [{ "flag": "askedTomorrow" }, { "flag": "tomorrowUnderstood", "value": false }, { "flag": "hintChotto", "value": false }] },
+      "text": ["«Yuki dice sempre: quando un giapponese dice ちょっと… e lascia la frase a metà, vuol dire no. E poi, scusa: non lo sapevi già che domani non poteva?»"],
+      "effects": [{ "type": "flag", "id": "hintChotto" }]
+    },
+    {
+      "id": "hint-sleep",
+      "target": "phone",
+      "label": "Scrivi alla nonna che è sera",
+      "when": { "all": [{ "flag": "tomorrowUnderstood" }, { "flag": "sunday", "value": false }, { "flag": "hintSleep", "value": false }] },
+      "text": ["«Il mercatino è domani. Vai a dormire!!! E non mangiare solo panini.»"],
+      "effects": [{ "type": "flag", "id": "hintSleep" }]
+    },
+    {
+      "id": "hint-tape",
+      "target": "phone",
+      "label": "Chiedi alla nonna quale cassetta",
+      "when": { "all": [{ "flag": "sunday" }, { "flag": "songFound", "value": false }, { "flag": "hintTape", "value": false }] },
+      "text": ["«Guarda il retro della foto. Il dieci novembre: il Muro era caduto la sera prima. Abbiamo cantato dopo, non prima!»"],
+      "effects": [{ "type": "flag", "id": "hintTape" }]
+    },
+    {
+      "id": "hint-mei",
+      "target": "phone",
+      "label": "Scrivi alla nonna da Tokyo",
+      "when": { "all": [{ "flag": "flewTokyo" }, { "flag": "metMei", "value": false }, { "flag": "hintMei", "value": false }] },
+      "text": ["«Rileggi il messaggio di Mei. Cosa ha detto che indossa? マフラー è la sciarpa, me l'ha detto Yuki. Copriti anche tu!!»"],
+      "effects": [{ "type": "flag", "id": "hintMei" }]
+    },
+    {
+      "id": "hint-kenji",
+      "target": "phone",
+      "label": "Chiedi alla nonna di Kenji",
+      "when": { "all": [{ "flag": "metMei" }, { "flag": "metKenji", "value": false }, { "flag": "hintKenji", "value": false }] },
+      "text": ["«Taro ha detto che suo padre gira sulla Yamanote con la chitarra. Guardati intorno, in treno. E sii educato: siamo in Giappone!»"],
+      "effects": [{ "type": "flag", "id": "hintKenji" }]
+    },
+    {
+      "id": "hint-temple",
+      "target": "phone",
+      "label": "Chiedi alla nonna del tempio",
+      "when": { "all": [{ "flag": "metMei" }, { "not": { "has": "omikuji" } }, { "flag": "hintTemple", "value": false }] },
+      "text": ["«La おみくじ si pesca al tempio di Asakusa. Ma c'è un ordine: leggi il cartello. Al tempio non si entra come al mercato!»"],
+      "effects": [{ "type": "flag", "id": "hintTemple" }]
+    },
+    {
+      "id": "hint-intercom",
+      "target": "phone",
+      "label": "Chiedi alla nonna cosa ha detto Hiroko",
+      "when": { "all": [{ "flag": "rang" }, { "flag": "understood", "value": false }, { "flag": "hintIntercom", "value": false }] },
+      "text": ["«Yuki mi ha insegnato che ほうがいい vuol dire “sarebbe meglio”. E ci scommetto che quella testona non parla di se stessa.»"],
+      "effects": [{ "type": "flag", "id": "hintIntercom" }]
+    },
+    {
+      "id": "hint-song",
+      "target": "phone",
+      "label": "Chiedi alla nonna come convincere Hiroko",
+      "when": { "all": [{ "flag": "understood" }, { "flag": "doorOpen", "value": false }, { "flag": "hintSong", "value": false }] },
+      "text": ["«Non provare a convincerla. Falle sentire la nostra canzone. A una canzone Hiroko non ha mai detto di no.»"],
+      "effects": [{ "type": "flag", "id": "hintSong" }]
+    },
+    {
+      "id": "greet-antioco",
+      "target": "antioco",
+      "label": "Saluta Antioco",
+      "when": { "flag": "greetedAntioco", "value": false },
+      "text": ["«Il nipote di Efisia! Come sta la nonna? Le dica che l'aspetto per il caffè del giovedì, con l'anca nuova o con quella vecchia.»"],
+      "effects": [{ "type": "flag", "id": "greetedAntioco" }]
+    },
+    {
+      "id": "repair-carillon",
+      "target": "antioco",
+      "item": "carillon",
+      "label": "Chiedi ad Antioco di riparare il carillon",
+      "when": { "flag": "carillonRepaired", "value": false },
+      "text": [
+        "Antioco apre il fondo del carillon con un cacciavite minuscolo. «Ecco il colpevole.» Con le pinzette tira fuori una puntina da disegno incastrata tra i denti del cilindro. «Come ci è finita qui dentro? No, non me lo dica.»",
+        "Una goccia d'olio, due viti strette. «Riparato. Ma per caricarlo serve la sua chiavetta, e le chiavette dei carillon si perdono sempre. Chieda a sua nonna dove l'ha messa.»",
+        "Sulla ricevuta scrive, per farti ridere: {修理|しゅうり}. «Me l'ha insegnato un cliente di Osaka: vuol dire riparazione. Non le faccio pagare niente, ma la nonna mi deve un caffè.»"
+      ],
+      "effects": [{ "type": "flag", "id": "carillonRepaired" }, { "type": "word", "id": "shuuri" }]
+    },
+    {
+      "id": "listen-tourists",
+      "target": "tourists",
+      "label": "Ascolta i turisti giapponesi",
+      "when": { "flag": "heardTourists", "value": false },
+      "text": [
+        "Passi accanto a loro mentre guardano il panorama.",
+        { "jp": "カリアリは{割|わり}と{静|しず}かだね。", "translation": "Cagliari è piuttosto tranquilla, eh.", "source": "Lui" },
+        { "jp": "うん。でも、{海|うみ}がかなりきれい。", "translation": "Sì. Però il mare è proprio bello.", "source": "Lei" },
+        "割と: “relativamente, rispetto a quel che ti aspettavi”. かなり: molto, e senza discussioni."
+      ],
+      "effects": [{ "type": "flag", "id": "heardTourists" }, { "type": "word", "id": "warito" }]
+    },
+    {
+      "id": "talk-fishmonger",
+      "target": "fishmonger",
+      "label": "Chiedi se il pesce è fresco",
+      "when": { "flag": "askedFish", "value": false },
+      "text": ["Il pescivendolo si porta una mano al cuore come se l'avessi insultato. «Fresco? Questo stamattina era ancora al largo del Poetto! Marcio, da me, non è mai entrato niente.» L'aragosta, sul ghiaccio, sembra d'accordo."],
+      "effects": [{ "type": "flag", "id": "askedFish" }]
+    },
+    {
+      "id": "buy-torrone",
+      "target": "torrone",
+      "label": "Compra il torrone per Hiroko",
+      "when": { "not": { "has": "torrone" } },
+      "text": ["La signora del banco lo incarta con cura e ci aggiunge due amaretti. «Per il viaggio. Il torrone è per il Giappone, gli amaretti per te.»"],
+      "effects": [{ "type": "take", "id": "torrone" }]
+    },
+    {
+      "id": "show-letter-yuki",
+      "target": "yuki",
+      "item": "letter",
+      "label": "Fai leggere la lettera a Yuki",
+      "when": { "flag": "letterRead", "value": false },
+      "text": [
+        "«Una lettera di Hiroko-san! Aspetta, servo questi due e arrivo.» Torna asciugandosi le mani sul grembiule e legge ad alta voce, piano.",
+        { "jp": "あの{夜|よる}の{曲|きょく}を{思|おも}い{出|だ}すたびに、{笑|わら}ってしまいます。", "translation": "Ogni volta che ripenso alla canzone di quella notte, mi viene da ridere.", "source": "La lettera di Hiroko" },
+        "«{曲|きょく} è un brano, una canzone. E 〜たびに vuol dire “ogni volta che”. Si può dire in tre modi, guarda.» Scrive su un tovagliolo:",
+        { "jp": "それを{思|おも}い{出|だ}しては{笑|わら}う。", "translation": "Ci ripensa, e ride (e le capita spesso)." },
+        { "jp": "{毎回|まいかい}それを{思|おも}い{出|だ}すと、{笑|わら}う。", "translation": "Tutte le volte che ci ripensa, ride." },
+        { "jp": "それを{思|おも}い{出|だ}すたびに{笑|わら}う。", "translation": "Ogni volta che ci ripensa, ride." },
+        "«Il terzo è il più naturale. E alla fine c'è 〜といいですね, “speriamo che”: vuole cantarla ancora con tua nonna. Ma quale canzone? Non c'è scritto.»",
+        "Yuki gira la fotografia tra le dita. «Questa è la Porta di Brandeburgo. E il chitarrista ha un registratore alla cintura, vedi? Se quella canzone esiste ancora, è a Berlino.»"
+      ],
+      "effects": [
+        { "type": "flag", "id": "letterRead" },
+        { "type": "word", "id": "kyoku" },
+        { "type": "word", "id": "tabi-ni" },
+        { "type": "word", "id": "to-ii" },
+        { "type": "clue", "id": "letter" }
+      ]
+    },
+    {
+      "id": "talk-yuki",
+      "target": "yuki",
+      "label": "Chiedi a Yuki di Hiroko",
+      "when": { "flag": "talkedYuki", "value": false },
+      "text": [
+        "«L'ho vista una volta sola, in videochiamata con tua nonna. Avevano il telefono al contrario e ridevano tutte e due.»",
+        "«Tua nonna mi porta le lettere da tre anni. Io le traduco, e lei mi porta le seadas. Mi sembra un ottimo affare.»"
+      ],
+      "effects": [{ "type": "flag", "id": "talkedYuki" }]
+    },
+    {
+      "id": "talk-fisherman",
+      "target": "fisherman",
+      "label": "Chiedi se abboccano",
+      "when": { "flag": "askedFisherman", "value": false },
+      "text": ["«Niente da stamattina. Ma la ragazza giapponese del chiosco dice che quello che faccio si chiama {魚釣|さかなつ}り. Detto così sembra quasi che abbia preso qualcosa.»"],
+      "effects": [{ "type": "flag", "id": "askedFisherman" }, { "type": "word", "id": "sakanatsuri" }]
+    },
+    {
+      "id": "find-tokyo",
+      "target": "worldclock",
+      "label": "Cerca Tokyo sull'orologio",
+      "when": { "flag": "foundTokyo", "value": false },
+      "text": ["Giri intorno al cilindro finché la trovi: Tokyo, otto ore avanti. Laggiù è già sera. Chissà cosa sta facendo Hiroko. Cagliari invece non c'è. C'è Roma, ma non è la stessa cosa."],
+      "effects": [{ "type": "flag", "id": "foundTokyo" }]
+    },
+    {
+      "id": "listen-horst",
+      "target": "horst",
+      "label": "Ascolta l'organetto",
+      "when": { "flag": "heardHorst", "value": false },
+      "text": ["L'organetto suona una marcetta allegra e un po' sgangherata. Ti accorgi solo dopo qualche giro che è «Berliner Luft», la stessa melodia del carillon."],
+      "effects": [{ "type": "flag", "id": "heardHorst" }]
+    },
+    {
+      "id": "show-photo-horst",
+      "target": "horst",
+      "item": "photo",
+      "label": "Mostra la fotografia al suonatore",
+      "when": { "flag": "knowsStudio", "value": false },
+      "text": [
+        "Il vecchio smette di girare la manovella e strizza gli occhi. «Das bin ich! Sono io, quello nell'angolo!» Ride, mostrando un dente d'oro. Parla un italiano imparato in trent'anni di vacanze a Rimini.",
+        "«Quella notte nessuno dormiva. Il Muro era caduto la sera prima, la gente ballava sulle macerie. E quelle due ragazze cantavano con Kenji, il giapponese con la chitarra.»",
+        "«Kenji registrava tutto con un registratore a cassette legato alla cintura. È tornato in Giappone tanti anni fa, ma suo figlio Taro ha uno studio di registrazione a Kreuzberg, sul canale: Studio Kirschblüte. Digli che ti manda Horst.»"
+      ],
+      "effects": [{ "type": "flag", "id": "knowsStudio" }, { "type": "clue", "id": "studio" }]
+    },
+    {
+      "id": "listen-guide",
+      "target": "guide",
+      "label": "Ascolta la guida",
+      "when": { "flag": "heardGuide", "value": false },
+      "text": [
+        "La guida alza la bandierina e indica il Muro in tutta la sua lunghezza.",
+        { "jp": "この{壁|かべ}は{相当|そうとう}{長|なが}いですよ。{一|いち}キロ{以上|いじょう}あります。", "translation": "Questo muro è davvero molto lungo: più di un chilometro.", "source": "La guida" },
+        { "jp": "なかなかかっこいい！", "translation": "Mica male!", "source": "Il bambino con il tablet" },
+        { "jp": "{絵|え}が{結構|けっこう}{多|おお}いね。", "translation": "Ci sono parecchi dipinti, più di quanti pensassi.", "source": "La mamma" },
+        "Tre modi di dire “molto”, tre sfumature diverse. Nel diario c'è uno schema."
+      ],
+      "effects": [
+        { "type": "flag", "id": "heardGuide" },
+        { "type": "word", "id": "kabe" },
+        { "type": "word", "id": "soutou" },
+        { "type": "word", "id": "nakanaka" },
+        { "type": "word", "id": "kekkou" }
+      ]
+    },
+    {
+      "id": "photo-mural",
+      "target": "mural",
+      "label": "Fai la fila per la foto",
+      "when": { "flag": "photoMural", "value": false },
+      "text": ["Dieci minuti di fila per una foto in cui si vede soprattutto la testa del signore davanti a te. La mandi alla nonna lo stesso. Risponde in tre secondi: «Che schifo, si baciano!! Bella foto.»"],
+      "effects": [{ "type": "flag", "id": "photoMural" }]
+    },
+    {
+      "id": "talk-lena",
+      "target": "lena",
+      "label": "Parla con Lena",
+      "when": { "flag": "talkedLena", "value": false },
+      "text": [
+        "Lena abbassa una cuffia. «Taro? Un consiglio: non chiedergli niente per domenica. La domenica c'è la partita dell'Union, ed è sacra.»",
+        "«Lui la chiama {試合|しあい}, come se fosse una cerimonia del tè. In effetti, per come la vive lui…»"
+      ],
+      "effects": [{ "type": "flag", "id": "talkedLena" }, { "type": "word", "id": "shiai" }]
+    },
+    {
+      "id": "ask-tapes",
+      "target": "taro",
+      "label": "Chiedi a Taro delle cassette di suo padre",
+      "when": { "flag": "tapeLead", "value": false },
+      "text": [
+        "Gli racconti della foto, di Horst, della canzone. Taro si gratta la testa, imbarazzato.",
+        { "jp": "あの{箱|はこ}？{捨|す}てた。…っていうか、マウアーパークの{蚤|のみ}の{市|いち}に{出|だ}しちゃった。", "translation": "Quella scatola? L'ho buttata. Anzi, più che buttata, l'ho data al mercatino delle pulci di Mauerpark.", "source": "Taro" },
+        "«C'è una signora, la Kowalski, che la domenica vende di tutto. La settimana scorsa le ho lasciato uno scatolone di roba di papà. Cassette comprese. Che idiota.»"
+      ],
+      "effects": [{ "type": "flag", "id": "tapeLead" }, { "type": "word", "id": "suteru" }, { "type": "word", "id": "tte-iu-ka" }, { "type": "clue", "id": "taro" }]
+    },
+    {
+      "id": "ask-tomorrow",
+      "target": "taro",
+      "label": "Chiedigli di venire con te al mercatino",
+      "when": { "all": [{ "flag": "tapeLead" }, { "flag": "askedTomorrow", "value": false }] },
+      "text": [
+        "Taro lancia un'occhiata alla sciarpa dell'Union sulla sedia, poi a te.",
+        { "jp": "{今日|きょう}はもう{閉|し}まってる。{明日|あした}は…うーん、ちょっと…", "translation": "Oggi ormai è chiuso. Domani… mmh, domani è un po'…", "source": "Taro" },
+        "Ti guarda, in attesa. Tocca a te rispondere, in giapponese."
+      ],
+      "effects": [{ "type": "flag", "id": "askedTomorrow" }]
+    },
+    {
+      "id": "reply-daijoubu",
+      "target": "taro",
+      "label": "«あ、じゃあ{明日|あした}{大丈夫|だいじょうぶ}なのか？»",
+      "when": { "all": [{ "flag": "askedTomorrow" }, { "flag": "tomorrowUnderstood", "value": false }] },
+      "text": [
+        "Taro ti fissa. «Ah, allora domani va bene?» Scuote la testa ridendo.",
+        "«No, no! Quando dico ちょっと e non finisco la frase, vuol dire che non posso. Riprova.»"
+      ]
+    },
+    {
+      "id": "reply-jitsu-wa",
+      "target": "taro",
+      "label": "«あ、でも{実|じつ}は{明日|あした}{無理|むり}だって{言|い}うのか？»",
+      "when": { "all": [{ "flag": "askedTomorrow" }, { "flag": "tomorrowUnderstood", "value": false }] },
+      "text": [
+        "«Ah, però in realtà mi stai dicendo che domani non puoi?» Taro aggrotta la fronte.",
+        "«{実|じつ}は? “In realtà”? Ma io non ho mai detto di sì! Detto così sembra che ti abbia preso in giro.»"
+      ]
+    },
+    {
+      "id": "reply-yappari",
+      "target": "taro",
+      "label": "«あ、そう。やっぱり{明日|あした}できないってことか。»",
+      "when": { "all": [{ "flag": "askedTomorrow" }, { "flag": "tomorrowUnderstood", "value": false }] },
+      "text": [
+        "«Ah, capisco. Quindi, come pensavo, domani non puoi.» Taro scoppia a ridere e indica Lena.",
+        "«やっぱり! Te l'ha detto lei, eh? Sì: domani c'è il {試合|しあい}, e l'Union senza di me in curva perde.» Apre un cassetto e tira fuori un Walkman giallo. «Prendi questo. È di papà. Così ascolti le cassette prima di comprarle.»",
+        "«E un'altra cosa. Papà vive a Tokyo, gira tutto il giorno sulla Yamanote con la chitarra, come un pensionato qualsiasi. Lo chiamo stasera: gli dirò di cercarti.»",
+        "Il Walkman è nel tuo inventario."
+      ],
+      "effects": [
+        { "type": "flag", "id": "tomorrowUnderstood" },
+        { "type": "take", "id": "walkman" },
+        { "type": "word", "id": "tte-koto-ka" },
+        { "type": "word", "id": "shiai" },
+        { "type": "clue", "id": "kenji" }
+      ]
+    },
+    {
+      "id": "sleep-hostel",
+      "target": "hostel",
+      "label": "Vai a dormire fino a domenica",
+      "when": { "all": [{ "flag": "tomorrowUnderstood" }, { "flag": "sunday", "value": false }] },
+      "text": [
+        "Ceni con un döner mangiato in piedi su un ponte, guardando le luci tremare nel canale. In camerata qualcuno russa in olandese. Ti addormenti con il Walkman di Kenji sul cuscino.",
+        "Domenica mattina il cielo si è aperto. A Mauerpark, ormai, il mercatino starà montando le bancarelle."
+      ],
+      "effects": [{ "type": "flag", "id": "sunday" }, { "type": "discover", "id": "stall" }]
+    },
+    {
+      "id": "early-hostel",
+      "target": "hostel",
+      "label": "Sali a riposarti un po'",
+      "when": { "all": [{ "flag": "tomorrowUnderstood", "value": false }, { "flag": "restedEarly", "value": false }] },
+      "text": ["Ti sdrai dieci minuti sul letto a castello, guardando il soffitto. Poi ti rialzi: sei venuto fin qui per una canzone, non per dormire."],
+      "effects": [{ "type": "flag", "id": "restedEarly" }]
+    },
+    {
+      "id": "applaud-bearpit",
+      "target": "bearpit",
+      "label": "Applaudi il cantante",
+      "when": { "all": [{ "flag": "sunday" }, { "flag": "applauded", "value": false }] },
+      "text": ["Applaudi con tutti gli altri. Il ragazzo si inchina fino a terra, felice come se avesse vinto un premio. Al Bearpit, l'intonazione è facoltativa e il coraggio è tutto."],
+      "effects": [{ "type": "flag", "id": "applauded" }]
+    },
+    {
+      "id": "read-labels",
+      "target": "stall",
+      "label": "Leggi le etichette delle cassette",
+      "when": { "flag": "readLabels", "value": false },
+      "text": [
+        "Quattro cassette, quattro etichette scritte con la stessa calligrafia nervosa. Le leggi una per una:",
+        { "jp": "{壁|かべ}が{崩|くず}れる{前|まえ}に", "translation": "Prima che il Muro crollasse", "source": "Etichetta blu" },
+        { "jp": "{壁|かべ}が{崩|くず}れた{後|あと}で", "translation": "Dopo che il Muro è crollato", "source": "Etichetta rossa" },
+        { "jp": "ベルリンに{来|き}たとき", "translation": "Quando sono arrivato a Berlino", "source": "Etichetta verde" },
+        { "jp": "{日本|にほん}に{帰|かえ}るまで", "translation": "Fino al ritorno in Giappone", "source": "Etichetta gialla" },
+        "前に e まで vogliono il verbo nella forma piana del dizionario; 後で quella al passato in た. Nel diario c'è tutto."
+      ],
+      "effects": [
+        { "type": "flag", "id": "readLabels" },
+        { "type": "word", "id": "kabe" },
+        { "type": "word", "id": "mae-ni" },
+        { "type": "word", "id": "ato-de" },
+        { "type": "word", "id": "toki" },
+        { "type": "word", "id": "made" }
+      ]
+    },
+    {
+      "id": "talk-kowalski",
+      "target": "stall",
+      "label": "Parla con la signora Kowalski",
+      "when": { "flag": "talkedKowalski", "value": false },
+      "text": ["«Le cassette del giapponese? Quel ragazzo me le ha lasciate per niente. Prova pure, il Walkman ce l'hai.» Ti versa un dito di tè dal thermos senza chiederti se lo vuoi."],
+      "effects": [{ "type": "flag", "id": "talkedKowalski" }]
+    },
+    {
+      "id": "listen-before",
+      "target": "tape-before",
+      "item": "walkman",
+      "label": "Ascolta la cassetta blu",
+      "text": ["Una chitarra sola, in una stanza piccola. Kenji prova sempre lo stesso giro di accordi e sbuffa ogni volta che sbaglia. Nessuna voce di donna: è prima di quella notte."]
+    },
+    {
+      "id": "listen-arrival",
+      "target": "tape-arrival",
+      "item": "walkman",
+      "label": "Ascolta la cassetta verde",
+      "text": ["Rumore di treni, un annuncio in tedesco, poi la voce di un ragazzo giapponese che dice, emozionato: «ベルリンに{着|つ}きました». Sono appena arrivato a Berlino. È Kenji, giovanissimo. Non c'è nessuna canzone."]
+    },
+    {
+      "id": "listen-until",
+      "target": "tape-until",
+      "item": "walkman",
+      "label": "Ascolta la cassetta gialla",
+      "text": ["Kenji canta da solo, in giapponese, una canzone lenta che parla di aerei e di casa. È bella, ma la nonna e Hiroko non ci sono. È un'altra storia."]
+    },
+    {
+      "id": "listen-after",
+      "target": "tape-after",
+      "item": "walkman",
+      "label": "Ascolta la cassetta rossa",
+      "when": { "flag": "songFound", "value": false },
+      "text": [
+        "Un boato di folla, clacson, qualcuno che stappa una bottiglia. Poi una chitarra, e due voci di donna che ridono più che cantare. Una canta in giapponese. L'altra, in sardo, inventando le parole.",
+        "È la nonna. Ha trentasette anni meno di adesso e la stessa risata.",
+        "La canzone finisce in un applauso. Una voce maschile, vicinissima al microfono, dice: «{壁|かべ}が{崩|くず}れた{後|あと}で…いい{夜|よる}だ». Dopo che il Muro è crollato… che bella notte."
+      ],
+      "effects": [{ "type": "flag", "id": "songFound" }]
+    },
+    {
+      "id": "buy-tape",
+      "target": "tape-after",
+      "label": "Prendi la cassetta rossa",
+      "when": { "all": [{ "flag": "songFound" }, { "not": { "has": "tape-after" } }] },
+      "text": [
+        "La signora Kowalski fa un gesto con la mano. «Tienila. Le cose giuste devono tornare dove devono stare.» Poi aggiunge, in tedesco, qualcosa che non capisci, e ride.",
+        "La cassetta è nel tuo inventario. Adesso hai tutto: l'anello, la canzone, e un Walkman per farla ascoltare."
+      ],
+      "effects": [{ "type": "take", "id": "tape-after" }]
+    },
+    {
+      "id": "pet-hachiko",
+      "target": "hachiko",
+      "label": "Accarezza il muso di Hachikō",
+      "when": { "flag": "petHachiko", "value": false },
+      "text": ["Il bronzo è freddo e liscissimo. Dieci anni ad aspettare qualcuno che non tornava. Speri che a Hiroko vada meglio."],
+      "effects": [{ "type": "flag", "id": "petHachiko" }]
+    },
+    {
+      "id": "greet-student",
+      "target": "crowd",
+      "label": "Saluta la studentessa con lo zaino rosso",
+      "when": { "flag": "metMei", "value": false },
+      "text": ["La ragazza ti guarda allarmata, si inchina velocemente e scappa verso le strisce. Ha lo zaino rosso, sì. Ma non è una マフラー."]
+    },
+    {
+      "id": "greet-salaryman",
+      "target": "crowd",
+      "label": "Saluta l'impiegato con la cravatta rossa",
+      "when": { "flag": "metMei", "value": false },
+      "text": ["L'impiegato si inchina, tu ti inchini, lui si inchina di nuovo. Alla fine scopri che aspetta il suo capo. Una cravatta non è una sciarpa, e lui non si chiama Mei."]
+    },
+    {
+      "id": "greet-mei",
+      "target": "crowd",
+      "label": "Saluta la ragazza con la sciarpa rossa",
+      "when": { "flag": "metMei", "value": false },
+      "text": [
+        "La ragazza alza gli occhi dal telefono e si illumina. «Sei tu! Il nipote di Efisia-san! Io sono Mei.» Ti stringe la mano all'occidentale, poi si inchina lo stesso.",
+        "«La nonna compie ottant'anni oggi, ma ha preso il raffreddore e non vuole vedere nessuno.» Mei sospira.",
+        { "jp": "おばあちゃん、{風邪|かぜ}をひいちゃった。", "translation": "La nonna si è presa il raffreddore.", "source": "Mei" },
+        "«E così non è potuta andare al tempio di Asakusa a pescare la sua おみくじ. Lo fa ogni compleanno da sessant'anni. Dice sempre: “Finché non ho la mia おみくじ, il compleanno non comincia.”»",
+        "«Facciamo così: tu vai ad Asakusa e prendi una おみくじ per lei. Io vado avanti a casa, a Yanaka, a preparare. Scendi a Nippori. Ci vediamo davanti a casa!» E corre via, con la sciarpa che sventola."
+      ],
+      "effects": [
+        { "type": "flag", "id": "metMei" },
+        { "type": "discover", "id": "mei" },
+        { "type": "word", "id": "kaze" },
+        { "type": "clue", "id": "mei-plan" }
+      ]
+    },
+    {
+      "id": "read-priority-sign",
+      "target": "priority-sign",
+      "label": "Leggi l'adesivo",
+      "when": { "flag": "readPrioritySign", "value": false },
+      "text": [
+        "Lo leggi sillaba per sillaba. {優先席|ゆうせんせき}: posti prioritari. お{年寄|としよ}り: gli anziani. {席|せき}: il posto a sedere.",
+        "Ti accorgi solo adesso di essere seduto proprio lì sotto."
+      ],
+      "effects": [{ "type": "flag", "id": "readPrioritySign" }, { "type": "word", "id": "yuusenseki" }, { "type": "word", "id": "otoshiyori" }]
+    },
+    {
+      "id": "pretend-sleep",
+      "target": "kenji",
+      "label": "Fai finta di dormire",
+      "when": { "flag": "metKenji", "value": false },
+      "text": ["Chiudi gli occhi. Li riapri dopo un secondo: l'anziano è sempre lì, in piedi, con la custodia della chitarra tra le gambe, e ti sembra che tutto il vagone ti guardi. Non è da te."]
+    },
+    {
+      "id": "give-seat",
+      "target": "kenji",
+      "label": "Alzati e cedigli il posto",
+      "when": { "flag": "metKenji", "value": false },
+      "text": [
+        "Ti alzi e indichi il posto. L'anziano si inchina, si siede, sistema la chitarra. Poi il suo sguardo cade sul Walkman giallo che ti spunta dalla tasca, e diventa rotondo.",
+        "«それ、{僕|ぼく}のウォークマン！» Quello è il mio Walkman! «Tu sei il ragazzo di cui mi ha parlato Taro. Io sono Kenji. Mori Kenji.»",
+        { "jp": "もう{家|いえ}に{帰|かえ}ろうと{思|おも}ってた。でも、ひろこさんに{会|あ}いに{行|い}きたいと{思|おも}う。", "translation": "Avevo intenzione di tornarmene a casa. Ma voglio andare a trovare Hiroko-san.", "source": "Kenji" },
+        "«Trentasette anni. Hiroko è una signora {相当|そうとう} testarda, sai? Ma una chitarra la fa sempre ragionare.» Tamburella sulla custodia. «Scendo a Nippori e ti aspetto davanti a casa sua. Tu passa prima dal tempio, come ha detto Mei.»"
+      ],
+      "effects": [
+        { "type": "flag", "id": "metKenji" },
+        { "type": "move", "id": "kenji", "to": "casa-hiroko" },
+        { "type": "word", "id": "ai-ni-iku" }
+      ]
+    },
+    {
+      "id": "look-lantern",
+      "target": "lantern",
+      "label": "Fatti una foto sotto la lanterna",
+      "when": { "flag": "photoLantern", "value": false },
+      "text": [
+        "Una signora gentile si offre di scattarti la foto e ti fa mettere in tre pose diverse. La mandi alla nonna: «Che bella! Sembri un turista!!» Sei un turista.",
+        "Accanto a te una guida dice al suo gruppo: «{浅草|あさくさ}を{訪|おとず}れる{人|ひと}は、{一年|いちねん}に{三千万人|さんぜんまんにん}です». Trenta milioni di persone visitano Asakusa ogni anno."
+      ],
+      "effects": [{ "type": "flag", "id": "photoLantern" }, { "type": "word", "id": "otozureru" }]
+    },
+    {
+      "id": "read-temple-sign",
+      "target": "temple-sign",
+      "label": "Leggi il cartello con attenzione",
+      "when": { "not": { "clue": "temple-rule" } },
+      "text": ["Lo leggi due volte. Il diario conserva una copia: 前に e 後で, l'ordine conta anche qui."],
+      "effects": [{ "type": "clue", "id": "temple-rule" }, { "type": "word", "id": "mae-ni" }, { "type": "word", "id": "ato-de" }]
+    },
+    {
+      "id": "wash-hands",
+      "target": "fountain",
+      "label": "Lavati le mani",
+      "when": { "flag": "washed", "value": false },
+      "text": ["Copi la signora accanto a te: mestolo nella destra, acqua sulla sinistra; cambi mano, acqua sulla destra. Un sorso nel palmo per sciacquarti la bocca, e il resto lo lasci scorrere sul manico. L'acqua è gelata."],
+      "effects": [{ "type": "flag", "id": "washed" }]
+    },
+    {
+      "id": "waft-incense",
+      "target": "incense",
+      "label": "Spingiti il fumo sulla testa",
+      "when": { "flag": "incense", "value": false },
+      "text": ["Raccogli il fumo con le mani e te lo porti sulla testa, come fanno tutti. Una signora anziana ti dà una pacca sulla spalla: «{頭|あたま}がよくなるよ». Diventerai più intelligente. Ne prendi ancora un po', non si sa mai."],
+      "effects": [{ "type": "flag", "id": "incense" }]
+    },
+    {
+      "id": "pray",
+      "target": "hall",
+      "label": "Prega per Hiroko",
+      "when": { "flag": "prayed", "value": false },
+      "requires": { "flag": "washed" },
+      "text": [
+        "Getti una moneta nella cassetta, giungi le mani, chini la testa. Preghi per Hiroko, per la nonna e per la sua anca nuova, e anche per la cassetta, che non si inceppi proprio adesso.",
+        "Quando rialzi la testa ti senti più leggero."
+      ],
+      "failure": ["Sali la scalinata, ma una signora anziana ti ferma con gentilezza e indica la fontana di pietra. «まず、{手|て}を». Prima, le mani."],
+      "effects": [{ "type": "flag", "id": "prayed" }]
+    },
+    {
+      "id": "draw-omikuji",
+      "target": "omikuji-stand",
+      "label": "Pesca una おみくじ per Hiroko",
+      "when": { "not": { "has": "omikuji" } },
+      "requires": { "flag": "prayed" },
+      "text": [
+        "Lasci cento yen, scuoti il cilindro di metallo e ne esce un bastoncino: trentadue. Apri il cassettino trentadue e prendi il foglio.",
+        { "jp": "{大吉|だいきち}。{待|ま}ち{人|びと}：{必|かなら}ず{来|く}る。", "translation": "Grande fortuna. La persona che aspetti: arriverà di sicuro.", "source": "La おみくじ" },
+        "大吉: il massimo della fortuna. Questa non si lega al filo: si porta a casa."
+      ],
+      "failure": ["Il monaco del banco ti guarda, poi guarda la sala principale. Sorride e indica il cartello: «お{参|まい}りした{後|あと}で». Dopo aver pregato."],
+      "effects": [{ "type": "take", "id": "omikuji" }, { "type": "word", "id": "kanarazu" }]
+    },
+    {
+      "id": "pet-cats",
+      "target": "cats",
+      "label": "Prova ad accarezzare il gatto grigio",
+      "when": { "flag": "petCats", "value": false },
+      "text": ["Il gatto grigio apre un occhio, valuta la tua mano, sbadiglia con una lentezza offensiva e si rigira dall'altra parte. Accarezzi l'aria. Una signora che passa ride."],
+      "effects": [{ "type": "flag", "id": "petCats" }]
+    },
+    {
+      "id": "eat-menchi",
+      "target": "menchi",
+      "label": "Fai la fila per una menchi katsu",
+      "when": { "flag": "ateMenchi", "value": false },
+      "text": ["Dieci minuti di fila e una polpetta bollente avvolta nella carta. Croccante fuori, succosa dentro. Te la mangi camminando, come tutti, bruciandoti la lingua."],
+      "effects": [{ "type": "flag", "id": "ateMenchi" }]
+    },
+    {
+      "id": "talk-kenji",
+      "target": "kenji",
+      "label": "Chiedi a Kenji di quella notte",
+      "when": { "all": [{ "flag": "metKenji" }, { "flag": "talkedKenji", "value": false }] },
+      "text": [
+        "Kenji sorride senza alzare gli occhi dalle corde. «Ogni volta che ci penso, rido.» Lo dice in italiano, poi in giapponese:",
+        { "jp": "それを{思|おも}い{出|だ}すたびに{笑|わら}う。", "translation": "Ogni volta che ci ripenso, rido.", "source": "Kenji" },
+        "«Tua nonna cantava parole inventate in una lingua che nessuno capiva. Hiroko rideva così tanto che non riusciva a stare al tempo. È la registrazione peggiore che abbia mai fatto. Ed è l'unica che ho tenuto per trentasette anni.»"
+      ],
+      "effects": [{ "type": "flag", "id": "talkedKenji" }]
+    },
+    {
+      "id": "talk-mei",
+      "target": "mei",
+      "label": "Chiedi a Mei della nonna",
+      "when": { "flag": "talkedMei", "value": false },
+      "text": [
+        "«La nonna parla sempre di Efisia-san. Ogni anno, il giorno del suo compleanno, apre la scatola delle lettere e le rilegge tutte.»",
+        "«Ma sa com'è: è una signora di ottant'anni, e quando dice no è no. Oggi, poi, con il raffreddore…»"
+      ],
+      "effects": [{ "type": "flag", "id": "talkedMei" }]
+    },
+    {
+      "id": "ring-intercom",
+      "target": "intercom",
+      "label": "Suona il citofono",
+      "when": { "flag": "rang", "value": false },
+      "text": [
+        "Premi il pulsante. Un lungo silenzio, poi un colpo di tosse e una voce sottile, un po' roca:",
+        { "jp": "…{風邪|かぜ}をひいてるから、{今日|きょう}は{帰|かえ}ったほうがいいと{思|おも}う。", "translation": "…Ho il raffreddore, quindi penso che oggi sarebbe meglio che ve ne andaste.", "source": "Hiroko, dal citofono" },
+        "Clic. Mei ti guarda: «Hai capito cosa ha detto?»"
+      ],
+      "effects": [{ "type": "flag", "id": "rang" }, { "type": "clue", "id": "hiroko-voice" }]
+    },
+    {
+      "id": "interpret-kaeru",
+      "target": "intercom",
+      "label": "«Pensa che tornerà a casa»",
+      "when": { "all": [{ "flag": "rang" }, { "flag": "understood", "value": false }] },
+      "text": ["Mei scuote la testa. «Quello sarebbe 帰ると思う: “suppongo che tornerò”. Ma la nonna è già a casa. Ascolta bene la fine della frase.»"]
+    },
+    {
+      "id": "interpret-kaeritai",
+      "target": "intercom",
+      "label": "«Vuole tornare a casa»",
+      "when": { "all": [{ "flag": "rang" }, { "flag": "understood", "value": false }] },
+      "text": ["«No: “voglio tornare” sarebbe 帰りたいと思う. E poi, dove dovrebbe tornare? È in pigiama!»"]
+    },
+    {
+      "id": "interpret-houga-ii",
+      "target": "intercom",
+      "label": "«Dice che faremmo meglio ad andarcene»",
+      "when": { "all": [{ "flag": "rang" }, { "flag": "understood", "value": false }] },
+      "text": [
+        "Mei annuisce, avvilita. «Esatto. 帰ったほうがいい: sarebbe meglio tornare a casa. Ci sta mandando via.»",
+        "Conta sulle dita: «帰ると思う, suppongo che tornerò. 帰ろうと思う, ho intenzione di tornare. 帰りたいと思う, voglio tornare. 帰ったほうがいいと思う, sarebbe meglio tornare. Quattro frasi quasi uguali, quattro cose diverse.»",
+        "Kenji, dal muretto, accarezza la custodia della chitarra. «Con le parole non la convinci. Ma con qualcos'altro, forse sì.»"
+      ],
+      "effects": [{ "type": "flag", "id": "understood" }, { "type": "word", "id": "to-omou" }]
+    },
+    {
+      "id": "play-tape",
+      "target": "intercom",
+      "item": "walkman",
+      "label": "Fai suonare la cassetta davanti al citofono",
+      "when": { "all": [{ "flag": "understood" }, { "flag": "doorOpen", "value": false }] },
+      "requires": { "has": "tape-after" },
+      "text": [
+        "Infili la cassetta rossa, stacchi le cuffie, alzi il volume al massimo e premi il pulsante del citofono. Kenji attacca con la chitarra, allo stesso tempo del nastro.",
+        "Dal Walkman escono la folla di Berlino, i clacson, e due voci di donna che ridono più che cantare.",
+        "Per un po' non succede niente. Poi, dentro casa, una risata. Prima piccola, poi sempre più forte, interrotta da un colpo di tosse.",
+        "La porta scorrevole si apre. Sulla soglia c'è una signora minuta in vestaglia, con una sciarpa bianca al collo e gli occhi lucidi.",
+        { "jp": "ちょうど{寝|ね}るところだったのに…", "translation": "Stavo giusto per andare a dormire…", "source": "Hiroko" },
+        "Lo dice senza riuscire a smettere di ridere."
+      ],
+      "failure": ["Il Walkman è vuoto. Ti serve la cassetta giusta."],
+      "effects": [{ "type": "flag", "id": "doorOpen" }, { "type": "discover", "id": "hiroko" }, { "type": "word", "id": "tokoro" }]
+    },
+    {
+      "id": "greet-hiroko",
+      "target": "hiroko",
+      "label": "Saluta Hiroko",
+      "when": { "flag": "greetedHiroko", "value": false },
+      "text": [
+        "Ti inchini come hai visto fare. Hiroko ti prende tutte e due le mani.",
+        { "jp": "エフィジアさんのお{孫|まご}さん…{目|め}がそっくり。", "translation": "Il nipote di Efisia… avete gli stessi occhi.", "source": "Hiroko" }
+      ],
+      "effects": [{ "type": "flag", "id": "greetedHiroko" }]
+    },
+    {
+      "id": "give-omikuji",
+      "target": "hiroko",
+      "item": "omikuji",
+      "label": "Dai la おみくじ a Hiroko",
+      "when": { "flag": "omikujiGiven", "value": false },
+      "text": [
+        "Hiroko apre il foglietto, legge e si porta una mano alla bocca.",
+        { "jp": "{待|ま}ち{人|びと}、{必|かなら}ず{来|く}る…ほんとに{来|き}たね。", "translation": "“La persona che aspetti arriverà di sicuro”… ed è arrivata davvero.", "source": "Hiroko" },
+        "«Adesso sì» dice Mei. «Adesso il compleanno può cominciare.»"
+      ],
+      "effects": [{ "type": "flag", "id": "omikujiGiven" }]
+    },
+    {
+      "id": "give-ring",
+      "target": "hiroko",
+      "item": "ring",
+      "label": "Restituisci l'anello a Hiroko",
+      "requires": { "flag": "omikujiGiven" },
+      "text": [
+        "Le apri la mano e ci posi l'anello d'argento. Hiroko lo riconosce subito: lo gira, legge il carattere inciso all'interno, e per un momento non dice niente.",
+        "Kenji, sul muretto, accorda l'ultima corda. «そろそろ{歌|うた}おうか» dice. È quasi ora di cantare."
+      ],
+      "failure": [
+        "Hiroko guarda l'anello e scuote la testa, sorridendo.",
+        { "jp": "おみくじを{見|み}るまで、{誕生日|たんじょうび}じゃないの。", "translation": "Finché non vedo la mia おみくじ, non è il mio compleanno.", "source": "Hiroko" }
+      ],
+      "effects": [{ "type": "word", "id": "sorosoro" }, { "type": "finish", "ending": "three-cities" }]
+    }
+  ],
+  "clues": [
+    {
+      "id": "promise",
+      "title": "La promessa di Berlino",
+      "text": [
+        "Nel 1989, a Berlino, Hiroko ha dato il suo anello alla nonna: «Me lo ridarai quando canteremo di nuovo insieme». Tra una settimana Hiroko compie ottant'anni, a Tokyo.",
+        "L'anello è chiuso nel carillon, che è bloccato. La lettera di Hiroko è in giapponese: Yuki, al chiosco del Poetto, sa leggerla."
+      ]
+    },
+    {
+      "id": "letter",
+      "title": "La lettera di Hiroko",
+      "text": [
+        { "jp": "あの{夜|よる}の{曲|きょく}を{思|おも}い{出|だ}すたびに、{笑|わら}ってしまいます。もう{一度|いちど}、{一緒|いっしょ}に{歌|うた}えるといいですね。", "translation": "Ogni volta che ripenso alla canzone di quella notte mi viene da ridere. Speriamo di poterla cantare ancora insieme.", "source": "Letta da Yuki" },
+        "Il chitarrista della foto aveva un registratore. Se la canzone esiste ancora, è a Berlino."
+      ]
+    },
+    {
+      "id": "carillon-note",
+      "title": "Sotto il carillon",
+      "text": [
+        { "jp": "ねじを{巻|ま}いてから、{引|ひ}き{出|だ}しを{開|あ}けてください。", "translation": "Dopo aver caricato la molla, aprite il cassetto.", "source": "La grafia di Hiroko" }
+      ]
+    },
+    {
+      "id": "studio",
+      "title": "Studio Kirschblüte",
+      "text": ["Horst, il suonatore d'organetto della foto, dice che Kenji è tornato in Giappone. Suo figlio Taro ha uno studio di registrazione a Kreuzberg, sul Landwehrkanal."]
+    },
+    {
+      "id": "taro",
+      "title": "Le cassette di Kenji",
+      "text": [
+        { "jp": "あの{箱|はこ}？{捨|す}てた。…っていうか、マウアーパークの{蚤|のみ}の{市|いち}に{出|だ}しちゃった。", "translation": "Quella scatola? L'ho buttata. Anzi, l'ho data al mercatino delle pulci di Mauerpark.", "source": "Taro" },
+        "Il mercatino di Mauerpark c'è solo la domenica. Cercare la bancarella della signora Kowalski."
+      ]
+    },
+    {
+      "id": "kenji",
+      "title": "Kenji a Tokyo",
+      "text": ["Kenji, il chitarrista, vive a Tokyo e gira sulla linea Yamanote con la chitarra. Taro lo avviserà."]
+    },
+    {
+      "id": "mei-message",
+      "title": "Il messaggio di Mei",
+      "text": [
+        { "jp": "ハチ{公|こう}の{前|まえ}にいます。{赤|あか}いマフラーをしています。メイ", "translation": "Sono davanti a Hachikō. Porto una sciarpa rossa. Mei", "source": "Arrivato all'atterraggio" }
+      ]
+    },
+    {
+      "id": "mei-plan",
+      "title": "Il piano di Mei",
+      "text": ["Hiroko ha il raffreddore e non vuole vedere nessuno. Senza la sua おみくじ del tempio di Asakusa il compleanno «non comincia». Poi, appuntamento davanti a casa sua a Yanaka (stazione di Nippori)."]
+    },
+    {
+      "id": "temple-rule",
+      "title": "Il cartello del tempio",
+      "text": [
+        { "jp": "お{参|まい}りする{前|まえ}に、{手|て}を{洗|あら}ってください。おみくじは、お{参|まい}りした{後|あと}で{引|ひ}きましょう。", "translation": "Prima di pregare, lavatevi le mani. La おみくじ si pesca dopo aver pregato.", "source": "Sensō-ji" }
+      ]
+    },
+    {
+      "id": "hiroko-voice",
+      "title": "La voce al citofono",
+      "text": [
+        { "jp": "…{風邪|かぜ}をひいてるから、{今日|きょう}は{帰|かえ}ったほうがいいと{思|おも}う。", "translation": "…Ho il raffreddore, quindi penso che oggi sarebbe meglio che ve ne andaste.", "source": "Hiroko" }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "id": "shujutsu",
+      "text": "手術",
+      "reading": "しゅじゅつ",
+      "translation": "operazione chirurgica",
+      "example": { "jp": "{祖母|そぼ}は{先月|せんげつ}、{手術|しゅじゅつ}をしました。", "translation": "Il mese scorso mia nonna è stata operata." },
+      "note": "Secondo la nonna, il nome di un dolce."
+    },
+    {
+      "id": "yubiwa",
+      "text": "指輪",
+      "reading": "ゆびわ",
+      "translation": "anello",
+      "example": { "jp": "{指輪|ゆびわ}を{返|かえ}します。", "translation": "Restituisco l'anello." },
+      "note": "指 è il dito, 輪 il cerchio: il cerchio del dito."
+    },
+    {
+      "id": "te-kara",
+      "text": "〜てから",
+      "reading": "てから",
+      "translation": "dopo aver… / da quando…",
+      "example": { "jp": "ベルリンで{会|あ}ってから、{三十七年|さんじゅうななねん}です。", "translation": "Sono trentasette anni da quando ci siamo conosciute a Berlino." },
+      "note": "Forma in て + から. Indica una cosa che avviene dopo un'altra («carica, poi apri»), oppure il punto da cui si conta il tempo."
+    },
+    {
+      "id": "takara",
+      "text": "宝",
+      "reading": "たから",
+      "translation": "tesoro",
+      "example": { "jp": "この{指輪|ゆびわ}は{私|わたし}の{宝|たから}です。", "translation": "Questo anello è il mio tesoro." },
+      "note": "Inciso dentro l'anello di Hiroko."
+    },
+    {
+      "id": "todokeru",
+      "text": "届ける",
+      "reading": "とどける",
+      "translation": "consegnare, far arrivare",
+      "example": { "jp": "{東京|とうきょう}まで{届|とど}けてね。", "translation": "Portalo fino a Tokyo, mi raccomando." },
+      "note": "Si dice di qualcosa che deve arrivare a destinazione: un pacco, una lettera, un anello."
+    },
+    {
+      "id": "shuuri",
+      "text": "修理",
+      "reading": "しゅうり",
+      "translation": "riparazione",
+      "example": { "jp": "{時計|とけい}を{修理|しゅうり}してもらいました。", "translation": "Mi sono fatto riparare l'orologio." },
+      "note": "Sulla ricevuta di Antioco."
+    },
+    {
+      "id": "warito",
+      "text": "割と",
+      "reading": "わりと",
+      "translation": "relativamente, piuttosto",
+      "example": { "jp": "カリアリは{割|わり}と{静|しず}かだね。", "translation": "Cagliari è piuttosto tranquilla, eh." },
+      "note": "Rispetto a quello che ci si aspetterebbe. Più debole di かなり, che indica un grado alto e oggettivo."
+    },
+    {
+      "id": "sakanatsuri",
+      "text": "魚釣り",
+      "reading": "さかなつり",
+      "translation": "pesca (con la canna)",
+      "example": { "jp": "{週末|しゅうまつ}は{魚釣|さかなつ}りに{行|い}きます。", "translation": "Nel fine settimana vado a pescare." },
+      "note": "Il pescatore del Poetto non ha preso niente, ma almeno ha un bel nome per farlo."
+    },
+    {
+      "id": "kyoku",
+      "text": "曲",
+      "reading": "きょく",
+      "translation": "brano, canzone",
+      "example": { "jp": "あの{曲|きょく}を{覚|おぼ}えていますか。", "translation": "Ti ricordi quella canzone?" }
+    },
+    {
+      "id": "tabi-ni",
+      "text": "〜たびに",
+      "reading": "たびに",
+      "translation": "ogni volta che…",
+      "example": { "jp": "それを{思|おも}い{出|だ}すたびに{笑|わら}う。", "translation": "Ogni volta che ci ripenso, rido." },
+      "note": "Verbo in forma piana + たびに. Si può dire anche 思い出しては笑う, oppure 毎回思い出すと笑う."
+    },
+    {
+      "id": "to-ii",
+      "text": "〜といいですね",
+      "reading": "といいですね",
+      "translation": "speriamo che…",
+      "example": { "jp": "また{会|あ}えるといいですね。", "translation": "Speriamo di rivederci." },
+      "note": "Un augurio gentile: verbo in forma piana + といいですね."
+    },
+    {
+      "id": "donyori",
+      "text": "どんより",
+      "reading": "どんより",
+      "translation": "grigio, cupo, coperto",
+      "example": { "jp": "{今日|きょう}はどんよりした{空|そら}ですね。", "translation": "Oggi il cielo è proprio grigio." },
+      "note": "Il contrario di 晴れ, il bel tempo. Il cielo di Berlino al tuo arrivo."
+    },
+    {
+      "id": "kabe",
+      "text": "壁",
+      "reading": "かべ",
+      "translation": "muro, parete",
+      "example": { "jp": "{壁|かべ}が{崩|くず}れました。", "translation": "Il muro è crollato." }
+    },
+    {
+      "id": "soutou",
+      "text": "相当",
+      "reading": "そうとう",
+      "translation": "considerevolmente, davvero molto",
+      "example": { "jp": "この{壁|かべ}は{相当|そうとう}{長|なが}い。", "translation": "Questo muro è davvero lunghissimo." },
+      "note": "Dal più debole al più forte: 割と (relativamente) → 結構 (parecchio, più del previsto) → なかなか (sorprendentemente) → かなり (molto) → 相当 (decisamente molto, enfatico)."
+    },
+    {
+      "id": "nakanaka",
+      "text": "なかなか",
+      "reading": "なかなか",
+      "translation": "niente male, sorprendentemente",
+      "example": { "jp": "なかなかかっこいい！", "translation": "Mica male!" },
+      "note": "Meglio di quanto pensassi. Con un verbo negativo cambia senso: なかなか来ない, «non arriva mai»."
+    },
+    {
+      "id": "kekkou",
+      "text": "結構",
+      "reading": "けっこう",
+      "translation": "parecchio, abbastanza",
+      "example": { "jp": "{絵|え}が{結構|けっこう}{多|おお}いね。", "translation": "Ci sono parecchi dipinti." },
+      "note": "Più del necessario o di quanto ci si aspettasse."
+    },
+    {
+      "id": "shiai",
+      "text": "試合",
+      "reading": "しあい",
+      "translation": "partita, incontro",
+      "example": { "jp": "{明日|あした}はサッカーの{試合|しあい}があります。", "translation": "Domani c'è la partita di calcio." },
+      "note": "Per Taro, una cerimonia sacra."
+    },
+    {
+      "id": "suteru",
+      "text": "捨てる",
+      "reading": "すてる",
+      "translation": "buttare, gettare via",
+      "example": { "jp": "{古|ふる}いカセットを{捨|す}てた。", "translation": "Ho buttato le vecchie cassette." }
+    },
+    {
+      "id": "tte-iu-ka",
+      "text": "〜っていうか",
+      "reading": "っていうか",
+      "translation": "anzi, più che…",
+      "example": { "jp": "{捨|す}てた。…っていうか、{売|う}った。", "translation": "L'ho buttata. Anzi, più che buttata, l'ho venduta." },
+      "note": "Corregge o precisa quello che si è appena detto. Molto parlato."
+    },
+    {
+      "id": "tte-koto-ka",
+      "text": "〜ってことか",
+      "reading": "ってことか",
+      "translation": "quindi vuol dire che…",
+      "example": { "jp": "やっぱり{明日|あした}できないってことか。", "translation": "Quindi, come pensavo, domani non puoi." },
+      "note": "Si tirano le somme di quello che ha detto l'altro. Con やっぱり: «come mi aspettavo». Attenzione: じゃあ明日大丈夫なのか? chiede conferma di un sì; でも実は明日無理だって言うのか? suona come se prima avesse detto di sì."
+    },
+    {
+      "id": "mae-ni",
+      "text": "〜前に",
+      "reading": "まえに",
+      "translation": "prima di…",
+      "example": { "jp": "{壁|かべ}が{崩|くず}れる{前|まえ}に", "translation": "prima che il Muro crollasse" },
+      "note": "Verbo in forma piana (del dizionario) + 前に, anche se si parla del passato."
+    },
+    {
+      "id": "ato-de",
+      "text": "〜た後で",
+      "reading": "たあとで",
+      "translation": "dopo…",
+      "example": { "jp": "{壁|かべ}が{崩|くず}れた{後|あと}で", "translation": "dopo che il Muro è crollato" },
+      "note": "Verbo al passato in た + 後で, anche se si parla del futuro."
+    },
+    {
+      "id": "toki",
+      "text": "〜とき",
+      "reading": "とき",
+      "translation": "quando…",
+      "example": { "jp": "ベルリンに{来|き}たとき", "translation": "quando sono arrivato a Berlino" },
+      "note": "Forma piana + とき."
+    },
+    {
+      "id": "made",
+      "text": "〜まで",
+      "reading": "まで",
+      "translation": "fino a…",
+      "example": { "jp": "{日本|にほん}に{帰|かえ}るまで", "translation": "fino al ritorno in Giappone" },
+      "note": "Forma piana + まで. Anche con i luoghi: 東京まで, fino a Tokyo."
+    },
+    {
+      "id": "mafura",
+      "text": "マフラー",
+      "reading": "まふらー",
+      "translation": "sciarpa",
+      "example": { "jp": "{赤|あか}いマフラーをしています。", "translation": "Porto una sciarpa rossa." },
+      "note": "Dall'inglese muffler. In katakana, come quasi tutte le parole straniere."
+    },
+    {
+      "id": "kaze",
+      "text": "風邪をひく",
+      "reading": "かぜをひく",
+      "translation": "prendere il raffreddore",
+      "example": { "jp": "おばあちゃん、{風邪|かぜ}をひいちゃった。", "translation": "La nonna si è presa il raffreddore." },
+      "note": "Il raffreddore non si «prende», si «tira»: ひく. Lo stesso per l'influenza: インフルエンザをひく."
+    },
+    {
+      "id": "yuusenseki",
+      "text": "優先席",
+      "reading": "ゆうせんせき",
+      "translation": "posti a sedere prioritari",
+      "example": { "jp": "{優先席|ゆうせんせき}に{座|すわ}らないでください。", "translation": "Per favore, non sedetevi sui posti prioritari." },
+      "note": "優先 è la precedenza, 席 il posto a sedere."
+    },
+    {
+      "id": "otoshiyori",
+      "text": "お年寄り",
+      "reading": "おとしより",
+      "translation": "anziani",
+      "example": { "jp": "お{年寄|としよ}りに{席|せき}を{譲|ゆず}りました。", "translation": "Ho ceduto il posto a un anziano." },
+      "note": "Un modo rispettoso di dirlo."
+    },
+    {
+      "id": "ai-ni-iku",
+      "text": "会いに行く",
+      "reading": "あいにいく",
+      "translation": "andare a trovare qualcuno",
+      "example": { "jp": "ひろこさんに{会|あ}いに{行|い}きたい。", "translation": "Voglio andare a trovare Hiroko." },
+      "note": "Per le persone. Per i luoghi si usa 訪れる."
+    },
+    {
+      "id": "otozureru",
+      "text": "訪れる",
+      "reading": "おとずれる",
+      "translation": "visitare (un luogo)",
+      "example": { "jp": "{毎年|まいとし}、{多|おお}くの{人|ひと}が{浅草|あさくさ}を{訪|おとず}れる。", "translation": "Ogni anno molte persone visitano Asakusa." },
+      "note": "Un po' formale. Nel parlato si dice anche 訪問する, o semplicemente 行く."
+    },
+    {
+      "id": "kanarazu",
+      "text": "必ず",
+      "reading": "かならず",
+      "translation": "immancabilmente, di sicuro",
+      "example": { "jp": "{待|ま}ち{人|びと}、{必|かなら}ず{来|く}る。", "translation": "La persona che aspetti arriverà di sicuro." },
+      "note": "Senza eccezioni. Era scritto sulla おみくじ."
+    },
+    {
+      "id": "to-omou",
+      "text": "〜と思う",
+      "reading": "とおもう",
+      "translation": "pensare che…",
+      "example": { "jp": "{帰|かえ}ったほうがいいと{思|おも}う。", "translation": "Penso che sarebbe meglio tornare." },
+      "note": "Cambia tutto la forma prima di と: 帰ると思う, suppongo che tornerò; 帰ろうと思う, ho intenzione di tornare; 帰りたいと思う, voglio tornare; 帰ったほうがいいと思う, sarebbe meglio tornare."
+    },
+    {
+      "id": "tokoro",
+      "text": "〜ところ",
+      "reading": "ところ",
+      "translation": "stare per…",
+      "example": { "jp": "ちょうど{寝|ね}るところだった。", "translation": "Stavo giusto per andare a dormire." },
+      "note": "Forma piana + ところ: stare per fare. Altri modi: しようとする (cercare di, stare per), しそうになる (rischiare di), しかける / やりかける (cominciare a fare senza finire)."
+    },
+    {
+      "id": "sorosoro",
+      "text": "そろそろ",
+      "reading": "そろそろ",
+      "translation": "tra poco, è quasi ora",
+      "example": { "jp": "そろそろ{歌|うた}おうか。", "translation": "È quasi ora di cantare, no?" },
+      "note": "Con しばらく (per un po'), ばかり (appena) e 直前 (subito prima), uno degli avverbi di tempo più usati."
+    }
+  ],
+  "endings": [
+    {
+      "id": "three-cities",
+      "title": "La canzone delle tre città",
+      "text": [
+        "Hiroko si infila l'anello al dito. Le va ancora bene. Poi prende il telefono di Mei e fa una videochiamata in Sardegna.",
+        "Sullo schermo compare nonna Efisia, con gli occhiali sulla fronte e la telecamera puntata sul soffitto. «Hiroko? Hiroko! Non ti vedo! Vedo il lampadario!»",
+        "Ridono tutte e due, come in una foto di trentasette anni fa. Kenji attacca con la chitarra, e loro cantano. Una in giapponese, l'altra in sardo, inventando le parole. Mei filma tutto e piange.",
+        { "jp": "あの{曲|きょく}を{思|おも}い{出|だ}すたびに、{笑|わら}う。", "translation": "Ogni volta che ripenso a quella canzone, rido.", "source": "Hiroko" },
+        { "text": "Alla fine Hiroko scarta il torrone, ne assaggia un pezzo e dichiara che è la cosa migliore che sia mai arrivata dalla Sardegna. «Dopo di te» aggiunge, verso lo schermo.", "when": { "has": "torrone" } },
+        "Fuori, su Yanaka, il sole tramonta dietro la scala del tramonto. Da qualche parte a Berlino, un vecchio gira la manovella di un organetto. A Cagliari, una signora con l'anca nuova canta ancora, da sola, con il telefono in mano."
+      ]
+    }
+  ]
+}

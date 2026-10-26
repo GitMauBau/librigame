@@ -1,0 +1,34 @@
+[
+  {
+    "id": "canzone-tre-citta",
+    "path": "stories/tre-citta/story.json",
+    "title": "La canzone delle tre città",
+    "subtitle": "Cagliari, Berlino, Tokyo: un anello da riportare",
+    "titles": {
+      "it": {
+        "title": "La canzone delle tre città",
+        "subtitle": "Cagliari, Berlino, Tokyo: un anello da riportare"
+      },
+      "en": {
+        "title": "The Song of Three Cities",
+        "subtitle": "Cagliari, Berlin, Tokyo: a ring to bring back"
+      }
+    },
+    "translations": {
+      "en": "stories/tre-citta/story.en.json"
+    }
+  },
+  {
+    "id": "ultima-notte-1889",
+    "path": "stories/cagliari-1889/story.json",
+    "title": "L'ultima notte del vecchio codice",
+    "subtitle": "Cagliari, dicembre 1889",
+    "titles": {
+      "it": {
+        "title": "L'ultima notte del vecchio codice",
+        "subtitle": "Cagliari, dicembre 1889"
+      }
+    },
+    "translations": {}
+  }
+]

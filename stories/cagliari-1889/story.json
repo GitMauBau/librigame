@@ -1,0 +1,4339 @@
+{
+  "format": 1,
+  "id": "ultima-notte-1889",
+  "version": "1.0.0",
+  "title": "L'ultima notte del vecchio codice",
+  "subtitle": "Cagliari, dicembre 1889",
+  "author": "GameBooks",
+  "language": "it",
+  "start": "redazione",
+  "locations": [
+    {
+      "id": "offstage",
+      "title": "Altrove",
+      "description": [
+        "Cose e persone che hanno preso la loro strada."
+      ],
+      "exits": []
+    },
+    {
+      "id": "redazione",
+      "title": "La redazione de «L'Unione Sarda»",
+      "eyebrow": "Marina",
+      "description": [
+        {
+          "text": "Domenica 29 dicembre 1889, primo pomeriggio. Tre stanze al primo piano di una casa della Marina, che odorano d'inchiostro e di sigaro spento. Il giornale è nato in ottobre come settimanale, in mezzo alla battaglia per le elezioni comunali; da pochi giorni esce tutti i giorni, e nessuno qui dentro dorme più di cinque ore per notte.",
+          "when": {
+            "flag": "ch2",
+            "value": false
+          }
+        },
+        {
+          "text": "Lunedì 30 dicembre, mattina. Dalla finestra entra la luce bianca del porto. Peppino ha già acceso la stufa e il direttore è già arrabbiato con qualcuno.",
+          "when": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "flag": "ch2"
+                  },
+                  {
+                    "flag": "ch4",
+                    "value": false
+                  }
+                ]
+              },
+              {
+                "flag": "notaryRead",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "È sera. Le lampade a petrolio fanno un'isola gialla sui tavoli. Il numero di domani è quasi chiuso, ma il direttore tiene una colonna libera in prima pagina, e ogni tanto la guarda.",
+          "when": {
+            "all": [
+              {
+                "flag": "notaryRead"
+              },
+              {
+                "flag": "ch4",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "Martedì 31 dicembre 1889, l'ultimo giorno dell'anno e l'ultimo giorno del vecchio codice penale. In redazione si parla soltanto di questo: da mezzanotte entra in vigore il Codice Zanardelli, e Peppino ha già composto il titolo per l'occasione.",
+          "when": {
+            "all": [
+              {
+                "flag": "ch4"
+              },
+              {
+                "flag": "arrest",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "Fuori, la Marina aspetta la mezzanotte. Dentro, Peppino ha tolto dal banco il titolo sul nuovo codice e ha lasciato la colonna vuota. Aspetta te.",
+          "when": {
+            "flag": "arrest"
+          }
+        },
+        "Sul tavolo grande, i giornali della settimana fanno una pila alta come un bambino. Le scale scendono verso la Via Roma e il mare."
+      ],
+      "exits": [
+        {
+          "to": "viaroma",
+          "label": "Scendi in Via Roma"
+        }
+      ],
+      "illustration": {
+        "src": "img/redazione.png",
+        "alt": "La facciata di una casa della Marina con l'insegna del giornale sopra il portone"
+      },
+      "map": {
+        "x": 3,
+        "y": 4
+      }
+    },
+    {
+      "id": "viaroma",
+      "title": "La Via Roma",
+      "eyebrow": "Il lungomare",
+      "description": [
+        "La Via Roma l'hanno tracciata nove anni fa lungo il fronte del porto, dove prima c'erano le mura. Per ora è più una promessa che una strada: qualche facciata nuova, molti cantieri, magazzini, e il vento che solleva la polvere fino agli occhi.",
+        "Da una parte il mare, con le alberature dei velieri e i fumaioli dei vapori. Dall'altra la Marina, che sale a gradini verso Castello. In fondo a destra, Largo Carlo Felice e il mercato nuovo.",
+        {
+          "text": "Quest'ultimo giorno dell'anno la strada è piena di carri: tutti vogliono imbarcare o sdoganare qualcosa prima che si fermino gli uffici per la festa.",
+          "when": {
+            "flag": "ch4"
+          }
+        }
+      ],
+      "exits": [
+        {
+          "to": "redazione",
+          "label": "Sali in redazione"
+        },
+        {
+          "to": "molo",
+          "label": "Vai al Molo della Dogana"
+        },
+        {
+          "to": "mercato",
+          "label": "Vai a Largo Carlo Felice"
+        },
+        {
+          "to": "villanova",
+          "label": "Sali in Villanova, per via Garibaldi",
+          "when": {
+            "flag": "leadMallena"
+          },
+          "locked": "In Villanova, per ora, non hai nessuno da cercare."
+        },
+        {
+          "to": "locanda",
+          "label": "Entra nella locanda della Marina",
+          "when": {
+            "flag": "ch4"
+          },
+          "locked": "La locanda del Leone d'oro: marinai, sensali e forestieri di passaggio. Non è ancora il momento di cercare qualcuno lì dentro."
+        }
+      ],
+      "map": {
+        "x": 2,
+        "y": 5
+      }
+    },
+    {
+      "id": "molo",
+      "title": "Il Molo della Dogana",
+      "eyebrow": "Il porto",
+      "description": [
+        "La calata di pietra scura, le bitte di ferro, le gomene arrotolate come serpenti addormentati. Qui scaricano i vapori postali e qui le merci passano davanti agli occhi della dogana prima di entrare in città.",
+        {
+          "text": "È qui che, la notte fra il 28 e il 29, hanno trovato l'uomo con la testa rotta. Una macchia scura è ancora sulla pietra, vicino a una pila di sacchi.",
+          "when": {
+            "not": {
+              "flag": "ch4"
+            }
+          }
+        },
+        {
+          "text": "Il vapore postale per Genova è all'ormeggio, con la caldaia già accesa: parte stasera. Lungo la passerella un brigadiere dei Carabinieri guarda chi sale, con le mani dietro la schiena.",
+          "when": {
+            "all": [
+              {
+                "flag": "ch4"
+              },
+              {
+                "flag": "convinced",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "Il vapore postale per Genova fuma, impaziente. Il brigadiere non c'è più: è andato in magazzino con i suoi uomini.",
+          "when": {
+            "all": [
+              {
+                "flag": "ch4"
+              },
+              {
+                "flag": "convinced"
+              },
+              {
+                "flag": "arrest",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "Il vapore è partito senza una cassa e senza un passeggero. Sulla calata restano due carabinieri a fumare.",
+          "when": {
+            "flag": "arrest"
+          }
+        }
+      ],
+      "exits": [
+        {
+          "to": "viaroma",
+          "label": "Torna in Via Roma"
+        },
+        {
+          "to": "dogana",
+          "label": "Entra nell'ufficio della Dogana",
+          "when": {
+            "flag": "ch4"
+          },
+          "locked": "Il doganiere di turno non ha tempo per un cronista senza una domanda precisa. La porta dell'ufficio resta chiusa."
+        },
+        {
+          "to": "magazzino",
+          "label": "Entra nel magazzino della calata",
+          "when": {
+            "flag": "ch4"
+          },
+          "locked": "Il magazzino della calata è chiuso con una sbarra e un lucchetto della dogana."
+        }
+      ],
+      "illustration": {
+        "src": "img/molo.png",
+        "alt": "Una bitta di ferro con una gomena arrotolata sulla calata di pietra, accanto a una pila di sacchi"
+      },
+      "map": {
+        "x": 2,
+        "y": 6
+      }
+    },
+    {
+      "id": "mercato",
+      "title": "Largo Carlo Felice",
+      "eyebrow": "Il mercato nuovo",
+      "description": [
+        "Il largo scende dalla collina di Stampace verso il porto, largo e in pendenza come un fiume di pietra. In basso c'è il mercato nuovo, tutto ferro e vetro, finito tre anni fa: dentro ci rimbomba ogni voce come in una chiesa.",
+        "Banchi di arance di Muravera, di cardi, di pesce del golfo. I picciocus de crobi, i ragazzi con la cesta, portano la spesa delle signore fino a casa per pochi centesimi. Più su c'è l'imbocco di via Manno; in fondo, la stazione della ferrovia; a sinistra, la salita verso l'Ospedale Civile.",
+        {
+          "text": "Il mercato chiude presto, oggi: domani è Capodanno.",
+          "when": {
+            "flag": "ch4"
+          }
+        }
+      ],
+      "exits": [
+        {
+          "to": "viaroma",
+          "label": "Scendi in Via Roma"
+        },
+        {
+          "to": "studio",
+          "label": "Sali in via Manno, dal fotografo"
+        },
+        {
+          "to": "stazione",
+          "label": "Vai alla stazione"
+        },
+        {
+          "to": "ospedale",
+          "label": "Sali all'Ospedale Civile"
+        }
+      ],
+      "illustration": {
+        "src": "img/mercato.png",
+        "alt": "Il padiglione di ferro e vetro del mercato, con le colonne sottili e il tetto a capriate"
+      },
+      "map": {
+        "x": 1,
+        "y": 4
+      }
+    },
+    {
+      "id": "studio",
+      "title": "Lo studio fotografico Cadoni",
+      "eyebrow": "Via Manno",
+      "description": [
+        "Un salottino d'attesa con le poltrone di velluto, una colonna di gesso, un fondale dipinto con un giardino che non esiste. Sopra, sotto il lucernario, la sala di posa; dietro una tenda nera, il laboratorio, che sa di acido e di albume d'uovo.",
+        {
+          "text": "Il sole entra di sbieco dal lucernario. Sul davanzale, i torchietti di stampa sono stati messi in fila a prendere la luce.",
+          "when": {
+            "flag": "ch2"
+          }
+        }
+      ],
+      "exits": [
+        {
+          "to": "mercato",
+          "label": "Torna a Largo Carlo Felice"
+        }
+      ],
+      "illustration": {
+        "src": "img/studio.png",
+        "alt": "Una macchina fotografica a soffietto sul treppiede, davanti a un fondale dipinto"
+      },
+      "map": {
+        "x": 2,
+        "y": 3
+      }
+    },
+    {
+      "id": "ospedale",
+      "title": "L'Ospedale Civile",
+      "eyebrow": "San Giovanni di Dio · Stampace",
+      "description": [
+        "La facciata dell'architetto Cima è lunga, pulita, neoclassica: un colonnato che sembra un tempio messo lì per sbaglio, ai piedi di Stampace. Nell'atrio si incrociano medici con la barba, studenti con i libri sotto il braccio, parenti con le ceste e suore con le cuffie bianche.",
+        "Da un lato del cortile si lavora ai nuovi bracci per le cliniche dell'Università: impalcature, sacchi di calce, un via vai di muratori che con il silenzio dell'ospedale non hanno niente a che fare.",
+        "Una scala laterale sale verso via Università e la Torre dell'Elefante."
+      ],
+      "exits": [
+        {
+          "to": "mercato",
+          "label": "Scendi a Largo Carlo Felice"
+        },
+        {
+          "to": "corsia",
+          "label": "Entra in corsia",
+          "when": {
+            "flag": "teresaCame"
+          },
+          "locked": "Suor Annetta ti sbarra la strada con un sorriso di ferro: in corsia entrano soltanto i medici e i parenti."
+        },
+        {
+          "to": "torre",
+          "label": "Sali alla Torre dell'Elefante",
+          "when": {
+            "flag": "ch2"
+          },
+          "locked": "Castello può aspettare. Prima ti serve un nome, non un palazzo."
+        }
+      ],
+      "illustration": {
+        "src": "img/ospedale.png",
+        "alt": "La facciata neoclassica dell'Ospedale Civile, con il colonnato e il frontone"
+      },
+      "map": {
+        "x": 1,
+        "y": 3
+      }
+    },
+    {
+      "id": "corsia",
+      "title": "La corsia degli uomini",
+      "eyebrow": "Ospedale Civile",
+      "description": [
+        "Una navata lunga e alta, con i letti in due file e le finestre in alto, perché l'aria cattiva salga e se ne vada. Odore di fenolo e di brodo. In fondo, un crocifisso; ai piedi di ogni letto, una tavoletta con il nome.",
+        "Sulla tavoletta del letto diciotto, fino a ieri, c'era scritto soltanto «Sconosciuto, dal molo»."
+      ],
+      "exits": [
+        {
+          "to": "ospedale",
+          "label": "Torna nell'atrio"
+        }
+      ],
+      "illustration": {
+        "src": "img/corsia.png",
+        "alt": "Un letto di ferro in corsia, con la tavoletta del nome ai piedi e le finestre alte"
+      },
+      "map": {
+        "x": 0,
+        "y": 3
+      }
+    },
+    {
+      "id": "stazione",
+      "title": "La stazione della ferrovia",
+      "eyebrow": "Ai piedi di Stampace",
+      "description": [
+        "La stazione l'hanno aperta dieci anni fa, dove prima c'erano orti e canneti: un edificio basso e lungo, con l'orologio in mezzo e le pensiline di ghisa. Da qui si va a Sassari, a Oristano, a Iglesias, in un giorno invece che in tre.",
+        "Sotto la pensilina, carrettini, ceste, famiglie intere sedute sui bagagli. Accanto alla sala d'aspetto di terza classe c'è lo sportello del deposito bagagli."
+      ],
+      "exits": [
+        {
+          "to": "mercato",
+          "label": "Torna a Largo Carlo Felice"
+        }
+      ],
+      "illustration": {
+        "src": "img/stazione.png",
+        "alt": "L'edificio basso e lungo della stazione, con l'orologio in mezzo e la pensilina"
+      },
+      "map": {
+        "x": 0,
+        "y": 5
+      }
+    },
+    {
+      "id": "torre",
+      "title": "La Torre dell'Elefante",
+      "eyebrow": "Porta di Castello",
+      "description": [
+        "La torre dei Pisani, di blocchi di calcare bianco, è aperta dalla parte della città come una casa delle bambole: si vedono i piani di legno, uno sopra l'altro. Sotto, la porta con la saracinesca, alzata da tanto tempo che nessuno ricorda di averla vista abbassare.",
+        "In alto, su una mensola, il piccolo elefante di pietra che le dà il nome guarda verso Stampace, paziente."
+      ],
+      "exits": [
+        {
+          "to": "ospedale",
+          "label": "Scendi verso l'Ospedale"
+        },
+        {
+          "to": "piazza",
+          "label": "Entra in Castello"
+        }
+      ],
+      "illustration": {
+        "src": "img/torre.png",
+        "alt": "La Torre dell'Elefante, di blocchi di pietra, con la porta ad arco e l'elefantino sulla mensola"
+      },
+      "map": {
+        "x": 1,
+        "y": 2
+      }
+    },
+    {
+      "id": "piazza",
+      "title": "Piazza Palazzo",
+      "eyebrow": "Castello",
+      "description": [
+        "Il cuore di Castello: la Cattedrale con la sua facciata disadorna, il palazzo del Viceré che ora è della Prefettura, il palazzo di città, le case dei nobili con i portoni alti come navi. Qui si cammina più piano e si parla a voce più bassa.",
+        "Palazzo Pinna sta all'angolo, con le persiane chiuse in segno di lutto. Accanto alla porta del notaio Floris, un vicolo scende fra due muri.",
+        {
+          "text": "La sera, in Castello, le strade si svuotano presto. Un lampionaio sale e scende dalla sua scala, una fiammella alla volta.",
+          "when": {
+            "all": [
+              {
+                "flag": "notaryRead"
+              },
+              {
+                "flag": "ch4",
+                "value": false
+              }
+            ]
+          }
+        }
+      ],
+      "exits": [
+        {
+          "to": "torre",
+          "label": "Esci dalla Torre dell'Elefante"
+        },
+        {
+          "to": "notaio",
+          "label": "Sali dal notaio Floris"
+        },
+        {
+          "to": "vicolo",
+          "label": "Entra nel vicolo dietro palazzo Pinna"
+        },
+        {
+          "to": "buoncammino",
+          "label": "Esci da Porta Cristina, verso Buon Cammino"
+        },
+        {
+          "to": "villanova",
+          "label": "Scendi in Villanova per le scalette",
+          "when": {
+            "flag": "leadMallena"
+          },
+          "locked": "Le scalette scendono verso Villanova, fra gli orti. Per ora, laggiù, non hai nessuno da cercare."
+        }
+      ],
+      "illustration": {
+        "src": "img/piazza.png",
+        "alt": "La facciata di palazzo Pinna, con il grande portone e le persiane chiuse in segno di lutto"
+      },
+      "map": {
+        "x": 2,
+        "y": 1
+      }
+    },
+    {
+      "id": "notaio",
+      "title": "Lo studio del notaio Floris",
+      "eyebrow": "Castello",
+      "description": [
+        "Un'anticamera con due sedie e un orologio a pendolo che fa più rumore di quanto dovrebbe. Alle pareti, scaffali di faldoni legati con lo spago rosso, ognuno con un nome e un anno. Dietro una porta a vetri smerigliati, lo studio vero e proprio."
+      ],
+      "exits": [
+        {
+          "to": "piazza",
+          "label": "Torna in Piazza Palazzo"
+        }
+      ],
+      "illustration": {
+        "src": "img/notaio.png",
+        "alt": "Uno scaffale di faldoni legati con lo spago accanto a un orologio a pendolo"
+      },
+      "map": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    {
+      "id": "vicolo",
+      "title": "Il vicolo dietro palazzo Pinna",
+      "eyebrow": "Castello",
+      "description": [
+        "Un budello fra due muri ciechi, così stretto che due persone devono mettersi di fianco per incrociarsi. Gocciola sempre, anche quando non piove. In fondo c'è la porticina di servizio di palazzo Pinna, quella da cui entrano la legna, l'acqua e le serve.",
+        {
+          "text": "Ora che è sera, il vicolo è nero come l'interno di una bottiglia.",
+          "when": {
+            "all": [
+              {
+                "flag": "notaryRead"
+              },
+              {
+                "flag": "ch4",
+                "value": false
+              }
+            ]
+          }
+        }
+      ],
+      "exits": [
+        {
+          "to": "piazza",
+          "label": "Torna in Piazza Palazzo"
+        },
+        {
+          "to": "stanza",
+          "label": "Sali allo studio di donna Rosalia",
+          "when": {
+            "flag": "porticina"
+          }
+        }
+      ],
+      "map": {
+        "x": 3,
+        "y": 1
+      }
+    },
+    {
+      "id": "stanza",
+      "title": "Lo studio di donna Rosalia",
+      "eyebrow": "Palazzo Pinna",
+      "description": [
+        "Una stanza piccola, all'ultimo piano, con una sola finestra che dà sui tetti della Marina e sul porto. È rimasta come l'ha lasciata lei: lo scialle sulla spalliera, gli occhiali sul libro dei conti, una tazza con un dito di caffè seccato.",
+        "Odora di cera, di carta vecchia e di qualcuno che non tornerà. Nella parete, dietro un quadro con la Madonna del Buon Cammino, una cassaforte di ferro con la manopola d'ottone."
+      ],
+      "exits": [
+        {
+          "to": "vicolo",
+          "label": "Riscendi nel vicolo"
+        }
+      ],
+      "illustration": [
+        {
+          "src": "img/stanza-1.png",
+          "alt": "Una piccola cassaforte murata, con lo sportello aperto e il quadro scostato",
+          "when": {
+            "flag": "safeOpen"
+          }
+        },
+        {
+          "src": "img/stanza-0.png",
+          "alt": "Una piccola cassaforte murata dietro un quadro scostato, accanto allo scrittoio"
+        }
+      ],
+      "map": {
+        "x": 4,
+        "y": 1
+      }
+    },
+    {
+      "id": "buoncammino",
+      "title": "La salita di Buon Cammino",
+      "eyebrow": "Fuori Porta Cristina",
+      "description": [
+        "Fuori dalle mura di Castello il vento arriva senza ostacoli, dal golfo e dallo stagno. Il viale di Buon Cammino corre sul crinale, fra il carcere nuovo e le casermette, con una fila di alberi magri piegati tutti dalla stessa parte.",
+        "Qui, dicono le vecchie, si fa is ascurtus: si ascoltano le frasi dei passanti, una parola qua e una là, e se ne ricava il futuro. Di solito lo si fa nelle notti delle feste. Ma c'è sempre qualcuno che non vuole aspettare la notte giusta."
+      ],
+      "exits": [
+        {
+          "to": "piazza",
+          "label": "Rientra in Castello"
+        }
+      ],
+      "illustration": {
+        "src": "img/buoncammino.png",
+        "alt": "Un muretto con un lampione e una panchina di pietra lungo il viale di Buon Cammino"
+      },
+      "map": {
+        "x": 2,
+        "y": 0
+      }
+    },
+    {
+      "id": "villanova",
+      "title": "San Giacomo",
+      "eyebrow": "Villanova",
+      "description": [
+        "Villanova è un'altra città: strade dritte e basse, case con il cortile e il pozzo, orti che cominciano dove finiscono le case. Il campanile di San Giacomo sta in mezzo a tutto come un pastore in mezzo al gregge.",
+        "La confraternita ha la sua sede accanto alla chiesa: una stanza con i gonfaloni appoggiati al muro, una panca, una stufa, e sempre qualcuno che rammenda, prega o chiacchiera.",
+        "Più giù, verso San Lucifero, il fumo del vecchio mattatoio."
+      ],
+      "exits": [
+        {
+          "to": "viaroma",
+          "label": "Scendi verso la Via Roma"
+        },
+        {
+          "to": "piazza",
+          "label": "Sali in Castello per le scalette"
+        },
+        {
+          "to": "mattatoio",
+          "label": "Vai al mattatoio"
+        }
+      ],
+      "illustration": {
+        "src": "img/villanova.png",
+        "alt": "Il campanile di San Giacomo sopra la facciata della chiesa"
+      },
+      "map": {
+        "x": 3,
+        "y": 2
+      }
+    },
+    {
+      "id": "mattatoio",
+      "title": "Il vecchio mattatoio",
+      "eyebrow": "Villanova · San Lucifero",
+      "description": [
+        "Un recinto di muri alti, imbiancati a calce, con un portone largo per i carri. Lo hanno costruito a metà secolo fuori dalla città, e ora la città gli è arrivata addosso. In consiglio comunale se ne parla da anni: chi vorrebbe ristrutturarlo, chi spostarlo alla Playa. Intanto è qui, e si sente.",
+        "Nel cortile, carri, abbeveratoi, un cane che non si scompone per niente."
+      ],
+      "exits": [
+        {
+          "to": "villanova",
+          "label": "Torna a San Giacomo"
+        }
+      ],
+      "illustration": {
+        "src": "img/mattatoio.png",
+        "alt": "Il portone largo del vecchio mattatoio fra due muri imbiancati"
+      },
+      "map": {
+        "x": 4,
+        "y": 2
+      }
+    },
+    {
+      "id": "dogana",
+      "title": "L'ufficio della Dogana",
+      "eyebrow": "Il porto",
+      "description": [
+        "Un banco lungo, uno sportello con la grata, scaffali di registri rilegati in tela verde. Sulla parete, la tabella delle tariffe e un ritratto del re che guarda tutti con la stessa diffidenza.",
+        "Oggi c'è la fila: sensali, capitani, spedizionieri con le polizze in mano."
+      ],
+      "exits": [
+        {
+          "to": "molo",
+          "label": "Torna sul molo"
+        }
+      ],
+      "illustration": {
+        "src": "img/dogana.png",
+        "alt": "Lo sportello con la grata dell'ufficio della dogana, con i registri e il timbro"
+      },
+      "map": {
+        "x": 1,
+        "y": 6
+      }
+    },
+    {
+      "id": "magazzino",
+      "title": "Il magazzino della calata",
+      "eyebrow": "Il porto",
+      "description": [
+        "Un capannone di pietra con il tetto a capriate. Dentro è buio e fresco, odora di sughero, di catrame e di grano. Le merci in partenza per Genova aspettano accanto alla porta, ognuna con il suo cartellino, il peso scritto col gesso e il piombino della dogana.",
+        "Sul piatto della grande stadera, una cassa alla volta."
+      ],
+      "exits": [
+        {
+          "to": "molo",
+          "label": "Torna sul molo"
+        }
+      ],
+      "illustration": [
+        {
+          "src": "img/magazzino-1.png",
+          "alt": "Una stadera da porto accanto a tre casse, una delle quali aperta con la paglia che esce",
+          "when": {
+            "flag": "arrest"
+          }
+        },
+        {
+          "src": "img/magazzino-0.png",
+          "alt": "Una stadera da porto accanto a tre casse chiodate con i cartellini"
+        }
+      ],
+      "map": {
+        "x": 3,
+        "y": 6
+      }
+    },
+    {
+      "id": "locanda",
+      "title": "La locanda del Leone d'oro",
+      "eyebrow": "Marina",
+      "description": [
+        "Una sala bassa con le travi annerite dal fumo, il bancone di marmo e le botti di vernaccia. Marinai napoletani, sensali genovesi, un commesso viaggiatore che dorme con il cappello in testa. Chi parte stasera aspetta qui l'ora dell'imbarco."
+      ],
+      "exits": [
+        {
+          "to": "viaroma",
+          "label": "Esci in Via Roma"
+        }
+      ],
+      "illustration": {
+        "src": "img/locanda.png",
+        "alt": "L'ingresso della locanda, con l'insegna appesa e due botti accanto alla porta"
+      },
+      "map": {
+        "x": 4,
+        "y": 5
+      }
+    }
+  ],
+  "entities": [
+    {
+      "visible": true,
+      "id": "taccuino",
+      "name": "Il taccuino",
+      "hint": "Appunti, nomi, date. E la matita.",
+      "position": "player",
+      "description": [
+        "Un taccuino con la copertina di tela nera, già consumato agli angoli. Vinelli dice che un cronista senza taccuino è un chiacchierone. Ci scrivi tutto, anche quello che ti sembra inutile: soprattutto quello.",
+        {
+          "text": "In una pagina, ricopiata parola per parola nello studio del notaio, la riga del testamento: «…e che il palazzo resti affidato, sino all'apertura della successione, alla vigilanza delle Guardie di città».",
+          "when": {
+            "all": [
+              {
+                "flag": "notaryRead"
+              },
+              {
+                "flag": "anachronism",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "Nella pagina del testamento hai cerchiato due volte «Guardie di città», e accanto hai scritto, ben chiaro: 21 dicembre. Lei è morta il 20.",
+          "when": {
+            "flag": "anachronism"
+          }
+        }
+      ],
+      "illustration": [
+        {
+          "src": "img/taccuino-2.png",
+          "alt": "Il taccuino aperto, con una riga cerchiata e una data scritta a margine",
+          "when": {
+            "flag": "anachronism"
+          }
+        },
+        {
+          "src": "img/taccuino-1.png",
+          "alt": "Il taccuino aperto su una pagina fitta di appunti",
+          "when": {
+            "flag": "notaryRead"
+          }
+        },
+        {
+          "src": "img/taccuino-0.png",
+          "alt": "Un taccuino chiuso con una matita"
+        }
+      ]
+    },
+    {
+      "visible": true,
+      "id": "tessera",
+      "name": "La tessera del giornale",
+      "hint": "«L'Unione Sarda», cronista.",
+      "position": "player",
+      "description": [
+        "Un cartoncino con il timbro della redazione e la firma del direttore: «Il signor Efisio Loi è cronista de L'Unione Sarda». Apre alcune porte. Ne chiude altrettante."
+      ],
+      "illustration": {
+        "src": "img/tessera.png",
+        "alt": "Un cartoncino stampato con un timbro e una firma"
+      }
+    },
+    {
+      "visible": true,
+      "id": "borsellino",
+      "name": "Il borsellino",
+      "hint": "Qualche moneta, non di più.",
+      "position": "player",
+      "description": [
+        "Un borsellino di cuoio con le monete per la settimana: qualche soldo di rame, due pezzi da cinquanta centesimi e una lira d'argento con la faccia del re. Per un sigaro o per una lucidata di scarpe basta. Per corrompere qualcuno, no."
+      ],
+      "illustration": {
+        "src": "img/borsellino.png",
+        "alt": "Un borsellino di cuoio con qualche moneta"
+      }
+    },
+    {
+      "visible": true,
+      "id": "frammento",
+      "name": "Il frammento di lastra",
+      "hint": "Vetro, con una pellicola scura.",
+      "position": "offstage",
+      "description": [
+        "Un triangolo di vetro grande come una mano, con gli spigoli taglienti. Da una parte è liscio; dall'altra c'è uno strato scuro, opaco, che controluce lascia vedere ombre rovesciate: il bianco è nero e il nero è bianco. Un pezzo di negativo fotografico, una lastra al collodio o alla gelatina.",
+        "Sull'immagine, per quel poco che si capisce, ci sono degli scalini e la gamba di una sedia. Niente che valga una testa rotta."
+      ],
+      "illustration": {
+        "src": "img/frammento.png",
+        "alt": "Un frammento triangolare di lastra fotografica di vetro"
+      }
+    },
+    {
+      "visible": true,
+      "id": "biglietto",
+      "name": "Il biglietto da visita",
+      "hint": "Fotografia Cadoni, via Manno.",
+      "position": "offstage",
+      "description": [
+        "Un cartoncino stampato con eleganza: «A. CADONI — Fotografia artistica — Ritratti, vedute, riproduzioni — Via Manno, Cagliari». Sul retro, a matita, qualcuno ha scritto un'ora: «ore 11». Bagnato e asciugato, si è un po' ondulato."
+      ],
+      "illustration": {
+        "src": "img/biglietto.png",
+        "alt": "Un biglietto da visita di uno studio fotografico"
+      }
+    },
+    {
+      "visible": true,
+      "id": "ricevuta",
+      "name": "La ricevuta del deposito bagagli",
+      "hint": "Strade Ferrate, n. 304.",
+      "position": "offstage",
+      "description": [
+        "Un talloncino giallo della Compagnia Reale delle Ferrovie Sarde: «Deposito bagagli — Cagliari — N. 304 — un baule». La data è quella del 28 dicembre, di mattina."
+      ],
+      "illustration": {
+        "src": "img/ricevuta.png",
+        "alt": "Un talloncino ferroviario con un numero stampato"
+      }
+    },
+    {
+      "visible": true,
+      "id": "lastra",
+      "name": "La lastra n. 17",
+      "hint": "Avvolta nel velluto.",
+      "position": "offstage",
+      "description": [
+        "Una lastra di vetro di tredici centimetri per diciotto, avvolta in un pezzo di velluto rosso. In un angolo, inciso con la punta di un diamante: «17/XII». Controluce, una figura seduta, con le mani in grembo; ma un negativo è un'immagine al contrario, e per leggerla davvero bisogna stamparla."
+      ],
+      "illustration": {
+        "src": "img/lastra.png",
+        "alt": "Una lastra fotografica di vetro su un pezzo di velluto"
+      }
+    },
+    {
+      "visible": true,
+      "id": "stampa",
+      "name": "La fotografia di donna Rosalia",
+      "hint": "Stampa all'albumina, ancora fresca.",
+      "position": "offstage",
+      "description": [
+        "Una stampa color seppia, incollata su un cartoncino con il nome dello studio. Donna Rosalia Pinna è seduta nel suo studio di Castello, vestita di nero, con un rosario fra le dita e la finestra alle spalle. Ha uno sguardo dritto, di chi non chiede il permesso a nessuno.",
+        {
+          "text": "Con la lente il dettaglio salta fuori: il polso destro è stretto in una stecca di legno fasciata di bende, e la mano destra riposa inerte sulla sinistra. Le dita non tengono il rosario: è la sinistra a tenerlo. Sul cartoncino, a matita, la data dello scatto: 17 dicembre.",
+          "when": {
+            "flag": "printExamined"
+          }
+        }
+      ],
+      "illustration": [
+        {
+          "src": "img/stampa-1.png",
+          "alt": "La fotografia di una signora seduta, con una lente che ingrandisce il polso fasciato",
+          "when": {
+            "flag": "printExamined"
+          }
+        },
+        {
+          "src": "img/stampa-0.png",
+          "alt": "La fotografia di una signora seduta, vestita di nero"
+        }
+      ]
+    },
+    {
+      "visible": true,
+      "id": "lente",
+      "name": "La lente di Cadoni",
+      "hint": "Per guardare i dettagli.",
+      "position": "offstage",
+      "description": [
+        "Una lente d'ingrandimento con il manico d'osso, di quelle che i fotografi usano per controllare la messa a fuoco sul vetro smerigliato. Cadoni te l'ha prestata con mille raccomandazioni."
+      ],
+      "illustration": {
+        "src": "img/lente.png",
+        "alt": "Una lente d'ingrandimento con il manico d'osso"
+      }
+    },
+    {
+      "visible": true,
+      "id": "giornale",
+      "name": "Il giornale del 23 dicembre",
+      "hint": "«L'Unione Sarda», un numero della settimana scorsa.",
+      "position": "offstage",
+      "description": [
+        "Il numero di lunedì 23 dicembre, quattro pagine. In prima la politica, in seconda la cronaca cittadina, in terza le notizie dal Regno, in quarta gli annunci dei vapori e la pubblicità del Ferro-China Bisleri.",
+        "In terza pagina, una colonna da Roma: «Con Regio Decreto del 21 corrente è istituito il Corpo delle Guardie di città, che sostituirà le guardie di pubblica sicurezza nei capoluoghi del Regno». Peppino ci ha messo il titolo in neretto."
+      ],
+      "illustration": {
+        "src": "img/giornale.png",
+        "alt": "Un giornale ripiegato con la testata stampata"
+      }
+    },
+    {
+      "visible": true,
+      "id": "lettera",
+      "name": "La lettera di Vinelli",
+      "hint": "Per il notaio Floris.",
+      "position": "offstage",
+      "description": [
+        "Una busta chiusa con la ceralacca, indirizzata «All'egregio notaio cav. Floris — Castello». Vinelli dice che il notaio gli deve un favore dai tempi delle elezioni. Non ha detto quale."
+      ],
+      "illustration": {
+        "src": "img/lettera.png",
+        "alt": "Una busta chiusa con un sigillo di ceralacca"
+      }
+    },
+    {
+      "visible": true,
+      "id": "attestazione",
+      "name": "La dichiarazione del dottor Ledda",
+      "hint": "Firmata e datata.",
+      "position": "offstage",
+      "description": [
+        "Un foglio con l'intestazione dell'Ospedale Civile, scritto con una grafia da medico, cioè quasi illeggibile: «Dichiaro di aver ridotto, il giorno 10 dicembre 1889, la frattura del radio destro di donna Rosalia Pinna, caduta sulle scale del suo palazzo, e di averle applicato una stecca. Per almeno sei settimane la paziente non era in grado di scrivere, né di tenere una penna con la mano destra. In fede, dott. G. Ledda»."
+      ],
+      "illustration": {
+        "src": "img/attestazione.png",
+        "alt": "Un foglio intestato con una firma e un timbro"
+      }
+    },
+    {
+      "visible": true,
+      "id": "chiave",
+      "name": "La chiave della porticina",
+      "hint": "Di ferro, lunga come un dito.",
+      "position": "offstage",
+      "description": [
+        "Una chiave di ferro con l'anello consumato dalle dita, legata a un nastrino di seta nera. Tzia Mallena l'ha portata al collo per trent'anni, e non l'ha restituita quando l'hanno mandata via."
+      ],
+      "illustration": {
+        "src": "img/chiave.png",
+        "alt": "Una lunga chiave di ferro legata a un nastrino"
+      }
+    },
+    {
+      "visible": true,
+      "id": "testamento87",
+      "name": "Il testamento del 1887",
+      "hint": "Scritto di suo pugno.",
+      "position": "offstage",
+      "description": [
+        "Due fogli di carta pesante, piegati in quattro, scritti con una grafia regolare e inclinata, la grafia di una persona abituata a comandare con la penna. «Io, Rosalia Pinna, nel pieno delle mie facoltà, lascio il mio palazzo di Castello e le rendite delle mie terre all'Ospedale Civile di San Giovanni di Dio, per la cura dei poveri della città…»",
+        "Un vitalizio per la governante Maddalena Serra, «che mi è stata più sorella che serva». Un anello per il nipote Vittorio, «perché si ricordi di me quando avrà messo la testa a posto». Di Raimondo Usai, nemmeno una parola. Data e firma: Cagliari, 2 febbraio 1887."
+      ],
+      "illustration": {
+        "src": "img/testamento87.png",
+        "alt": "Due fogli manoscritti con una firma in fondo"
+      }
+    },
+    {
+      "visible": true,
+      "id": "inventario",
+      "name": "L'inventario dei gioielli",
+      "hint": "Una lista, firmata da donna Rosalia.",
+      "position": "offstage",
+      "description": [
+        "Un foglio protocollo con l'elenco, voce per voce, dei gioielli di famiglia: «una parure di corallo di Alghero, una collana di filigrana d'oro con diciassette bottoni sardi, due spille con granati, un anello con brillante, la croce pettorale dello zio canonico…», e in fondo l'argenteria: «due candelabri, un servizio da caffè, ventiquattro posate». Tutto in un cofanetto e una cassetta che nello studio non ci sono più."
+      ],
+      "illustration": {
+        "src": "img/inventario.png",
+        "alt": "Un foglio con un elenco scritto a mano e una firma"
+      }
+    },
+    {
+      "visible": true,
+      "id": "sigaro",
+      "name": "Il sigaro toscano",
+      "hint": "Un toscano intero, ancora profumato.",
+      "position": "offstage",
+      "description": [
+        "Un toscano intero, scuro e storto come un ramo secco. Tu non fumi. Ma qualcuno sì."
+      ],
+      "illustration": {
+        "src": "img/sigaro.png",
+        "alt": "Un sigaro toscano"
+      }
+    },
+    {
+      "visible": true,
+      "id": "polizza",
+      "name": "La copia della polizza",
+      "hint": "Con il timbro della Dogana.",
+      "position": "offstage",
+      "description": [
+        "Una copia della polizza di carico, ricopiata dal doganiere e timbrata: «Vapore postale per Genova, partenza 31 dicembre, ore 22. Speditore: R. Usai, Cagliari. Una cassa, contrassegnata R·U·, contenuto dichiarato: libri usati. Peso lordo: kg 38. In deposito al magazzino della calata»."
+      ],
+      "illustration": {
+        "src": "img/polizza.png",
+        "alt": "Un modulo stampato e compilato a mano, con un timbro tondo"
+      }
+    },
+    {
+      "visible": true,
+      "id": "cambiale",
+      "name": "La cambiale",
+      "hint": "Firmata da Vittorio Pinna.",
+      "position": "offstage",
+      "description": [
+        "Un foglio con il bollo: «A tre mesi data pagherò all'ordine del signor Raimondo Usai la somma di lire tremila». Firmato, con una grafia svolazzante, Vittorio Pinna. Vittorio dice che ce ne sono altre undici come questa."
+      ],
+      "illustration": {
+        "src": "img/cambiale.png",
+        "alt": "Una cambiale con il bollo e una firma svolazzante"
+      }
+    },
+    {
+      "visible": true,
+      "id": "vinelli",
+      "name": "Il direttore Vinelli",
+      "hint": "Giovane, sempre di corsa.",
+      "position": "redazione",
+      "description": [
+        "Marcello Vinelli ha pochi anni più di te e la fretta di dieci uomini. Gira con le maniche della camicia arrotolate, una matita dietro l'orecchio e un'altra in mano. Ha portato il giornale a uscire tutti i giorni, e adesso deve riempirlo tutti i giorni."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "peppino",
+      "name": "Peppino, il tipografo",
+      "hint": "Le mani nere di piombo.",
+      "position": "redazione",
+      "description": [
+        "Peppino compone le pagine lettera per lettera, al rovescio, più svelto di quanto tu riesca a leggerle al dritto. Ha sessant'anni, ha lavorato in tutti i giornali di Cagliari e li ha visti morire quasi tutti."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "pila",
+      "name": "La pila dei giornali",
+      "hint": "I numeri della settimana.",
+      "position": "redazione",
+      "description": [
+        "L'Unione Sarda e L'Avvenire di Sardegna, mescolati, con le pagine piegate dove qualcuno ha preso appunti. Il numero di oggi in cima, quelli dei giorni passati sotto."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "banco",
+      "name": "Il banco di composizione",
+      "hint": "La prima pagina di domani.",
+      "position": "redazione",
+      "description": [
+        "Il telaio di ferro della prima pagina, con le colonne già composte e serrate. Una sola è vuota.",
+        {
+          "text": "Peppino ti guarda, le mani ferme sulla cassa dei caratteri: «Allora? Me la detti, questa storia, o devo indovinarla?»",
+          "when": {
+            "flag": "arrest"
+          }
+        }
+      ]
+    },
+    {
+      "visible": true,
+      "id": "guardia",
+      "name": "La guardia di pubblica sicurezza",
+      "hint": "Baffi, sciabola, cappotto troppo grande.",
+      "position": "molo",
+      "description": [
+        "Una guardia giovane, con un cappotto che gli arriva quasi alle caviglie e un'aria di chi non ha ancora deciso se questo mestiere gli piace."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "calata",
+      "name": "Le pietre della calata",
+      "hint": "Sacchi, gomene, una macchia scura.",
+      "position": "molo",
+      "description": [
+        "Sacchi di sughero, una gomena, due bitte di ferro arrugginite. Fra le pietre, negli interstizi, si fermano le cose che cadono."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "brigadiere",
+      "name": "Il brigadiere dei Carabinieri",
+      "hint": "Tricorno, mani dietro la schiena.",
+      "position": "offstage",
+      "description": [
+        "Un piemontese alto e magro, con i baffi grigi e il tricorno in testa anche al chiuso. È in Sardegna da quindici anni e ancora non ha imparato a sudare. Ascolta tutto, non crede a niente, e annota."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "piroscafo",
+      "name": "Il vapore postale per Genova",
+      "hint": "Parte stasera alle dieci.",
+      "position": "offstage",
+      "description": [
+        "Uno scafo nero con la fascia rossa sul fumaiolo. Dalla stiva salgono e scendono facchini con le casse sulle spalle. Alle dieci, con l'ultima campana, mollerà gli ormeggi."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "teresa",
+      "name": "Teresa",
+      "hint": "Fazzoletto in testa, occhi stanchi.",
+      "position": "mercato",
+      "description": [
+        "Una ragazza con il fazzoletto in testa e le braccia forti. Ha gli occhi stanchi di chi non ha dormito.",
+        {
+          "text": "Vende arance di Muravera, messe a piramide su un banco sotto la tettoia del mercato.",
+          "when": {
+            "at": "mercato"
+          }
+        },
+        {
+          "text": "È seduta su uno sgabello accanto al letto diciotto, con il grembiule ancora piegato in grembo. Non lascia mai la mano del fratello.",
+          "when": {
+            "at": "corsia"
+          }
+        }
+      ]
+    },
+    {
+      "visible": true,
+      "id": "lustrascarpe",
+      "name": "Il lustrascarpe",
+      "hint": "Una cassetta, due spazzole.",
+      "position": "mercato",
+      "description": [
+        "Un vecchietto seduto su una cassetta, all'imbocco di via Manno, con le spazzole, il lucido e un panno che è stato bianco. Guarda le scarpe della gente prima delle facce."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "tabaccaio",
+      "name": "La rivendita di tabacchi",
+      "hint": "Sigari, tabacco da fiuto, fiammiferi.",
+      "position": "villanova",
+      "description": [
+        "Una rivendita di Sali e Tabacchi all'angolo della piazza di San Giacomo, con lo stemma sopra la porta: toscani, tabacco da pipa, scatole di fiammiferi di cera."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "picciocu",
+      "name": "Un picciocu de crobi",
+      "hint": "Un ragazzino con la cesta.",
+      "position": "mercato",
+      "description": [
+        "Un ragazzino scalzo con una cesta di canne più grande di lui, che aspetta una signora da servire. Sa tutto quello che succede nel mercato, e anche un po' di quello che succede fuori."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "cadoni",
+      "name": "Il fotografo Cadoni",
+      "hint": "Gilet, dita macchiate di nitrato.",
+      "position": "studio",
+      "description": [
+        "Antonio Cadoni ha la barba a punta e le dita macchiate di nero dal nitrato d'argento. Parla dei suoi clienti come un sarto: «la contessa ha un profilo difficile», «il canonico non sta mai fermo»."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "registro",
+      "name": "Il registro delle lastre",
+      "hint": "Un librone sul bancone.",
+      "position": "studio",
+      "description": [
+        "Un registro rilegato in pelle, con una riga per ogni lastra scattata: numero, data, cliente, formato. Accanto, lo scaffale delle lastre, con le scanalature numerate."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "suora",
+      "name": "Suor Annetta",
+      "hint": "Cuffia bianca, mazzo di chiavi.",
+      "position": "ospedale",
+      "description": [
+        "Una Figlia della Carità con la cuffia inamidata ad ali di gabbiano e un mazzo di chiavi alla cintura che annuncia il suo arrivo da lontano. Gentile con tutti, inflessibile con chiunque."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "ledda",
+      "name": "Il dottor Ledda",
+      "hint": "Medico di guardia.",
+      "position": "ospedale",
+      "description": [
+        "Un medico sui cinquanta, il camice sopra il panciotto, gli occhiali spinti sulla fronte. Fa il giro dei letti la mattina e le visite a domicilio il pomeriggio, e si lamenta del cantiere tutto il resto del tempo."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "gavino",
+      "name": "L'uomo del letto diciotto",
+      "hint": "La testa fasciata.",
+      "position": "corsia",
+      "description": [
+        "Un giovane magro, con la testa avvolta nelle bende fino alle sopracciglia. Ha le mani lunghe, con le dita macchiate di nero come quelle di Cadoni.",
+        {
+          "text": "Ha la febbre alta. Muove le labbra senza sosta.",
+          "when": {
+            "flag": "ch2",
+            "value": false
+          }
+        },
+        {
+          "text": "Stamattina la febbre è scesa. Ha gli occhi aperti e ti segue con lo sguardo.",
+          "when": {
+            "flag": "ch2"
+          }
+        }
+      ]
+    },
+    {
+      "visible": true,
+      "id": "facchino",
+      "name": "Il facchino del deposito",
+      "hint": "Berretto con la placca.",
+      "position": "stazione",
+      "description": [
+        "Un omone con il berretto delle Ferrovie e la placca d'ottone, dietro lo sportello del deposito. Alle sue spalle, scaffali di bauli, valigie e ceste legate con lo spago."
+      ]
+    },
+    {
+      "visible": false,
+      "id": "baule",
+      "name": "Il baule numero 304",
+      "hint": "Con un lucchetto a combinazione.",
+      "position": "stazione",
+      "description": [
+        "Un baule da viaggio di legno e tela, con gli angoli di ottone e un lucchetto a combinazione di quattro cifre. Un cartellino: «G. A. — Sassari, fermo posta»."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "custode",
+      "name": "Il custode della torre",
+      "hint": "Un vecchio soldato con una gamba sola.",
+      "position": "torre",
+      "description": [
+        "Un vecchio in divisa sbiadita, seduto su uno sgabello sotto la porta, con la stampella appoggiata al muro. Fa il custode di una porta che non chiude più nessuno, e ne parla come di una ferita."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "usai",
+      "name": "Il signor Usai",
+      "hint": "L'amministratore di casa Pinna.",
+      "position": "piazza",
+      "description": [
+        "Raimondo Usai, amministratore dei beni di casa Pinna da quindici anni. Un uomo grigio e curato, con il cappello duro e i guanti di pelle, e una voce gentile che non si alza mai.",
+        {
+          "text": "Sta sulla soglia di palazzo Pinna con le chiavi in mano, come se il portone fosse suo.",
+          "when": {
+            "at": "piazza"
+          }
+        },
+        {
+          "text": "Siede da solo a un tavolo, con un bicchiere di vernaccia che non beve e una valigia di cuoio fra i piedi.",
+          "when": {
+            "at": "locanda"
+          }
+        }
+      ]
+    },
+    {
+      "visible": true,
+      "id": "scrivano",
+      "name": "Lo scrivano del notaio",
+      "hint": "Mezze maniche nere.",
+      "position": "notaio",
+      "description": [
+        "Un giovane con le mezze maniche di lustrino nero e la penna d'oca dietro l'orecchio, che fa da guardia allo studio come un cane alla cuccia."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "porticina",
+      "name": "La porticina di servizio",
+      "hint": "Legno scuro, una serratura antica.",
+      "position": "vicolo",
+      "description": [
+        "Una porta bassa di legno scuro, rinforzata con chiodi a testa larga. La serratura è grande quanto un pugno.",
+        {
+          "text": "Ora è socchiusa, e dietro una scala di servizio sale nel buio.",
+          "when": {
+            "flag": "porticina"
+          }
+        }
+      ]
+    },
+    {
+      "visible": true,
+      "id": "cassaforte",
+      "name": "La cassaforte",
+      "hint": "Una manopola d'ottone, quattro cifre.",
+      "position": "stanza",
+      "description": [
+        "Una piccola cassaforte di ferro murata nella parete, con quattro rotelle di ottone numerate da zero a nove. Sullo sportello, la marca di una fabbrica di Torino.",
+        {
+          "text": "Lo sportello è aperto. Dentro c'è soltanto un vuoto squadrato.",
+          "when": {
+            "flag": "safeOpen"
+          }
+        }
+      ]
+    },
+    {
+      "visible": true,
+      "id": "cofanetto",
+      "name": "Il cofanetto vuoto",
+      "hint": "Velluto blu, scomparti vuoti.",
+      "position": "stanza",
+      "description": [
+        "Un cofanetto di cuoio rosso aperto sulla scrivania, foderato di velluto blu, con gli scomparti sagomati per collane, anelli e spille. Tutti vuoti. Le impronte nel velluto sono ancora fresche."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "scrittoio",
+      "name": "Lo scrittoio",
+      "hint": "Calamaio, penne, carta da lettere.",
+      "position": "stanza",
+      "description": [
+        "Uno scrittoio di noce, con un calamaio di cristallo, un portapenne e una risma di carta da lettere con lo stemma di famiglia. Il calamaio è pieno fino all'orlo."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "passanti",
+      "name": "I passanti",
+      "hint": "Gente che va e che viene.",
+      "position": "buoncammino",
+      "description": [
+        "Soldati in libera uscita, una coppia di sposi, due servette con le ceste, un signore con il bastone, un prete che legge il breviario camminando."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "vecchia",
+      "name": "La vecchia con lo scialle",
+      "hint": "Seduta su un muretto, in ascolto.",
+      "position": "buoncammino",
+      "description": [
+        "Una vecchia vestita di nero, con lo scialle tirato fin sugli occhi, seduta su un muretto. Non guarda nessuno. Ascolta."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "mallena",
+      "name": "Tzia Mallena",
+      "hint": "Una vecchia governante, con il rosario.",
+      "position": "villanova",
+      "description": [
+        "Maddalena Serra, che tutti chiamano Tzia Mallena, ha servito in casa Pinna per trentun anni. Ora è seduta sulla panca della confraternita, con le mani in grembo e gli occhi rossi, a cucire l'orlo di un gonfalone. Accanto a lei, un fagotto con tutto quello che possiede."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "confratelli",
+      "name": "I confratelli",
+      "hint": "Due anziani accanto alla stufa.",
+      "position": "villanova",
+      "description": [
+        "Due anziani con la mantellina della confraternita, che si scaldano le mani alla stufa e commentano tutto il quartiere, casa per casa."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "bachis",
+      "name": "Tziu Bachis, il carrettiere",
+      "hint": "Un carro, un mulo, poche parole.",
+      "position": "mattatoio",
+      "description": [
+        "Un uomo largo e corto, con la berritta calata su un orecchio e la faccia cotta dal sole. Sta strigliando il mulo come se fosse l'unica cosa importante al mondo. Forse lo è."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "doganiere",
+      "name": "Il doganiere",
+      "hint": "Dietro la grata dello sportello.",
+      "position": "dogana",
+      "description": [
+        "Un uomo con la visiera lucida e gli occhiali a molla, che timbra moduli con la regolarità di un orologio. Sopra lo sportello, un cartello: «Si parla solo per servizio»."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "cassa-seminario",
+      "name": "La cassa del Seminario",
+      "hint": "Cartellino: «Seminario Arcivescovile».",
+      "position": "magazzino",
+      "description": [
+        "Una cassa di abete, chiodata. Sul cartellino: «Seminario Arcivescovile di Cagliari — libri liturgici — per Genova». Col gesso, sul fianco: «kg 38»."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "cassa-ru1",
+      "name": "La cassa R·U· grande",
+      "hint": "Marchiata R·U·, kg 52.",
+      "position": "magazzino",
+      "description": [
+        "Una cassa di castagno con le lettere R·U· marchiate a fuoco. Sul cartellino: «libri usati — per Genova». Col gesso, sul fianco: «kg 52»."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "cassa-ru2",
+      "name": "La cassa R·U· piccola",
+      "hint": "Marchiata R·U·, kg 38.",
+      "position": "magazzino",
+      "description": [
+        "Una cassa di castagno, più piccola, con le lettere R·U· marchiate a fuoco e il piombino della dogana. Sul cartellino: «libri usati — per Genova». Col gesso, sul fianco: «kg 38».",
+        {
+          "text": "Ora è aperta. Fra la paglia, il rosso del corallo e il giallo dell'oro.",
+          "when": {
+            "flag": "arrest"
+          }
+        }
+      ]
+    },
+    {
+      "visible": true,
+      "id": "vittorio",
+      "name": "Vittorio Pinna",
+      "hint": "Il nipote, con un bicchiere in mano.",
+      "position": "locanda",
+      "description": [
+        "Un uomo sui trent'anni, bello e già sciupato, con il colletto slacciato e un bicchiere vuoto che continua a girare fra le dita. Al Circolo di Castello dicono che abbia perso a carte anche la camicia. Alla Marina dicono peggio."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "cantieri",
+      "name": "I cantieri del lungomare",
+      "hint": "Impalcature e mucchi di pietra.",
+      "position": "viaroma",
+      "description": [
+        "Mucchi di blocchi squadrati, un argano, una baracca di tavole. Qui un giorno ci saranno i palazzi con i portici. Per ora ci sono i muratori, che a mezzogiorno mangiano pane e formaggio seduti sui blocchi."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "pensilina",
+      "name": "L'orologio della stazione",
+      "hint": "Sopra la porta, tondo come una luna.",
+      "position": "stazione",
+      "description": [
+        "Un orologio grande, con i numeri romani, regolato ogni mattina con il telegrafo da Roma. I cagliaritani dicono che è l'unico in città che va giusto."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "fondale",
+      "name": "Il fondale dipinto",
+      "hint": "Un giardino che non esiste.",
+      "position": "studio",
+      "description": [
+        "Una tela grande come una parete, dipinta con un giardino all'italiana, una fontana e una balaustra. Davanti, una colonna di gesso e una sedia di vimini. Mezza Cagliari si è fatta ritrarre davanti a questo giardino."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "tavoletta",
+      "name": "La tavoletta del letto diciotto",
+      "hint": "Il nome del malato, col gesso.",
+      "position": "corsia",
+      "description": [
+        {
+          "text": "Una tavoletta nera appesa ai piedi del letto. Col gesso: «Sconosciuto, dal molo. Commozione cerebrale.»",
+          "when": {
+            "flag": "sawGavino",
+            "value": false
+          }
+        },
+        {
+          "text": "Una tavoletta nera appesa ai piedi del letto. Suor Annetta ha cancellato «Sconosciuto» con il pollice e ha scritto: «Atzeni Gavino, anni 22».",
+          "when": {
+            "flag": "sawGavino"
+          }
+        }
+      ]
+    },
+    {
+      "visible": true,
+      "id": "elefante",
+      "name": "L'elefante di pietra",
+      "hint": "Piccolo, su una mensola.",
+      "position": "torre",
+      "description": [
+        "Un elefantino di marmo, consumato dal vento di sei secoli, con la proboscide che quasi non si vede più. Guarda verso Stampace e il mare, da prima che ci fossero il mercato, la stazione e i giornali."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "cattedrale",
+      "name": "La Cattedrale",
+      "hint": "Una facciata disadorna, una scalinata.",
+      "position": "piazza",
+      "description": [
+        "La facciata barocca l'hanno tolta anni fa perché cadeva a pezzi, e ora la chiesa madre di Cagliari mostra al mondo un muro di pietra nudo, come una signora senza cappello. Dentro, invece, oro, marmi e le tombe dei re."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "faldoni",
+      "name": "I faldoni",
+      "hint": "Spago rosso, nomi e anni.",
+      "position": "notaio",
+      "description": [
+        "Faldoni su faldoni, uno per ogni famiglia di Castello: compravendite, doti, testamenti, liti. Tutta la città alta è qui, legata con lo spago rosso."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "gonfaloni",
+      "name": "I gonfaloni",
+      "hint": "Appoggiati al muro.",
+      "position": "villanova",
+      "description": [
+        "Stendardi di seta ricamata, con i santi, le croci e i nomi dei quartieri, appoggiati al muro come soldati a riposo. Escono per le processioni, e Tzia Mallena ne sta rifacendo l'orlo."
+      ]
+    },
+    {
+      "visible": true,
+      "id": "oste",
+      "name": "L'oste",
+      "hint": "Grembiule, baffi, una brocca.",
+      "position": "locanda",
+      "description": [
+        "Un genovese grasso e lento che fa l'oste alla Marina da vent'anni e parla un sardo con l'accento di Sampierdarena."
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "id": "talk-vinelli",
+      "target": "vinelli",
+      "label": "Chiedi a Vinelli che cosa vuole",
+      "when": {
+        "flag": "briefed",
+        "value": false
+      },
+      "text": [
+        "«Loi! Finalmente.» Vinelli ti spinge una sedia con il piede e non ti dà il tempo di sederti. «Stanotte, fra il 28 e il 29, una guardia ha trovato un uomo al Molo della Dogana, svenuto, con la testa aperta. Niente documenti, niente portafogli. L'hanno portato all'Ospedale Civile.»",
+        "«Ha la febbre e ripete una parola sola, dice la suora: diciassette. Diciassette, diciassette.» Batte la matita sul tavolo. «E sai cosa scrive stamattina L'Avvenire? \"Un contrabbandiere regolato dai suoi compari\". Senza sapere chi sia. Così, perché fa vendere.»",
+        "«Voglio il nome di quell'uomo prima di loro. Voglio sapere chi è e cosa ci faceva al molo. Comincia da dove l'hanno trovato.»",
+        "Poi, mentre già ti volti: «E tieni un occhio su Castello. Il 20 è morta donna Rosalia Pinna, quella del palazzo all'angolo di Piazza Palazzo. Il notaio Floris ha in mano un testamento, e dicono che il nipote si prenda tutto, fino all'ultimo cucchiaino. Non è affar nostro, ma Castello non parla d'altro.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "briefed"
+        },
+        {
+          "type": "clue",
+          "id": "incarico"
+        }
+      ]
+    },
+    {
+      "id": "chat-vinelli",
+      "target": "vinelli",
+      "label": "Parla con Vinelli",
+      "when": {
+        "all": [
+          {
+            "flag": "briefed"
+          },
+          {
+            "not": {
+              "all": [
+                {
+                  "flag": "lastraGiven"
+                },
+                {
+                  "flag": "ch2",
+                  "value": false
+                }
+              ]
+            }
+          },
+          {
+            "not": {
+              "all": [
+                {
+                  "has": "testamento87"
+                },
+                {
+                  "clue": "bachis"
+                },
+                {
+                  "flag": "ch4",
+                  "value": false
+                }
+              ]
+            }
+          },
+          {
+            "flag": "arrest",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        {
+          "text": "«Sei ancora qui? Il molo, Loi. Il molo, l'ospedale, la gente. Le notizie non salgono le scale da sole.»",
+          "when": {
+            "flag": "ch2",
+            "value": false
+          }
+        },
+        {
+          "text": "«Floris ti riceverà, se ti presenti come si deve. E come si deve vuol dire: pulito, educato, e senza la matita in mano finché non te lo dice lui.»",
+          "when": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "flag": "ch2"
+                  },
+                  {
+                    "flag": "ch4",
+                    "value": false
+                  }
+                ]
+              },
+              {
+                "flag": "notaryRead",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "Vinelli ascolta, prende appunti sul margine del giornale, non dice niente. Poi: «Va' avanti. Ma ricordati: in un articolo una voce resta una voce, anche se la scrivi in neretto. Mi servono fatti.»",
+          "when": {
+            "all": [
+              {
+                "flag": "notaryRead"
+              },
+              {
+                "flag": "ch4",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Il vapore parte alle dieci. Dopo, quel signore è a Genova, e da Genova va dove vuole. Muoviti.»",
+          "when": {
+            "all": [
+              {
+                "flag": "ch4"
+              },
+              {
+                "flag": "arrest",
+                "value": false
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "report-1",
+      "target": "vinelli",
+      "label": "Racconta a Vinelli la giornata",
+      "when": {
+        "all": [
+          {
+            "flag": "lastraGiven"
+          },
+          {
+            "flag": "ch2",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Racconti tutto: il frammento, Cadoni, Gavino Atzeni nel letto diciotto, il baule alla stazione, la lastra con la data del 17 dicembre e il nome di donna Rosalia nel registro.",
+        "Vinelli non ti interrompe nemmeno una volta, ed è la prima volta che succede. Alla fine si toglie la matita dall'orecchio e la posa sul tavolo, piano.",
+        "«Un assistente fotografo con la testa rotta, una lastra nascosta in un baule e una nobildonna morta con un testamento che fa comodo a qualcuno. Loi, questo non è un contrabbandiere.» Prende un foglio con l'intestazione del giornale e scrive. «Il notaio Floris mi deve un favore. Domattina gli porti questa. Ma va' a dormire, prima: hai una faccia che spaventa.»",
+        "Dormi su una branda in archivio, fra le pile di giornali. Quando ti svegli è lunedì 30 dicembre, e Peppino ti mette in mano una tazza di caffè nero e la lettera per il notaio."
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "ch2"
+        },
+        {
+          "type": "take",
+          "id": "lettera"
+        }
+      ]
+    },
+    {
+      "id": "report-2",
+      "target": "vinelli",
+      "label": "Fai rapporto a Vinelli",
+      "when": {
+        "all": [
+          {
+            "has": "testamento87"
+          },
+          {
+            "clue": "bachis"
+          },
+          {
+            "flag": "ch4",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Metti tutto sul tavolo del direttore: la fotografia, la dichiarazione del medico, il testamento del 1887, l'inventario dei gioielli. Gli racconti di Tzia Mallena e di Tziu Bachis.",
+        "Vinelli resta in silenzio a lungo. Fuori, sulle tegole della Marina, comincia a piovere.",
+        "«È più di quanto speravo e meno di quanto serve», dice infine. «Un brigadiere dei Carabinieri non arresta un amministratore di casa nobile perché un giornalista gli ha portato delle carte. Vorrà sapere dove sono i gioielli. E vorrà sapere perché il nipote ha presentato un testamento falso: se è complice o se è uno stupido. Il nipote, a proposito, lo trovi alla locanda del Leone d'oro: ci passa le giornate.»",
+        "Dormi di nuovo in archivio, poco e male. All'alba Peppino ti sveglia con una notizia: «Il signor Usai ha mandato a dire al notaio che alla lettura di stamattina non ci sarà: parte stasera per Genova. Affari urgenti.» È martedì 31 dicembre 1889."
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "ch4"
+        },
+        {
+          "type": "move",
+          "id": "brigadiere",
+          "to": "molo"
+        },
+        {
+          "type": "move",
+          "id": "piroscafo",
+          "to": "molo"
+        },
+        {
+          "type": "move",
+          "id": "usai",
+          "to": "locanda"
+        }
+      ]
+    },
+    {
+      "id": "talk-peppino",
+      "target": "peppino",
+      "label": "Scambia due parole con Peppino",
+      "when": {
+        "flag": "arrest",
+        "value": false
+      },
+      "text": [
+        {
+          "text": "«Il diciassette? Al lotto è la disgrazia.» Peppino non alza gli occhi dal compositoio. «Ma io non ci credo. In quarant'anni di giornali ho imparato una cosa sola: le parole contano meno delle date. Una data non si può smentire.»",
+          "when": {
+            "flag": "ch2",
+            "value": false
+          }
+        },
+        {
+          "text": "«Un notaio? Vestiti bene e parla poco. Io, quando lavoravo alla Gazzetta Popolare, una volta sono andato da un notaio con le scarpe sporche di inchiostro. Mi ha fatto aspettare tre ore in piedi.»",
+          "when": {
+            "all": [
+              {
+                "all": [
+                  {
+                    "flag": "ch2"
+                  },
+                  {
+                    "flag": "ch4",
+                    "value": false
+                  }
+                ]
+              },
+              {
+                "flag": "notaryRead",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "Peppino fa scorrere il dito sul titolo del nuovo codice. «A mezzanotte cambia tutto e non cambia niente. Ma una cosa la so: chi ha falsificato qualcosa prima di mezzanotte, lo giudicano con il codice vecchio.»",
+          "when": {
+            "any": [
+              {
+                "all": [
+                  {
+                    "flag": "notaryRead"
+                  },
+                  {
+                    "flag": "ch4",
+                    "value": false
+                  }
+                ]
+              },
+              {
+                "flag": "ch4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "take-giornale",
+      "target": "pila",
+      "label": "Cerca i numeri della settimana passata",
+      "when": {
+        "not": {
+          "has": "giornale"
+        }
+      },
+      "text": [
+        "Sfogli la pila: il numero di oggi, quello di ieri, quelli di Natale. Ti tieni il numero di lunedì 23, che hai seguito tu in tipografia: l'unico della settimana che non hai ancora letto per intero."
+      ],
+      "effects": [
+        {
+          "type": "take",
+          "id": "giornale"
+        }
+      ]
+    },
+    {
+      "id": "read-avvenire",
+      "target": "pila",
+      "label": "Leggi cosa scrive L'Avvenire",
+      "text": [
+        "«Mistero al porto. Un individuo di loschi costumi, verosimilmente dedito al contrabbando, è stato rinvenuto ferito nella notte presso il Molo della Dogana. La Questura indaga negli ambienti della malavita portuale.» Nemmeno un nome, nemmeno un'età. Ma «loschi costumi» l'hanno trovato subito.",
+        {
+          "text": "Più sotto, nella cronaca di Castello: «Si apprende che la successione della compianta donna Rosalia Pinna, mancata il 20 corrente, si risolverà con la lettura del testamento olografo, rinvenuto dal fedele amministratore sig. Usai e presentato dal nipote, cav. Vittorio Pinna».",
+          "when": {
+            "flag": "ch2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "talk-guardia",
+      "target": "guardia",
+      "label": "Chiedi alla guardia della notte del 28",
+      "when": {
+        "flag": "ch4",
+        "value": false
+      },
+      "text": [
+        "«L'ho trovato io, all'una passata. Ero di ronda sulla calata, e c'era questo qui steso fra i sacchi, con la faccia nell'acqua del canale di scolo. Se arrivavo dieci minuti dopo, annegava in due dita d'acqua.»",
+        "«Niente portafogli, niente documenti, niente orologio. Ma il cappotto buono, e le scarpe buone. Un contrabbandiere?» Fa spallucce. «I contrabbandieri hanno le mani diverse. Questo aveva le dita nere, come uno che lavora con l'inchiostro.»",
+        "Poi aggiunge, con un mezzo orgoglio: «Comunque scrivetelo giusto, che sono una guardia di pubblica sicurezza. Ancora per poco: col decreto del 21 cambiamo nome, diventiamo Guardie di città. Uniforme nuova, regolamento nuovo. La sciabola resta.»"
+      ]
+    },
+    {
+      "id": "guardia-31",
+      "target": "guardia",
+      "label": "Saluta la guardia",
+      "when": {
+        "flag": "ch4"
+      },
+      "text": [
+        "«Oggi c'è il vapore per Genova: mezza Questura sul molo e i Carabinieri sulla passerella. Fra noi e loro, chi comanda?» Si stringe nel cappotto. «Il brigadiere, oggi. Lui il porto lo conosce da quindici anni.»"
+      ]
+    },
+    {
+      "id": "search-calata",
+      "target": "calata",
+      "label": "Cerca fra le pietre e i sacchi",
+      "when": {
+        "all": [
+          {
+            "flag": "briefed"
+          },
+          {
+            "flag": "searched",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Ti metti in ginocchio sulla pietra fredda, fra i sacchi di sughero, mentre due facchini ti guardano ridendo. La macchia scura. Una gomena. Una cicca. E poi, in un interstizio, qualcosa che luccica.",
+        "Un pezzo di vetro triangolare, con uno strato scuro da una parte. E poco più in là, incastrato sotto una bitta, un biglietto da visita bagnato: «A. Cadoni — Fotografia artistica — Via Manno».",
+        "Chi porta in tasca un pezzo di lastra fotografica, a mezzanotte, al molo?"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "searched"
+        },
+        {
+          "type": "take",
+          "id": "frammento"
+        },
+        {
+          "type": "take",
+          "id": "biglietto"
+        }
+      ]
+    },
+    {
+      "id": "look-calata",
+      "target": "calata",
+      "label": "Guarda la macchia sulla pietra",
+      "when": {
+        "flag": "searched"
+      },
+      "text": [
+        "La macchia si sta già sbiadendo sotto le scarpe dei facchini. Domani non ci sarà più. Al porto le cose spariscono in fretta."
+      ]
+    },
+    {
+      "id": "talk-teresa-0",
+      "target": "teresa",
+      "label": "Compra un paio di arance e scambia due parole",
+      "when": {
+        "flag": "knowsName",
+        "value": false
+      },
+      "text": [
+        "Teresa ti incarta due arance in un foglio di giornale, ed è L'Avvenire di stamattina. Non le dici che ci lavori, per un giornale.",
+        "«Scusi se sono lenta, signore. Non ho dormito.» Si asciuga le mani sul grembiule. «Mio fratello non è tornato a casa stanotte. Sarà con gli amici, è giovane. Ma non l'ha mai fatto.»"
+      ]
+    },
+    {
+      "id": "talk-teresa",
+      "target": "teresa",
+      "label": "Parla a Teresa di suo fratello",
+      "when": {
+        "all": [
+          {
+            "flag": "knowsName"
+          },
+          {
+            "flag": "teresaCame",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "«Lei è la sorella di Gavino Atzeni?» Teresa ti guarda, e prima ancora che tu dica altro ha già capito. Le arance le scivolano di mano e rotolano giù per la pendenza del largo, verso il porto.",
+        "Le racconti del molo e dell'ospedale, con le parole più piccole che trovi. Non piange. Si toglie il grembiule, lo piega, lo mette sul banco. Dice qualcosa in sardo alla vicina, «castia tui», guarda tu, e quella annuisce senza fare domande.",
+        "«Andiamo», dice. «Mi porti da lui.» Si avvia verso l'Ospedale Civile senza aspettarti."
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "teresaCame"
+        },
+        {
+          "type": "move",
+          "id": "teresa",
+          "to": "corsia"
+        }
+      ]
+    },
+    {
+      "id": "shine-shoes",
+      "target": "lustrascarpe",
+      "item": "borsellino",
+      "label": "Fatti lucidare le scarpe",
+      "when": {
+        "all": [
+          {
+            "flag": "ch2"
+          },
+          {
+            "flag": "shoes",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Il vecchietto guarda le tue scarpe, grigie della polvere della calata e della calce del cantiere, e fa una smorfia di dolore. «Cinque soldi. E non per il lucido: per la fatica.»",
+        "Lavora un quarto d'ora con due spazzole e il panno, sputando sul cuoio con metodo. Quando ha finito, le scarpe brillano come quelle di un prefetto.",
+        "«Adesso sembra un signore», dice, intascando le monete. «Dalla caviglia in giù.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "shoes"
+        }
+      ]
+    },
+    {
+      "id": "talk-lustrascarpe",
+      "target": "lustrascarpe",
+      "label": "Parla con il lustrascarpe",
+      "text": [
+        "«Io guardo le scarpe, signore. Le scarpe dicono tutto. Un avvocato le ha lucide e sottili. Un sensale le ha lucide e grosse. Un giornalista…» guarda le tue, «…le ha sporche. Sempre di corsa.»",
+        {
+          "text": "«In Castello, con quelle, non la fanno nemmeno sedere. Ma oggi è tardi, e io ho finito il lucido. Torni domattina.»",
+          "when": {
+            "all": [
+              {
+                "flag": "shoes",
+                "value": false
+              },
+              {
+                "flag": "ch2",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«In Castello, con quelle, non la fanno nemmeno sedere. Cinque soldi e gliele sistemo.»",
+          "when": {
+            "all": [
+              {
+                "flag": "shoes",
+                "value": false
+              },
+              {
+                "flag": "ch2"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "buy-sigaro",
+      "target": "tabaccaio",
+      "item": "borsellino",
+      "label": "Compra un sigaro toscano",
+      "when": {
+        "all": [
+          {
+            "flag": "leadBachis"
+          },
+          {
+            "not": {
+              "has": "sigaro"
+            }
+          },
+          {
+            "flag": "bachis",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "«Un toscano. Uno solo?» Il tabaccaio sceglie il più dritto della scatola, lo annusa per te e te lo porge come un fiore. «Sette centesimi. Per il signore che non fuma.»"
+      ],
+      "effects": [
+        {
+          "type": "take",
+          "id": "sigaro"
+        }
+      ]
+    },
+    {
+      "id": "look-tabaccaio",
+      "target": "tabaccaio",
+      "label": "Guarda il banco del tabaccaio",
+      "text": [
+        "Toscani a sette centesimi, sigarette egiziane per chi se le può permettere, trinciato per la pipa. Il tabaccaio, un confratello in pensione, legge L'Avvenire e alza gli occhi solo per i clienti."
+      ]
+    },
+    {
+      "id": "talk-picciocu",
+      "target": "picciocu",
+      "label": "Chiedi al ragazzino cosa si dice",
+      "text": [
+        {
+          "text": "«Del molo? Dicono che era un contrabbandiere. Dicono che era un marinaio di Napoli. Dicono che era un innamorato, e che il marito l'ha preso a bastonate.» Il ragazzino si gratta la testa. «Dicono tante cose. Io non c'ero.»",
+          "when": {
+            "flag": "ch2",
+            "value": false
+          }
+        },
+        {
+          "text": "«Oggi si dice che donna Rosalia ha lasciato tutto al nipote, e che il nipote ha già perso tutto a carte. Prima ancora di averlo.» Ride. «Al mercato le cose si sanno prima.»",
+          "when": {
+            "all": [
+              {
+                "flag": "ch2"
+              },
+              {
+                "flag": "ch4",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Stasera parte il vapore e domani è festa. Le signore comprano il doppio, e io porto il doppio.» Ti mostra la cesta, piena fino all'orlo.",
+          "when": {
+            "flag": "ch4"
+          }
+        }
+      ]
+    },
+    {
+      "id": "look-mercato",
+      "target": "picciocu",
+      "label": "Guarda il mercato di ferro",
+      "text": [
+        "Colonne di ghisa sottili come gambe di trampoliere, capriate di ferro, un tetto di vetro e lamiera. Dentro rimbombano le grida dei venditori. Gli anziani dicono che d'estate ci si cuoce, come in un forno. I giovani dicono che è moderno, come Parigi."
+      ]
+    },
+    {
+      "id": "show-biglietto-cadoni",
+      "target": "cadoni",
+      "item": "biglietto",
+      "label": "Mostra il biglietto da visita a Cadoni",
+      "when": {
+        "flag": "knowsName",
+        "value": false
+      },
+      "text": [
+        "Cadoni lo prende fra due dita, lo gira, lo rigira. «È mio, certo. Ne do a tutti: ai clienti, ai fornitori, alle signore che passano a vedere le vetrine. Ne avrò stampati mille.»",
+        "«Ore 11, c'è scritto dietro. Un appuntamento, sembra. Ma di chi?» Te lo restituisce. «Mi dispiace. Un biglietto da visita non dice chi l'ha in tasca.»"
+      ]
+    },
+    {
+      "id": "show-frammento-cadoni",
+      "target": "cadoni",
+      "item": "frammento",
+      "label": "Mostra il frammento di lastra a Cadoni",
+      "when": {
+        "flag": "knowsName",
+        "value": false
+      },
+      "text": [
+        "Cadoni lo prende con due dita, controluce, e il suo viso cambia. «Questa è gelatina al bromuro. Lastre inglesi, le prendo solo io a Cagliari.» Guarda meglio. «E questo è il mio fondale. Questi sono gli scalini della sala di posa. È una lastra mia. Dove l'ha trovata?»",
+        "Glielo dici. Il fotografo si siede.",
+        "«Gavino», mormora. «Gavino Atzeni, il mio assistente. Ieri non è venuto a lavorare, e lui non manca mai. Ho pensato a una febbre.» Si passa la mano sulla barba. «Ha una sorella, Teresa. Vende arance al mercato, sotto la tettoia. Glielo dica lei. Io… io non saprei come.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "knowsName"
+        },
+        {
+          "type": "clue",
+          "id": "nome"
+        }
+      ]
+    },
+    {
+      "id": "read-registro",
+      "target": "registro",
+      "label": "Sfoglia il registro delle lastre",
+      "when": {
+        "all": [
+          {
+            "flag": "knowsName"
+          },
+          {
+            "flag": "registerRead",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Cadoni ti lascia sfogliare il registro. Ogni riga ha la sua lastra: numero, mese in cifre romane, data, cliente, formato. «N. 12/XII, 11 dicembre, cav. Melis e signora, 18×24.» «N. 15/XII, 14 dicembre, prima comunione della piccola Cocco, 13×18.»",
+        "Poi, con l'inchiostro più scuro: «N. 17/XII — 17 dicembre — donna Rosalia Pinna, ritratto a domicilio, Castello — 13×18 — operatore: G. Atzeni».",
+        "Vai allo scaffale delle lastre. La scanalatura numero diciassette, nel ripiano di dicembre, è vuota.",
+        "«Gavino è andato da lei con la macchina portatile», dice Cadoni alle tue spalle. «La signora non usciva più di casa: era caduta, si era fatta male. È morta tre giorni dopo, poveretta. La lastra la doveva stampare la settimana scorsa. Mi ha detto che si era rotta.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "registerRead"
+        },
+        {
+          "type": "clue",
+          "id": "registro"
+        }
+      ]
+    },
+    {
+      "id": "look-registro",
+      "target": "registro",
+      "label": "Guarda lo scaffale delle lastre",
+      "when": {
+        "flag": "registerRead"
+      },
+      "text": [
+        "Centinaia di lastre di vetro, in piedi nelle loro scanalature, come i libri di una biblioteca trasparente. Numero e mese, sempre: 3/XI, 4/XI, 5/XI. La scanalatura del 17/XII resta vuota, come un dente mancante."
+      ]
+    },
+    {
+      "id": "give-lastra",
+      "target": "cadoni",
+      "item": "lastra",
+      "label": "Dai la lastra a Cadoni perché la stampi",
+      "when": {
+        "flag": "lastraGiven",
+        "value": false
+      },
+      "text": [
+        "Cadoni toglie il velluto come se scartasse una reliquia. Guarda il numero inciso nell'angolo, guarda il negativo controluce, poi guarda te.",
+        "«Gavino mi ha mentito. Non si era rotta.» Si schiarisce la voce. «Gliela stampo. Ma la carta all'albumina vuole il sole: la metto nel torchietto sul davanzale, e il sole di Cagliari, a dicembre, ci mette una mattina intera. Torni domani, verso le dieci.»",
+        "«E la lastra resta qui. È roba mia, e adesso è anche roba pericolosa.» Il direttore, intanto, vorrà sapere tutto: è sera, e in redazione la luce è ancora accesa."
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "lastraGiven"
+        },
+        {
+          "type": "move",
+          "id": "lastra",
+          "to": "offstage"
+        }
+      ]
+    },
+    {
+      "id": "take-print",
+      "target": "cadoni",
+      "label": "Ritira la stampa",
+      "when": {
+        "all": [
+          {
+            "flag": "ch2"
+          },
+          {
+            "flag": "printTaken",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Cadoni ha la faccia di chi non ha dormito neanche lui. Ti porge la stampa, incollata su un cartoncino con il nome dello studio, ancora odorosa di fissaggio.",
+        "«Donna Rosalia Pinna, il 17 dicembre. Tre giorni prima di morire.» Ti mette in mano anche una lente con il manico d'osso. «Si porti questa. Una fotografia si guarda da vicino, oppure non la si guarda affatto. Me la riporti intera.»",
+        "«Povera signora. L'ultimo mese la curava il dottor Ledda, quello dell'Ospedale Civile: saliva in Castello ogni settimana. Gavino lo ha incontrato sulle scale, il giorno del ritratto.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "printTaken"
+        },
+        {
+          "type": "take",
+          "id": "stampa"
+        },
+        {
+          "type": "take",
+          "id": "lente"
+        }
+      ]
+    },
+    {
+      "id": "chat-cadoni",
+      "target": "cadoni",
+      "label": "Parla con Cadoni",
+      "when": {
+        "flag": "knowsName"
+      },
+      "text": [
+        {
+          "text": "«Gavino è il migliore assistente che ho avuto. Ha l'occhio. Io gli ho insegnato la chimica, ma l'occhio ce l'aveva già.»",
+          "when": {
+            "flag": "lastraGiven",
+            "value": false
+          }
+        },
+        {
+          "text": "«Domattina, verso le dieci. Non prima: il sole non si fa comandare nemmeno da un giornale.»",
+          "when": {
+            "all": [
+              {
+                "flag": "lastraGiven"
+              },
+              {
+                "flag": "ch2",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Come sta Gavino? Ci passo stasera, all'ospedale. Gli porto i biscotti di Teresa, che sono meglio della minestra delle suore.»",
+          "when": {
+            "flag": "printTaken"
+          }
+        }
+      ]
+    },
+    {
+      "id": "talk-suora",
+      "target": "suora",
+      "label": "Chiedi a Suor Annetta dell'uomo del molo",
+      "text": [
+        {
+          "text": "«Il povero sconosciuto del letto diciotto. Ha la febbre e non sa dove si trova.» Suor Annetta ti guarda la tessera e poi la faccia, e non le piace nessuna delle due. «In corsia entrano i medici e i parenti. Lei è un parente? No. Allora no.»",
+          "when": {
+            "flag": "teresaCame",
+            "value": false
+          }
+        },
+        {
+          "text": "«Con la sorella può passare. Ma piano, e poco. E se lo agita, la butto fuori io, con le mie mani.»",
+          "when": {
+            "all": [
+              {
+                "flag": "teresaCame"
+              },
+              {
+                "flag": "ch2",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Stamattina ha mangiato. La Madonna del Buon Cammino ci ha messo una mano, e il dottor Ledda l'altra.»",
+          "when": {
+            "flag": "ch2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "talk-ledda",
+      "target": "ledda",
+      "label": "Parla con il dottor Ledda",
+      "text": [
+        {
+          "text": "«Un colpo alla nuca, con qualcosa di pesante e di tondo: un bastone, un sacchetto di sabbia. Da dietro, alla nuca. Nessuno si fa una ferita così cadendo.» Il dottore si toglie gli occhiali. «Ha la commozione e la febbre. Se passa la notte, se la cava.»",
+          "when": {
+            "flag": "ch2",
+            "value": false
+          }
+        },
+        {
+          "text": "«Il ragazzo del molo? Fuori pericolo. Ma lei mi sembra quello con la febbre, adesso.»",
+          "when": {
+            "all": [
+              {
+                "flag": "ch2"
+              },
+              {
+                "not": {
+                  "has": "attestazione"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Ho scritto quello che ho visto. Un medico non fa altro.» Ledda rimette la penna nel taschino. «E adesso mi scusi: questi muratori mi stanno buttando giù l'ospedale per costruirmene un altro.»",
+          "when": {
+            "has": "attestazione"
+          }
+        }
+      ]
+    },
+    {
+      "id": "show-stampa-ledda",
+      "target": "ledda",
+      "item": "stampa",
+      "label": "Mostra la fotografia al dottor Ledda",
+      "when": {
+        "not": {
+          "has": "attestazione"
+        }
+      },
+      "requires": {
+        "flag": "printExamined"
+      },
+      "failure": [
+        "Il dottore guarda la fotografia un istante, per educazione. «Donna Rosalia, sì. L'ho curata io, nelle ultime settimane: il cuore, alla sua età…» Te la restituisce. «Una bella fotografia. Ma io qui ho cento malati vivi.»",
+        "Forse in quella fotografia c'è qualcosa che non hai notato. Qualcosa che un medico capirebbe al volo, se tu glielo indicassi."
+      ],
+      "text": [
+        "Indichi il polso. Ledda si abbassa gli occhiali sul naso e prende la stampa per guardarla meglio.",
+        "«La mia stecca. La riconosco: la fascio sempre così, a otto.» Annuisce lentamente. «Il 10 dicembre. È scivolata sulle scale del palazzo, di sera. Frattura del radio destro, composta, per fortuna. L'ho ridotta io, lì in casa sua, con il nipote che reggeva il lume e piangeva.»",
+        "Gli dici del testamento del 15 dicembre, «scritto tutto di mio pugno». Il medico ti guarda a lungo.",
+        "«Con quella mano, il 15? Non avrebbe tenuto in mano una forchetta, figuriamoci una penna. Per sei settimane almeno.» Prende un foglio intestato dal tavolo dell'atrio e scrive in piedi, appoggiato al muro. «Questo è quello che ho visto e fatto, e lo ripeto davanti a chi vuole. Il resto lo deve dire un giudice.» Ti restituisce la fotografia insieme al foglio."
+      ],
+      "effects": [
+        {
+          "type": "take",
+          "id": "attestazione"
+        },
+        {
+          "type": "clue",
+          "id": "polso"
+        }
+      ]
+    },
+    {
+      "id": "look-cantiere",
+      "target": "ledda",
+      "label": "Guarda il cantiere delle cliniche",
+      "text": [
+        "Due bracci nuovi per le cliniche dell'Università: la medicina che si impara al letto dei malati, non solo sui libri. Per ora sono fondamenta, ponteggi e un ingegnere che urla. Un muratore ti fa segno di spostarti: sta passando un secchio di calce, e le tue scarpe sono lì in mezzo."
+      ]
+    },
+    {
+      "id": "see-gavino",
+      "target": "gavino",
+      "label": "Avvicinati al letto con Teresa",
+      "when": {
+        "flag": "sawGavino",
+        "value": false
+      },
+      "text": [
+        "Teresa si siede sul bordo del letto e gli prende la mano. «Gavinu. Gavinu, seu deu.» Sono io. Il ragazzo apre gli occhi a metà e non la riconosce, o forse sì.",
+        "Muove le labbra. Ti chini. «…diciassette… dodici… non a lui… non a lui…» Poi richiude gli occhi.",
+        "Suor Annetta porta un fagotto: i vestiti del ragazzo e quello che avevano nelle tasche. Pochi soldi, un fazzoletto, una matita, e un talloncino giallo delle Ferrovie: deposito bagagli, numero 304, del 28 mattina.",
+        "«Un baule?» Teresa scuote la testa. «Non mi ha detto niente. Voleva andare a Sassari, da nostro cugino, dopo Capodanno. Ma un baule…» Ti mette in mano la ricevuta. «Vada lei. Io resto qui.»",
+        "E poi, quasi tra sé: «Se c'è il lucchetto, è uno dei suoi. Gavino non ricorda mai i numeri, solo quelli delle sue lastre. Ci mette sempre il numero e il mese di una lastra a cui tiene, come li segna il signor Cadoni. Diceva che così il lucchetto era una fotografia.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "sawGavino"
+        },
+        {
+          "type": "take",
+          "id": "ricevuta"
+        },
+        {
+          "type": "clue",
+          "id": "lucchetto"
+        }
+      ]
+    },
+    {
+      "id": "look-gavino",
+      "target": "gavino",
+      "label": "Guarda Gavino dormire",
+      "when": {
+        "all": [
+          {
+            "flag": "sawGavino"
+          },
+          {
+            "flag": "ch2",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Il petto si alza e si abbassa, troppo in fretta. Teresa gli bagna le labbra con un fazzoletto. «Diciassette», mormora lui ancora, nel sonno. «Dodici.»"
+      ]
+    },
+    {
+      "id": "talk-gavino",
+      "target": "gavino",
+      "label": "Chiedi a Gavino cosa è successo al molo",
+      "when": {
+        "all": [
+          {
+            "flag": "ch2"
+          },
+          {
+            "flag": "sawGavino"
+          },
+          {
+            "flag": "gavinoTalk",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Gavino parla piano, a pezzi, con Teresa che gli tiene la mano e Suor Annetta che vi guarda dal fondo della corsia.",
+        "«Il 17 sono salito da donna Rosalia per il ritratto. Lei ci teneva: voleva una fotografia da lasciare all'Ospedale, per quando non ci sarebbe stata più. Aveva il polso rotto, mi ha detto di non farlo vedere. Ma la lastra vede tutto.»",
+        "«Il 27 ho letto sull'Avvenire del testamento. Scritto di suo pugno il 15, dicevano. Io sapevo che il 15 non poteva scrivere. Sono andato dal signor Usai, l'amministratore: pensavo… pensavo che fosse giusto avvertire qualcuno della casa.»",
+        "Chiude gli occhi. «Era gentile. Mi ha detto che la lastra la voleva comprare lui, per la famiglia, e che mi avrebbe pagato bene. Appuntamento alla calata, alle undici di sera, il 28. Mi ha scritto l'ora sul retro di un mio biglietto.»",
+        "«Io non mi fidavo. Ho messo la lastra vera nel baule, alla stazione, e mi sono portato una lastra rotta, da buttare. Alla calata non c'era nessuno. Poi un colpo, da dietro. Non ho visto chi.» Riapre gli occhi. «Ma all'appuntamento doveva esserci lui.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "gavinoTalk"
+        },
+        {
+          "type": "clue",
+          "id": "gavino"
+        }
+      ]
+    },
+    {
+      "id": "chat-gavino",
+      "target": "gavino",
+      "label": "Saluta Gavino",
+      "when": {
+        "flag": "gavinoTalk"
+      },
+      "text": [
+        "«La lastra», dice Gavino. «Che la vedano tutti. Lei la voleva per l'Ospedale.» Poi, a Teresa, in sardo, qualcosa che ti fa capire che è ora di andare."
+      ]
+    },
+    {
+      "id": "talk-teresa-corsia",
+      "target": "teresa",
+      "label": "Parla con Teresa",
+      "when": {
+        "at": "corsia"
+      },
+      "text": [
+        {
+          "text": "«Il numero e il mese di una lastra a cui tiene», ripete Teresa. «Gliel'ho detto. Il signor Cadoni le segna tutte in quel suo librone.»",
+          "when": {
+            "flag": "ch2",
+            "value": false
+          }
+        },
+        {
+          "text": "«Mangia. Parla. Mi ha chiesto delle arance.» Teresa sorride per la prima volta. «Se gli ha fatto male qualcuno, signore, lo scriva. Lo scriva grosso.»",
+          "when": {
+            "flag": "ch2"
+          }
+        }
+      ]
+    },
+    {
+      "id": "give-ricevuta",
+      "target": "facchino",
+      "item": "ricevuta",
+      "label": "Consegna la ricevuta al facchino",
+      "when": {
+        "flag": "bauleOut",
+        "value": false
+      },
+      "text": [
+        "Il facchino guarda la ricevuta, guarda te, guarda di nuovo la ricevuta. «Trecentoquattro. Un baule.» Sparisce fra gli scaffali e torna trascinandolo per una maniglia. Si tiene la ricevuta e la infila su un chiodo, insieme a cento altre.",
+        "«Lo apra qui, se vuole. Ma se lo porta via, mi firma il registro.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "bauleOut"
+        },
+        {
+          "type": "discover",
+          "id": "baule"
+        },
+        {
+          "type": "move",
+          "id": "ricevuta",
+          "to": "offstage"
+        }
+      ]
+    },
+    {
+      "id": "talk-facchino",
+      "target": "facchino",
+      "label": "Parla con il facchino",
+      "text": [
+        {
+          "text": "«Deposito bagagli. Senza ricevuta, niente bagaglio. Neanche se lei è il re.»",
+          "when": {
+            "flag": "bauleOut",
+            "value": false
+          }
+        },
+        {
+          "text": "«Il treno per Sassari parte alle sette e venti. Arriva quando arriva.»",
+          "when": {
+            "flag": "bauleOut"
+          }
+        }
+      ]
+    },
+    {
+      "id": "open-baule",
+      "target": "baule",
+      "label": "Componi la combinazione del lucchetto",
+      "when": {
+        "flag": "bauleOpen",
+        "value": false
+      },
+      "input": {
+        "kind": "keypad",
+        "keys": [
+          {
+            "id": "k1",
+            "label": "1"
+          },
+          {
+            "id": "k2",
+            "label": "2"
+          },
+          {
+            "id": "k3",
+            "label": "3"
+          },
+          {
+            "id": "k4",
+            "label": "4"
+          },
+          {
+            "id": "k5",
+            "label": "5"
+          },
+          {
+            "id": "k6",
+            "label": "6"
+          },
+          {
+            "id": "k7",
+            "label": "7"
+          },
+          {
+            "id": "k8",
+            "label": "8"
+          },
+          {
+            "id": "k9",
+            "label": "9"
+          },
+          {
+            "id": "k0",
+            "label": "0"
+          }
+        ],
+        "answer": [
+          "k1",
+          "k7",
+          "k1",
+          "k2"
+        ],
+        "wrong": [
+          "Le rotelle girano, il lucchetto non si apre. Il facchino ti guarda con l'aria di chi ha visto molti ladri, e nessuno così maldestro.",
+          "Quattro cifre: Teresa ha detto che Gavino ci mette il numero e il mese di una lastra a cui tiene, come li segna Cadoni."
+        ]
+      },
+      "text": [
+        "Uno, sette. Uno, due. Diciassette, dodici. Il lucchetto si apre con uno scatto secco. Non era delirio: era una combinazione.",
+        "Dentro, due camicie piegate, un vestito della domenica, un paio di scarpe nuove, un libro di chimica fotografica. E in fondo, avvolta in un pezzo di velluto rosso, una lastra di vetro intatta, con un numero inciso nell'angolo: 17/XII."
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "bauleOpen"
+        },
+        {
+          "type": "take",
+          "id": "lastra"
+        }
+      ]
+    },
+    {
+      "id": "talk-custode",
+      "target": "custode",
+      "label": "Parla con il custode della torre",
+      "text": [
+        "«Guardo una porta che nessuno chiude. Prima, la notte, la saracinesca si abbassava, e Castello era Castello. Dentro i signori, fuori il resto.» Batte la stampella sul selciato. «Poi, nel 1861, ci hanno tolto dall'elenco delle piazzeforti del Regno. Niente più fortezza. E giù le mura, pezzo per pezzo, per fare le strade nuove, la Via Roma, i giardini.»",
+        "«Io dico che hanno fatto bene, per la salute. Ma certe signore di Castello non l'hanno mai perdonato. Per loro il 1861 è l'anno in cui la città si è tolta il corsetto.»"
+      ],
+      "effects": [
+        {
+          "type": "clue",
+          "id": "fortezza"
+        }
+      ]
+    },
+    {
+      "id": "talk-usai",
+      "target": "usai",
+      "label": "Presentati al signor Usai",
+      "when": {
+        "flag": "ch4",
+        "value": false
+      },
+      "text": [
+        "«Un giornalista.» Usai sorride, gentile come un sacerdote. «La casa è in lutto, giovanotto. Nessuno entra finché il notaio non avrà letto il testamento, domani mattina. È la legge, e la volontà della povera signora.»",
+        "«La governante? Tzia Mallena? L'ho dovuta mandare via, il 21. Una brava donna, ma anziana, confusa. Parlava da sola nei corridoi.» Si sfila un guanto, dito per dito. «Le auguro buona giornata.»",
+        "E chiude il portone. Senti la chiave girare due volte."
+      ]
+    },
+    {
+      "id": "talk-usai-locanda",
+      "target": "usai",
+      "label": "Siediti al tavolo del signor Usai",
+      "when": {
+        "all": [
+          {
+            "flag": "ch4"
+          },
+          {
+            "at": "locanda"
+          },
+          {
+            "flag": "arrest",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "«Il giornalista. Ci incontriamo spesso.» Usai non si stupisce di vederti. Gira il bicchiere di vernaccia senza berlo. «Parto stasera. Affari a Genova, per conto della famiglia. Il notaio può leggere quello che vuole anche senza di me: io ho fatto il mio dovere.»",
+        "Si china un poco, con la sua voce gentile che non si alza mai. «Lei è giovane. Si scrivono tante cose, nei giornali. Poi si pagano. Un ragazzo, l'altra notte, si è fatto male per molto meno.»",
+        "Si alza, prende la valigia, ti saluta con due dita sul cappello. Ma non esce: si siede a un altro tavolo, vicino alla porta, da dove si vede il molo."
+      ]
+    },
+    {
+      "id": "talk-scrivano",
+      "target": "scrivano",
+      "label": "Chiedi di parlare con il notaio",
+      "when": {
+        "flag": "notaryRead",
+        "value": false
+      },
+      "text": [
+        "«Il notaio non riceve senza appuntamento. E non riceve giornalisti, mai.» Lo scrivano ti squadra dalla testa ai piedi, e lo sguardo si ferma sulle scarpe.",
+        {
+          "text": "«E comunque non così. Qui viene gente di Castello.»",
+          "when": {
+            "flag": "shoes",
+            "value": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "give-lettera",
+      "target": "scrivano",
+      "item": "lettera",
+      "label": "Consegna allo scrivano la lettera di Vinelli",
+      "when": {
+        "flag": "notaryRead",
+        "value": false
+      },
+      "requires": {
+        "flag": "shoes"
+      },
+      "failure": [
+        "Lo scrivano prende la busta, ma il suo sguardo è fermo più in basso: sulle tue scarpe, ancora grigie della polvere della calata e della calce del cantiere. Te la restituisce con due dita.",
+        "«Il notaio riceve le persone, signore. Non la polvere.» E torna ai suoi registri."
+      ],
+      "text": [
+        "Lo scrivano rigira la busta, riconosce il sigillo, sparisce dietro la porta a vetri. Dopo un minuto ti fa entrare.",
+        "Il notaio Floris è un omino rotondo con i favoriti bianchi. Legge la lettera di Vinelli, sospira. «Marcello sa come chiedere le cose. Bene: le leggo quello che leggerò a tutti domattina. Niente di più.»",
+        "Apre un faldone. Dentro, un foglio solo, scritto con una grafia larga e un po' tremante. «Testamento olografo di donna Rosalia Pinna, datato Cagliari, 15 dicembre 1889. Presentato a questo studio il 22 dicembre dal nipote, cavalier Vittorio Pinna, che lo ha ricevuto dall'amministratore, signor Usai, che lo aveva rinvenuto nello scrittoio della defunta.»",
+        "Legge: «Io, Rosalia Pinna, scrivendo tutto di mio pugno, lascio ogni mio bene al nipote Vittorio. Nomino esecutore il mio fedele amministratore Raimondo Usai. E che il palazzo resti affidato, sino all'apertura della successione, alla vigilanza delle Guardie di città».",
+        "Ricopi la riga parola per parola nel taccuino. Guardie di città: dove l'hai sentito di recente, questo nome? Il notaio ti lascia fare, poi chiude il faldone. «La grafia non è bellissima, ma la signora era anziana, e malata. La firma mi sembra la sua.»",
+        "Sulla soglia, abbassando la voce: «Se cerca qualcuno che conosca quella casa, non lo cerchi in Castello. Usai ha mandato via la governante, Tzia Mallena, il giorno dopo il funerale. Sta a Villanova, dalle consorelle di San Giacomo. Trentun anni in quella casa, e l'hanno messa alla porta con un fagotto.»",
+        "Quando esci in Piazza Palazzo, il sole è già dietro Stampace. La giornata se n'è andata così."
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "notaryRead"
+        },
+        {
+          "type": "flag",
+          "id": "leadMallena"
+        },
+        {
+          "type": "move",
+          "id": "lettera",
+          "to": "offstage"
+        },
+        {
+          "type": "clue",
+          "id": "testamento"
+        }
+      ]
+    },
+    {
+      "id": "chat-scrivano",
+      "target": "scrivano",
+      "label": "Saluta lo scrivano",
+      "when": {
+        "flag": "notaryRead"
+      },
+      "text": [
+        "Lo scrivano ti fa un mezzo inchino, il minimo indispensabile. «Il notaio legge il testamento domattina alle dieci. Ai parenti. Lei non è un parente.»"
+      ]
+    },
+    {
+      "id": "examine-print",
+      "target": "stampa",
+      "item": "lente",
+      "label": "Guarda la fotografia con la lente",
+      "when": {
+        "flag": "printExamined",
+        "value": false
+      },
+      "text": [
+        "Avvicini la lente alla stampa e la fai scorrere piano, come ti ha insegnato Cadoni: prima il viso, poi le mani, poi lo sfondo.",
+        "Il viso è quello di una donna di settant'anni che non si è mai lasciata dire di no. Le mani, invece… Ti fermi. Il polso destro è stretto in una stecca di legno, fasciata di bende incrociate a otto. La mano destra riposa inerte sopra la sinistra, e il rosario lo tiene la sinistra.",
+        "Il 17 dicembre, donna Rosalia aveva il polso destro rotto. Il 15, due giorni prima, avrebbe scritto il suo testamento «tutto di suo pugno»?"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "printExamined"
+        },
+        {
+          "type": "clue",
+          "id": "ritratto"
+        }
+      ]
+    },
+    {
+      "id": "look-print-plain",
+      "target": "stampa",
+      "label": "Guarda la fotografia",
+      "when": {
+        "flag": "printExamined",
+        "value": false
+      },
+      "text": [
+        "Donna Rosalia, seduta, in nero, con il rosario. La luce viene dalla finestra a sinistra. È una bella fotografia, nitida. Così piccola, però, che i dettagli si perdono: per guardarla davvero ci vorrebbe una lente."
+      ]
+    },
+    {
+      "id": "compare-giornale",
+      "target": "taccuino",
+      "item": "giornale",
+      "label": "Confronta il giornale con la riga del testamento",
+      "when": {
+        "all": [
+          {
+            "flag": "notaryRead"
+          },
+          {
+            "flag": "anachronism",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Apri il taccuino sulla riga del testamento, e accanto apri il giornale del 23. «Alla vigilanza delle Guardie di città.» «Con Regio Decreto del 21 corrente è istituito il Corpo delle Guardie di città.»",
+        "Il 15 dicembre le Guardie di città non esistevano. Non esisteva nemmeno il nome: fino al 21 erano guardie di pubblica sicurezza, come ti ha detto la guardia del molo. E il 21 donna Rosalia era già morta da un giorno.",
+        "Chi ha scritto quella riga l'ha scritta dopo il 21 dicembre, leggendo i giornali. Cerchi due volte «Guardie di città» e scrivi a margine, ben chiaro: 21 dicembre. Lei è morta il 20."
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "anachronism"
+        },
+        {
+          "type": "clue",
+          "id": "anacronismo"
+        }
+      ]
+    },
+    {
+      "id": "read-giornale",
+      "target": "giornale",
+      "label": "Leggi il giornale del 23",
+      "text": [
+        "Rileggi le notizie della settimana di Natale. In prima pagina, ancora le polemiche sulle elezioni di novembre e sulla nuova giunta. In seconda, un carro rovesciato in via Sassari e una lite al mercato. In terza, da Roma, il decreto del 21 sul Corpo delle Guardie di città.",
+        "In quarta, fra gli annunci dei vapori: «Vapore postale per Genova, partenze il 31 dicembre e il 7 gennaio, ore 22»."
+      ]
+    },
+    {
+      "id": "read-taccuino",
+      "target": "taccuino",
+      "label": "Rileggi gli appunti",
+      "text": [
+        {
+          "text": "Gli appunti sono ancora pochi: «Uomo ferito al Molo della Dogana, notte 28–29. Ripete \"diciassette\". Dice Vinelli: comincia da dove l'hanno trovato.»",
+          "when": {
+            "all": [
+              {
+                "flag": "briefed"
+              },
+              {
+                "flag": "searched",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Un frammento di lastra fotografica e un biglietto dello studio Cadoni, via Manno. Il biglietto lo hanno in tasca in mille; il frammento è un'altra cosa: chi può riconoscere una lastra meglio di chi l'ha scattata?»",
+          "when": {
+            "all": [
+              {
+                "flag": "searched"
+              },
+              {
+                "flag": "knowsName",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Il ferito si chiama Gavino Atzeni. La sorella, Teresa, vende arance al mercato. In corsia la suora lascia entrare solo i parenti.»",
+          "when": {
+            "all": [
+              {
+                "flag": "knowsName"
+              },
+              {
+                "flag": "teresaCame",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Teresa è andata all'ospedale. Raggiungila in corsia.»",
+          "when": {
+            "all": [
+              {
+                "flag": "teresaCame"
+              },
+              {
+                "flag": "sawGavino",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Gavino ha lasciato un baule al deposito della stazione, ricevuta n. 304.»",
+          "when": {
+            "all": [
+              {
+                "flag": "sawGavino"
+              },
+              {
+                "flag": "bauleOut",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Il baule ha un lucchetto a quattro cifre. Teresa: Gavino usa il numero e il mese di una lastra a cui tiene, come li scrive Cadoni nel registro. Gavino, nel delirio: \"diciassette… dodici\".»",
+          "when": {
+            "all": [
+              {
+                "flag": "bauleOut"
+              },
+              {
+                "flag": "bauleOpen",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "Manca ancora una cosa: dare un'occhiata al registro delle lastre di Cadoni, per sapere cosa c'è sopra quella lastra.",
+          "when": {
+            "all": [
+              {
+                "flag": "knowsName"
+              },
+              {
+                "flag": "registerRead",
+                "value": false
+              },
+              {
+                "flag": "lastraGiven",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Una lastra, un negativo. Per vederla davvero bisogna stamparla. Chi meglio di Cadoni?»",
+          "when": {
+            "all": [
+              {
+                "flag": "bauleOpen"
+              },
+              {
+                "flag": "lastraGiven",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«La stampa sarà pronta domattina. Intanto: fare rapporto a Vinelli.»",
+          "when": {
+            "all": [
+              {
+                "flag": "lastraGiven"
+              },
+              {
+                "flag": "ch2",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Ritirare la stampa da Cadoni, verso le dieci.»",
+          "when": {
+            "all": [
+              {
+                "flag": "ch2"
+              },
+              {
+                "flag": "printTaken",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«La fotografia è piccola: Cadoni mi ha prestato la lente. Guardarla bene, centimetro per centimetro.»",
+          "when": {
+            "all": [
+              {
+                "flag": "printTaken"
+              },
+              {
+                "flag": "printExamined",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Il polso rotto: chi l'ha curata potrebbe metterlo per iscritto. Il dottor Ledda ha detto di averla seguita lui, nelle ultime settimane.»",
+          "when": {
+            "all": [
+              {
+                "flag": "printExamined"
+              },
+              {
+                "not": {
+                  "has": "attestazione"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Gavino è sveglio, all'ospedale. Ora può raccontare.»",
+          "when": {
+            "all": [
+              {
+                "flag": "ch2"
+              },
+              {
+                "flag": "gavinoTalk",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Il notaio Floris: lettera di Vinelli. Ma lo scrivano guarda le scarpe, e le mie fanno paura. All'imbocco di via Manno c'è un lustrascarpe.»",
+          "when": {
+            "all": [
+              {
+                "flag": "ch2"
+              },
+              {
+                "flag": "notaryRead",
+                "value": false
+              },
+              {
+                "flag": "shoes",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Scarpe lucide, lettera in tasca: lo studio del notaio è in Piazza Palazzo.»",
+          "when": {
+            "all": [
+              {
+                "flag": "ch2"
+              },
+              {
+                "flag": "notaryRead",
+                "value": false
+              },
+              {
+                "flag": "shoes"
+              }
+            ]
+          }
+        },
+        {
+          "text": "«La riga del testamento sulle Guardie di città. Dove l'ho già letto, questo nome? E da quando esiste? Il giornale del 23 è nella pila, in redazione.»",
+          "when": {
+            "all": [
+              {
+                "flag": "notaryRead"
+              },
+              {
+                "flag": "anachronism",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Tzia Mallena, la governante licenziata: a Villanova, dalle consorelle di San Giacomo.»",
+          "when": {
+            "all": [
+              {
+                "flag": "leadMallena"
+              },
+              {
+                "flag": "mallena",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Tziu Bachis, il carrettiere del mattatoio. Uno che chiede un toscano: c'è una rivendita di tabacchi proprio sulla piazza di San Giacomo.»",
+          "when": {
+            "all": [
+              {
+                "flag": "leadBachis"
+              },
+              {
+                "flag": "bachis",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«La chiave della porticina, nel vicolo dietro palazzo Pinna.»",
+          "when": {
+            "all": [
+              {
+                "has": "chiave"
+              },
+              {
+                "flag": "porticina",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«La combinazione della cassaforte: l'anno in cui la città smise di essere una fortezza. Chi può saperlo meglio di chi fa la guardia a una porta che nessuno chiude più?»",
+          "when": {
+            "all": [
+              {
+                "flag": "porticina"
+              },
+              {
+                "flag": "safeOpen",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Una voce sentita a Buon Cammino, quella sera: una voce sola, ma forse vale la pena di ascoltarne altre. Chi ascolta i passanti, lassù, dice di sapere il futuro.»",
+          "when": {
+            "all": [
+              {
+                "flag": "notaryRead"
+              },
+              {
+                "not": {
+                  "clue": "voce"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Tutto sul tavolo di Vinelli, prima che sia troppo tardi.»",
+          "when": {
+            "all": [
+              {
+                "has": "testamento87"
+              },
+              {
+                "clue": "bachis"
+              },
+              {
+                "flag": "ch4",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Il nipote, Vittorio, alla locanda del Leone d'oro.»",
+          "when": {
+            "all": [
+              {
+                "flag": "ch4"
+              },
+              {
+                "not": {
+                  "clue": "nipote"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Il vapore per Genova: in dogana si sa cosa parte e chi lo manda. Ma il doganiere parla solo per servizio. Cosa potrebbe convincerlo che è servizio?»",
+          "when": {
+            "all": [
+              {
+                "flag": "ch4"
+              },
+              {
+                "not": {
+                  "has": "polizza"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "text": "«Il brigadiere, sul molo. Mi serviranno fatti, non voci: il medico, la fotografia, la riga sulle Guardie, il testamento vero, le testimonianze di Gavino e di Bachis, la polizza, il nipote.»",
+          "when": {
+            "all": [
+              {
+                "flag": "ch4"
+              },
+              {
+                "flag": "convinced",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«La polizza dice una cassa R·U·, kg 38. In magazzino, con il brigadiere.»",
+          "when": {
+            "all": [
+              {
+                "flag": "convinced"
+              },
+              {
+                "flag": "arrest",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "text": "«La prima pagina di domani. Peppino aspetta al banco di composizione. In ordine, come sul calendario.»",
+          "when": {
+            "flag": "arrest"
+          }
+        },
+        {
+          "text": "Le pagine si riempiono di nomi, date, frecce. Una cosa la sai: le date non mentono, le persone sì.",
+          "when": {
+            "flag": "briefed"
+          }
+        },
+        {
+          "text": "Il taccuino è ancora bianco, a parte una lista della spesa di tua madre. Il direttore ti stava cercando.",
+          "when": {
+            "flag": "briefed",
+            "value": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "talk-vecchia",
+      "target": "vecchia",
+      "label": "Chiedi alla vecchia cosa ascolta",
+      "text": [
+        "«Is ascurtus, fillu miu.» La vecchia non si volta. «Una domanda nel cuore, e poi ascolti. La prima frase che passa è la risposta. Mia nonna lo faceva, e la nonna di mia nonna.»",
+        "«Si fa nelle notti giuste, dici? Il Signore non guarda il calendario.» Una pausa. «E nemmeno i fatti lo guardano. Ascolta, ascolta: è la sera dei treni e dei vapori, la gente parla di partenze.»"
+      ]
+    },
+    {
+      "id": "listen-passanti",
+      "target": "passanti",
+      "label": "Fai anche tu is ascurtus: ascolta i passanti",
+      "when": {
+        "all": [
+          {
+            "flag": "ch2"
+          },
+          {
+            "not": {
+              "clue": "voce"
+            }
+          }
+        ]
+      },
+      "text": [
+        "Ti appoggi al muretto, accanto alla vecchia, e ti fai una domanda nel cuore: chi ha colpito Gavino? Poi ascolti.",
+        "Due soldati: «…e il sergente dice che il rancio di Capodanno…» Niente.",
+        "Una servetta all'altra: «…a lei le hanno detto che la sposa, ma tu non ci credere…» Niente.",
+        "Poi due signori con il bastone, che passano piano verso il carcere nuovo: «…Usai? Ha comprato il biglietto per il vapore di Genova, quello del trentuno. Prima classe. Uno che fa l'amministratore, in prima classe…» «…eredità, eredità. Chi amministra mangia…» Le voci si allontanano nel vento.",
+        "La vecchia, accanto a te, fa il segno della croce. «Hai sentito? Uno che parte. Le partenze, a Capodanno, portano male a chi resta.» Tu non sai se sia un presagio. Sai solo che è una voce, sentita per strada. Una voce non è un fatto. Ma si può verificare."
+      ],
+      "effects": [
+        {
+          "type": "clue",
+          "id": "voce"
+        }
+      ]
+    },
+    {
+      "id": "listen-again",
+      "target": "passanti",
+      "label": "Ascolta ancora",
+      "when": {
+        "clue": "voce"
+      },
+      "text": [
+        "«…la vernaccia di quest'anno è aceto…» «…mio cugino di Quartu ha venduto il bue…» «…a mezzanotte, dicono, cambia la legge…» La città parla di tutto e di niente. La vecchia, accanto a te, sorride senza denti."
+      ]
+    },
+    {
+      "id": "open-porticina",
+      "target": "porticina",
+      "item": "chiave",
+      "label": "Apri la porticina con la chiave di Tzia Mallena",
+      "when": {
+        "flag": "porticina",
+        "value": false
+      },
+      "text": [
+        "La chiave entra dura, gira con un lamento. Dentro, una scala di servizio, stretta e buia, che sale a gomiti fino all'ultimo piano. Tzia Mallena ti ha detto: terza porta a destra, la stanza della signora. Il portiere dorme dall'altra parte del palazzo, e dopo cena non sente nemmeno le cannonate."
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "porticina"
+        }
+      ]
+    },
+    {
+      "id": "knock-porticina",
+      "target": "porticina",
+      "label": "Prova la porticina",
+      "when": {
+        "all": [
+          {
+            "flag": "porticina",
+            "value": false
+          },
+          {
+            "not": {
+              "has": "chiave"
+            }
+          }
+        ]
+      },
+      "text": [
+        "Chiusa. Il legno è duro come pietra. La serratura è di quelle antiche, che si aprono solo con la loro chiave: non c'è grimaldello che tenga, e tu non sei un ladro."
+      ]
+    },
+    {
+      "id": "open-safe",
+      "target": "cassaforte",
+      "label": "Componi la combinazione",
+      "when": {
+        "flag": "safeOpen",
+        "value": false
+      },
+      "input": {
+        "kind": "keypad",
+        "keys": [
+          {
+            "id": "s1",
+            "label": "1"
+          },
+          {
+            "id": "s2",
+            "label": "2"
+          },
+          {
+            "id": "s3",
+            "label": "3"
+          },
+          {
+            "id": "s4",
+            "label": "4"
+          },
+          {
+            "id": "s5",
+            "label": "5"
+          },
+          {
+            "id": "s6",
+            "label": "6"
+          },
+          {
+            "id": "s7",
+            "label": "7"
+          },
+          {
+            "id": "s8",
+            "label": "8"
+          },
+          {
+            "id": "s9",
+            "label": "9"
+          },
+          {
+            "id": "s0",
+            "label": "0"
+          }
+        ],
+        "answer": [
+          "s1",
+          "s8",
+          "s6",
+          "s1"
+        ],
+        "wrong": [
+          "Le rotelle girano con un ticchettio, la manopola non si muove. Nel silenzio del palazzo, ogni scatto ti sembra un colpo di cannone.",
+          "Tzia Mallena ha detto: l'anno in cui la città smise di essere una fortezza."
+        ]
+      },
+      "text": [
+        "Uno, otto, sei, uno. L'anno in cui Cagliari si tolse il corsetto. La manopola gira, lo sportello si apre con un sospiro di ferro.",
+        "Dentro non c'è denaro e non ci sono gioielli. Ci sono due cose. Due fogli di carta pesante, piegati in quattro, con la grafia ferma e inclinata di chi è abituato a comandare: il testamento di donna Rosalia, del 2 febbraio 1887. E un foglio protocollo con l'inventario, voce per voce, dei gioielli e dell'argenteria di famiglia.",
+        "Leggi il testamento a lume di candela. Il palazzo e le rendite all'Ospedale Civile, per i poveri. Un vitalizio a Tzia Mallena. Un anello al nipote. Di Usai, nemmeno il nome.",
+        "Vinelli deve vedere queste carte, stanotte stessa."
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "safeOpen"
+        },
+        {
+          "type": "take",
+          "id": "testamento87"
+        },
+        {
+          "type": "take",
+          "id": "inventario"
+        }
+      ]
+    },
+    {
+      "id": "look-cofanetto",
+      "target": "cofanetto",
+      "label": "Guarda il cofanetto",
+      "text": [
+        "Velluto blu, scomparti sagomati: una collana lunga, una parure, anelli, spille, una croce. Tutti vuoti. Le impronte nel velluto sono ancora nette, come se i gioielli fossero stati tolti pochi giorni fa.",
+        {
+          "text": "Confronti con l'inventario: collana di filigrana con diciassette bottoni sardi, la croce, la parure di corallo. Sono tutti spariti, e con loro la cassetta dell'argenteria. Tzia Mallena giura che il 20, il giorno della morte, erano ancora qui.",
+          "when": {
+            "has": "inventario"
+          }
+        }
+      ]
+    },
+    {
+      "id": "look-scrittoio",
+      "target": "scrittoio",
+      "label": "Guarda lo scrittoio",
+      "text": [
+        "È qui che Usai dice di aver trovato il testamento del 15. Il calamaio è pieno fino all'orlo, la penna pulita, la carta da lettere intatta. Uno scrittoio che non ha più scritto niente da settimane. Una signora con il polso rotto non avrebbe nemmeno potuto svitare il tappo del calamaio."
+      ]
+    },
+    {
+      "id": "talk-mallena",
+      "target": "mallena",
+      "label": "Parla con Tzia Mallena",
+      "when": {
+        "flag": "mallena",
+        "value": false
+      },
+      "text": [
+        "Tzia Mallena ti ascolta senza smettere di cucire. Quando nomini il testamento del 15, l'ago si ferma.",
+        "«Il 15? La signora non poteva nemmeno abbottonarsi il vestito. La vestivo io, la imboccavo io. Scrivere? Mi dettava le lettere, e io scrivevo come potevo, che ho fatto solo la terza elementare.» Scuote la testa. «E poi la signora il testamento l'aveva già fatto, anni fa. Lo teneva in cassaforte, nello studio, dove teneva i conti. Usai non ha mai saputo la combinazione. Lei non si fidava. Diceva sempre: chi amministra mangia.»",
+        "«La combinazione?» Un sorriso piccolo, triste. «Era l'anno in cui la città smise di essere una fortezza, diceva lei. Non ha mai perdonato quelli che hanno buttato giù le mura. Io di queste cose non so niente: so che erano quattro numeri.»",
+        "Poi abbassa la voce, anche se nella stanza ci sono solo i gonfaloni. «C'è un'altra cosa. La sera del 28 sono salita in Castello a riprendermi le mie cose, dalla porticina del vicolo: la chiave non gliel'ho mai ridata, a quello. E ho visto Usai che caricava una cassa sul carro di Tziu Bachis, il carrettiere del mattatoio. Di notte, alle dieci passate. Una cassa pesante, che ci volevano due uomini.»",
+        "Si sfila dal collo un nastrino di seta nera con una chiave di ferro e te la mette in mano. «Terza porta a destra, all'ultimo piano. Il portiere dorme dall'altra parte, e dopo cena non sente niente. Vada di sera. E mi porti notizie.»",
+        "Mentre esci aggiunge: «In giro dicono che Usai se ne vuole andare. Chi lo sa dove. Se vuole sapere cosa dice la città, salga a Buon Cammino la sera: le vecchie, lassù, fanno is ascurtus, e si sente tutto quello che passa.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "mallena"
+        },
+        {
+          "type": "flag",
+          "id": "leadBachis"
+        },
+        {
+          "type": "take",
+          "id": "chiave"
+        },
+        {
+          "type": "clue",
+          "id": "mallena"
+        }
+      ]
+    },
+    {
+      "id": "chat-mallena",
+      "target": "mallena",
+      "label": "Saluta Tzia Mallena",
+      "when": {
+        "flag": "mallena"
+      },
+      "text": [
+        {
+          "text": "«Vada con Dio, fillu. E stia attento: quell'uomo sorride sempre, anche quando ti chiude la porta in faccia.»",
+          "when": {
+            "not": {
+              "has": "testamento87"
+            }
+          }
+        },
+        {
+          "text": "Le racconti della cassaforte e del testamento. Tzia Mallena si copre la faccia con le mani. Quando le toglie, sorride. «Lo sapevo. Lo sapevo che la signora non mi aveva dimenticata.»",
+          "when": {
+            "has": "testamento87"
+          }
+        }
+      ]
+    },
+    {
+      "id": "talk-confratelli",
+      "target": "confratelli",
+      "label": "Ascolta i confratelli",
+      "text": [
+        "«Il nipote, si sa, è una testa vuota. Ma cattivo no.» «Cattivo no, ma ha debiti fino al collo. Al circolo non gli fanno più credito.» «E chi glieli paga, i debiti?» «Chi gli presta i soldi, no? Uno che di soldi se ne intende.»",
+        "Si girano verso di te, tutti e due insieme. «E lei, chi è? Uno dei giornali?» E non dicono più niente."
+      ]
+    },
+    {
+      "id": "talk-bachis",
+      "target": "bachis",
+      "label": "Chiedi a Tziu Bachis della notte del 28",
+      "when": {
+        "flag": "bachis",
+        "value": false
+      },
+      "text": [
+        "Tziu Bachis continua a strigliare il mulo. «Is giornalistas. Scrivete, scrivete, e poi la gente legge e parla, e io con la gente non voglio parlare.»",
+        "Si ferma, si guarda le tasche, sospira. «Mi è finito il tabacco. Senza un toscano non mi ricordo niente: è la vecchiaia.»"
+      ]
+    },
+    {
+      "id": "give-sigaro",
+      "target": "bachis",
+      "item": "sigaro",
+      "label": "Offri il toscano a Tziu Bachis",
+      "when": {
+        "flag": "bachis",
+        "value": false
+      },
+      "text": [
+        "Tziu Bachis prende il sigaro, lo annusa, lo spezza in due e se ne mette mezzo in tasca. L'altro mezzo lo accende con un fiammifero sfregato sul carro.",
+        "«Ajò, la memoria torna.» Una boccata. «La sera del 28 il signor Usai è venuto qui di persona, con il cappello duro e i guanti. Mi ha pagato il doppio per una corsa di notte. Una cassa, dal vicolo di palazzo Pinna fino al magazzino della calata. Pesante: l'abbiamo caricata in due, io e lui.»",
+        "«Alla calata c'era un giovanotto, vicino ai sacchi, che aspettava. Il signor Usai mi ha detto: lasci la cassa e se ne vada, che il resto lo sbrigo io. Io ho girato il carro e me ne sono andato. Dopo cento passi ho sentito un grido. Uno solo.»",
+        "Ti guarda, per la prima volta. «Io non ho visto niente, capito? Ho sentito. Ma se un giudice me lo chiede, quello che ho sentito lo dico. Eja, lo dico.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "bachis"
+        },
+        {
+          "type": "move",
+          "id": "sigaro",
+          "to": "offstage"
+        },
+        {
+          "type": "clue",
+          "id": "bachis"
+        }
+      ]
+    },
+    {
+      "id": "chat-bachis",
+      "target": "bachis",
+      "label": "Saluta Tziu Bachis",
+      "when": {
+        "flag": "bachis"
+      },
+      "text": [
+        "Tziu Bachis fa un cenno con il mezzo toscano. «Il mulo si chiama Zanardelli. L'ho chiamato così a ottobre: è testardo, e cambia tutto lui.»"
+      ]
+    },
+    {
+      "id": "look-mattatoio",
+      "target": "bachis",
+      "label": "Guarda il mattatoio",
+      "text": [
+        "Dal portone si vede il cortile lastricato, i ganci, i canali di scolo. Un garzone lava le pietre con secchiate d'acqua. In consiglio comunale lo chiamano «una vergogna igienica»; qui lo chiamano «il lavoro»."
+      ]
+    },
+    {
+      "id": "show-tessera-doganiere",
+      "target": "doganiere",
+      "item": "tessera",
+      "label": "Mostra la tessera al doganiere",
+      "when": {
+        "not": {
+          "has": "polizza"
+        }
+      },
+      "text": [
+        "Il doganiere guarda la tessera senza toccarla. «L'Unione Sarda. Bene. I manifesti di carico sono documenti di servizio, non notizie.» Indica il cartello: «Si parla solo per servizio.» E timbra il modulo successivo."
+      ]
+    },
+    {
+      "id": "show-inventario-doganiere",
+      "target": "doganiere",
+      "item": "inventario",
+      "label": "Mostra l'inventario dei gioielli al doganiere",
+      "when": {
+        "not": {
+          "has": "polizza"
+        }
+      },
+      "requires": {
+        "clue": "voce"
+      },
+      "failure": [
+        "Il doganiere scorre la lista: corallo, filigrana, granati, argenteria. «Bei gioielli. E allora?» Ti guarda sopra gli occhiali. «Qui partono cento casse al giorno. Mi dica chi spedisce e su quale vapore, e vediamo. Altrimenti non mi faccia perdere tempo.»"
+      ],
+      "text": [
+        "«Gioielli e argenteria spariti da un palazzo di Castello, e uno che parte stasera con il vapore di Genova: il signor Usai.» Il doganiere smette di timbrare. Scorre la lista dei gioielli, poi apre il registro dei manifesti e fa scorrere il dito.",
+        "«Usai, Raimondo. Una cassa, contrassegno R·U·, libri usati, kg 38. Imbarco stasera. Biglietto di prima classe a nome dello stesso.» Si toglie gli occhiali e ti restituisce l'inventario. «Libri usati, in prima classe.»",
+        "«Io non posso aprire una cassa piombata senza un ordine. Ma lo possono fare i Carabinieri, se qualcuno li convince.» Ricopia la polizza su un modulo, ci mette il timbro e te lo passa sotto la grata. «Per il brigadiere. Questo è servizio.»"
+      ],
+      "effects": [
+        {
+          "type": "take",
+          "id": "polizza"
+        },
+        {
+          "type": "clue",
+          "id": "polizza"
+        }
+      ]
+    },
+    {
+      "id": "look-registri",
+      "target": "doganiere",
+      "label": "Guarda i registri dei manifesti",
+      "text": [
+        "Registri di tela verde, uno per ogni mese e per ogni vapore. Ogni cassa che entra o esce dal porto ha la sua riga, il suo peso, il suo contrassegno. Dal vapore al magazzino, dal magazzino al carro, una catena di fogli: basta un anello falso perché tutta la catena menta."
+      ]
+    },
+    {
+      "id": "talk-vittorio",
+      "target": "vittorio",
+      "label": "Siediti con Vittorio Pinna",
+      "when": {
+        "not": {
+          "clue": "nipote"
+        }
+      },
+      "text": [
+        "Vittorio Pinna ti guarda come si guarda un altro bicchiere. «Un giornalista. Siediti. Vuoi sapere quanto ho perso a carte? Tutto. Anche quello che non avevo ancora.»",
+        "Gli dici del polso, della fotografia, della riga sulle Guardie di città. Il nipote smette di far girare il bicchiere.",
+        "«Io quel testamento non l'ho nemmeno letto, prima di portarlo al notaio. Me l'ha dato Usai, il 22, nella sala grande. Mi ha detto: l'ho trovato nello scrittoio della zia, portalo tu da Floris, che sei la famiglia. Io l'ho portato. Ero contento. Ero ubriaco, e contento.»",
+        "Tira fuori dalla giacca un mazzetto di fogli con il bollo e li butta sul tavolo. «Sai a chi devo trentaseimila lire? Dodici cambiali, tutte a lui. Ogni volta che perdevo al circolo, il buon Usai mi prestava. Con gli interessi. Se eredito io, il palazzo finisce a lui entro l'estate.» Ride, una risata brutta. «E io credevo che mi volesse bene.»",
+        "Te ne spinge una attraverso il tavolo. «Tieni. Portala a chi vuoi. È la verità, anche se è una verità che mi fa schifo.»"
+      ],
+      "effects": [
+        {
+          "type": "take",
+          "id": "cambiale"
+        },
+        {
+          "type": "clue",
+          "id": "nipote"
+        }
+      ]
+    },
+    {
+      "id": "chat-vittorio",
+      "target": "vittorio",
+      "label": "Parla ancora con Vittorio",
+      "when": {
+        "clue": "nipote"
+      },
+      "text": [
+        {
+          "text": "«La zia mi diceva sempre: metti la testa a posto. Guarda adesso, che posto ho trovato.» Ordina un altro bicchiere, poi lo rimanda indietro.",
+          "when": {
+            "flag": "arrest",
+            "value": false
+          }
+        },
+        {
+          "text": "Vittorio ha saputo dell'arresto da un marinaio. Ti stringe la mano, con forza. «Domani vado da Floris. A piedi, sobrio, e con le scarpe pulite.»",
+          "when": {
+            "flag": "arrest"
+          }
+        }
+      ]
+    },
+    {
+      "id": "accuse-vittorio",
+      "target": "brigadiere",
+      "label": "Accusa il nipote, Vittorio Pinna",
+      "when": {
+        "flag": "convinced",
+        "value": false
+      },
+      "text": [
+        "«Il nipote?» Il brigadiere non si scompone. «Debiti, carte, vino: lo sa tutta Cagliari. E tutta Cagliari dice che ha falsificato il testamento per pagarsi i debiti.» Si tocca i baffi. «Tutta Cagliari dice. Lei mi porta una voce, giovanotto, e io con le voci non arresto nessuno: con le voci si scrivono i giornali. Ha un fatto? Qualcuno che l'ha visto scrivere? Una carta?»",
+        {
+          "text": "«E poi, scusi: lei stesso mi dice che quell'uomo deve tutto all'amministratore. Se il testamento fa erede lui, a chi conviene davvero?»",
+          "when": {
+            "clue": "nipote"
+          }
+        }
+      ]
+    },
+    {
+      "id": "tell-voce",
+      "target": "brigadiere",
+      "label": "Racconta al brigadiere quello che hai sentito a Buon Cammino",
+      "when": {
+        "all": [
+          {
+            "clue": "voce"
+          },
+          {
+            "flag": "convinced",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Il brigadiere ti ascolta fino in fondo, con pazienza. «Is ascurtus. Lo fa anche mia suocera, che è di Quartu.» Non sorride. «Due signori che passavano dicevano che Usai ha il biglietto per il vapore. Benissimo: se lo dicono in dogana, è un fatto. Se lo dicono due signori col bastone, è una chiacchiera. Mi porti la dogana.»"
+      ]
+    },
+    {
+      "id": "accuse-usai",
+      "target": "brigadiere",
+      "label": "Accusa l'amministratore, Raimondo Usai",
+      "when": {
+        "flag": "convinced",
+        "value": false
+      },
+      "requires": {
+        "all": [
+          {
+            "flag": "printExamined"
+          },
+          {
+            "has": "attestazione"
+          },
+          {
+            "flag": "anachronism"
+          },
+          {
+            "has": "testamento87"
+          },
+          {
+            "clue": "gavino"
+          },
+          {
+            "clue": "bachis"
+          },
+          {
+            "has": "polizza"
+          },
+          {
+            "clue": "nipote"
+          }
+        ]
+      },
+      "failure": [
+        "Il brigadiere ti ascolta, poi scuote la testa. «Un amministratore di casa nobile, con trent'anni di servizio e amici in Prefettura. Se sbaglio, domani il giornale lo scrive di me. Mi porti fatti, non impressioni. Mi manca ancora qualcosa.»",
+        {
+          "text": "«Lei dice che la signora non poteva scrivere. Chi lo dice? Un medico? Lo voglio per iscritto.»",
+          "when": {
+            "not": {
+              "has": "attestazione"
+            }
+          }
+        },
+        {
+          "text": "«E una fotografia di quei giorni: se c'è, voglio vedere io con questi occhi quello che si vede.»",
+          "when": {
+            "not": {
+              "flag": "printExamined"
+            }
+          }
+        },
+        {
+          "text": "«E la riga di quel testamento: lei dice che non può essere della signora. Perché? Le grafie si discutono per anni, davanti ai giudici. Mi serve qualcosa che non si discuta.»",
+          "when": {
+            "flag": "anachronism",
+            "value": false
+          }
+        },
+        {
+          "text": "«Se quel testamento è falso, dov'è quello vero? Una signora così non muore senza aver lasciato scritto niente.»",
+          "when": {
+            "not": {
+              "has": "testamento87"
+            }
+          }
+        },
+        {
+          "text": "«E il ragazzo del molo: cosa dice lui, di quella notte? Con chi aveva appuntamento?»",
+          "when": {
+            "not": {
+              "clue": "gavino"
+            }
+          }
+        },
+        {
+          "text": "«Qualcuno ha visto l'amministratore, la notte del 28, vicino alla calata? Un testimone, uno qualsiasi.»",
+          "when": {
+            "not": {
+              "clue": "bachis"
+            }
+          }
+        },
+        {
+          "text": "«E i gioielli? Se sono partiti, voglio sapere come e per dove. In dogana sanno tutto quello che si imbarca.»",
+          "when": {
+            "not": {
+              "has": "polizza"
+            }
+          }
+        },
+        {
+          "text": "«E il nipote? È lui che ha presentato il testamento. Prima di mettere le mani su un altro, voglio sapere se il nipote è un complice o uno sciocco.»",
+          "when": {
+            "not": {
+              "clue": "nipote"
+            }
+          }
+        }
+      ],
+      "text": [
+        "Metti tutto davanti al brigadiere, sul coperchio di una botte, un pezzo alla volta. La fotografia e la lente: il polso nella stecca, il 17 dicembre. La dichiarazione del dottor Ledda: frattura del 10, niente penna per sei settimane. La riga del testamento e il giornale del 23: le Guardie di città, un nome nato il 21, il giorno dopo la morte della signora.",
+        "Poi il testamento del 1887, con la grafia ferma e la firma vera. Gavino, che aveva appuntamento con Usai alla calata. Tziu Bachis, che ha portato lì Usai e una cassa pesante, e poi ha sentito un grido. La cambiale di Vittorio. La polizza della dogana: una cassa R·U·, «libri usati», kg 38.",
+        "Il brigadiere guarda tutto, a lungo, senza toccare niente. Poi prende la polizza, la rilegge due volte e te la restituisce.",
+        "«Falsità in testamento olografo, furto, lesioni gravi. Codice vecchio, perché è stato prima di mezzanotte.» Fa un cenno a due carabinieri sulla passerella. «Andiamo in magazzino. Lei viene con noi, e mi indica la cassa. Se è quella sbagliata, ce ne torniamo a casa e io domani le faccio causa.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "convinced"
+        },
+        {
+          "type": "move",
+          "id": "brigadiere",
+          "to": "magazzino"
+        }
+      ]
+    },
+    {
+      "id": "point-seminario",
+      "target": "cassa-seminario",
+      "label": "Indica al brigadiere la cassa del Seminario",
+      "when": {
+        "all": [
+          {
+            "flag": "convinced"
+          },
+          {
+            "flag": "arrest",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Il brigadiere si china sul cartellino. «Seminario Arcivescovile. Trentotto chili, d'accordo: ma qui non c'è nessun R·U·. Vuole che apra una cassa dell'Arcivescovo, il 31 dicembre, davanti a mezzo porto?» Si raddrizza. «La polizza, giovanotto. Il contrassegno e il peso, tutti e due.»"
+      ]
+    },
+    {
+      "id": "point-ru1",
+      "target": "cassa-ru1",
+      "label": "Indica al brigadiere la cassa R·U· grande",
+      "when": {
+        "all": [
+          {
+            "flag": "convinced"
+          },
+          {
+            "flag": "arrest",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "Il brigadiere guarda il marchio, poi il gesso sul fianco, poi la polizza. «R·U·, sì. Ma qui c'è scritto cinquantadue chili, e la polizza ne dice trentotto.» Fa salire la cassa sulla stadera: cinquantadue, preciso. «Questa è una cassa di libri usati vera, scommetto. Il nostro uomo ne ha spedite due: una per la dogana, una per sé.»"
+      ]
+    },
+    {
+      "id": "point-ru2",
+      "target": "cassa-ru2",
+      "label": "Indica al brigadiere la cassa R·U· piccola",
+      "when": {
+        "all": [
+          {
+            "flag": "convinced"
+          },
+          {
+            "flag": "arrest",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "R·U·, trentotto chili, il piombino della dogana. Il brigadiere la fa salire sulla stadera: trentotto, preciso. Annuisce a un carabiniere, che taglia il piombino e fa leva con la baionetta.",
+        "Sotto uno strato di libri vecchi, di quelli che si vendono a peso, c'è la paglia. E nella paglia il rosso del corallo, il giallo della filigrana con i suoi bottoni d'oro, i granati, una croce pettorale, due candelabri d'argento avvolti nella flanella.",
+        "Il brigadiere conta i bottoni della collana, uno per uno, ad alta voce. Diciassette.",
+        "Poi esce sul molo senza correre. Dalla locanda del Leone d'oro, dieci minuti dopo, vedi uscire due carabinieri e, in mezzo a loro, un uomo grigio con il cappello duro e la valigia in mano, che cammina diritto come se fosse lui a scortarli. Passando, ti guarda. Non sorride più.",
+        "«Vada a scrivere, giovanotto», dice il brigadiere. «Prima che lo scriva L'Avvenire.»"
+      ],
+      "effects": [
+        {
+          "type": "flag",
+          "id": "arrest"
+        },
+        {
+          "type": "move",
+          "id": "usai",
+          "to": "offstage"
+        },
+        {
+          "type": "move",
+          "id": "brigadiere",
+          "to": "offstage"
+        },
+        {
+          "type": "clue",
+          "id": "cassa"
+        }
+      ]
+    },
+    {
+      "id": "look-stadera",
+      "target": "cassa-ru1",
+      "label": "Guarda la stadera",
+      "when": {
+        "flag": "convinced",
+        "value": false
+      },
+      "text": [
+        "Una stadera da porto, con il braccio di ferro lungo come un uomo e il romano di ghisa che scorre sulle tacche. Chi spedisce dichiara un peso; la dogana lo controlla qui. Ogni cassa ha il suo peso scritto col gesso sul fianco, e il peso non mente."
+      ]
+    },
+    {
+      "id": "compose-article",
+      "target": "banco",
+      "label": "Detta a Peppino l'articolo, nell'ordine giusto",
+      "when": {
+        "flag": "arrest"
+      },
+      "input": {
+        "kind": "tiles",
+        "keys": [
+          {
+            "id": "morte",
+            "label": "La morte di donna Rosalia"
+          },
+          {
+            "id": "molo",
+            "label": "L'agguato alla calata"
+          },
+          {
+            "id": "polso",
+            "label": "La caduta sulle scale e il polso rotto"
+          },
+          {
+            "id": "decreto",
+            "label": "Il decreto sulle Guardie di città"
+          },
+          {
+            "id": "data",
+            "label": "La data scritta sul testamento"
+          },
+          {
+            "id": "ritratto",
+            "label": "Il ritratto con la stecca"
+          }
+        ],
+        "answer": [
+          "polso",
+          "data",
+          "ritratto",
+          "morte",
+          "decreto",
+          "molo"
+        ],
+        "wrong": [
+          "Peppino legge la bozza a voce alta, al rovescio, sul compositoio, e storce il naso. «Così il lettore si perde, Efisio. In un articolo così le date sono tutto. Mettile in fila come sul calendario, una dopo l'altra, e la storia si racconta da sola.»",
+          "Nel diario hai tutte le date: quella del medico, quella del testamento, quella del registro di Cadoni, quella della morte, quella del giornale, quella della notte al molo."
+        ]
+      },
+      "text": [
+        "Detti, e Peppino compone. Il 10 dicembre donna Rosalia cade sulle scale del suo palazzo e si rompe il polso destro. Il 15, dice un foglio, scrive «tutto di suo pugno» il suo testamento. Il 17 si fa fotografare con il polso nella stecca. Il 20 muore. Il 21 un decreto da Roma dà un nome nuovo alle guardie, il nome che finirà nel testamento. Il 28, alla calata, qualcuno colpisce alla nuca il ragazzo che aveva fotografato quel polso.",
+        "In fila, una dopo l'altra, le date si raccontano da sole. Peppino serra il telaio, lo batte con il mazzuolo, e annuisce. «Questa si legge in piedi.»"
+      ],
+      "effects": [
+        {
+          "type": "finish",
+          "ending": "primo-gennaio"
+        }
+      ]
+    },
+    {
+      "id": "look-cantieri",
+      "target": "cantieri",
+      "label": "Guarda i cantieri",
+      "text": [
+        "Un capomastro ti spiega, senza che tu glielo chieda, che qui verrà un palazzo di quattro piani, con i portici come a Torino. «E il municipio nuovo, dicono, un giorno. Ma prima devono decidere dove. In consiglio comunale decidono tutto in dieci anni.»",
+        {
+          "text": "«Lei è del giornale? Allora lo scriva, che ci pagano tardi.»",
+          "when": {
+            "flag": "ch2",
+            "value": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "look-orologio",
+      "target": "pensilina",
+      "label": "Guarda l'orologio",
+      "text": [
+        "Le lancette scattano di un minuto, tutte insieme, con un rumore secco. Una famiglia di Senorbì, seduta sui fagotti, alza la testa a ogni scatto, per paura di perdere il treno che parte fra tre ore."
+      ]
+    },
+    {
+      "id": "look-fondale",
+      "target": "fondale",
+      "label": "Guarda il fondale",
+      "text": [
+        "Riconosci gli scalini della balaustra: sono gli stessi che si intravedono nel frammento di vetro trovato al molo. La lastra rotta che Gavino aveva in tasca era un ritratto qualunque, scattato qui davanti, da buttare."
+      ]
+    },
+    {
+      "id": "look-tavoletta",
+      "target": "tavoletta",
+      "label": "Leggi la tavoletta",
+      "text": [
+        {
+          "text": "«Sconosciuto, dal molo.» A Cagliari ci sono cinquantamila persone, e questa è l'unica che non ha nome.",
+          "when": {
+            "flag": "sawGavino",
+            "value": false
+          }
+        },
+        {
+          "text": "«Atzeni Gavino, anni 22.» Adesso ha un nome. Domani lo avrà anche sul giornale.",
+          "when": {
+            "flag": "sawGavino"
+          }
+        }
+      ]
+    },
+    {
+      "id": "look-elefante",
+      "target": "elefante",
+      "label": "Guarda l'elefantino",
+      "text": [
+        "Lo guardi dal basso, con la testa all'indietro. Un ragazzino che passa ti dice che se tocchi l'elefante ti sposi entro l'anno. Poi si ricorda che manca un giorno alla fine dell'anno, e ride."
+      ]
+    },
+    {
+      "id": "look-cattedrale",
+      "target": "cattedrale",
+      "label": "Entra un momento nella Cattedrale",
+      "text": [
+        "Dentro fa freddo e odora di incenso vecchio. Una donna in nero accende un cero davanti alla cappella del Santissimo; due canonici discutono a bassa voce di un lascito. A Cagliari anche le chiese parlano di eredità.",
+        {
+          "text": "Nella cappella di destra, un cartoncino listato a lutto: «Messa di trigesima per l'anima di donna Rosalia Pinna».",
+          "when": {
+            "flag": "ch4",
+            "value": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "look-faldoni",
+      "target": "faldoni",
+      "label": "Leggi i nomi sui faldoni",
+      "text": [
+        "Aymerich, Asquer, Cugia, Pinna, Sanjust, Zapata. Il faldone «Pinna» è grosso come un messale e ha un nastro nero. Lo scrivano ti vede guardare e ci mette sopra la mano."
+      ]
+    },
+    {
+      "id": "look-gonfaloni",
+      "target": "gonfaloni",
+      "label": "Guarda i gonfaloni",
+      "text": [
+        "Uno ha un Crocifisso in campo rosso, un altro San Giacomo con il bordone del pellegrino. Un confratello ti spiega che per la Settimana Santa li portano per tutta Villanova, e che il quartiere si conta in quante finestre si accendono al passaggio."
+      ]
+    },
+    {
+      "id": "talk-oste",
+      "target": "oste",
+      "label": "Ordina un bicchiere all'oste",
+      "text": [
+        "«Vernaccia di Oristano o nero di Monserrato?» L'oste versa senza aspettare la risposta. «Stasera c'è il vapore: tutti quelli che partono passano da qui. Chi beve per il coraggio, chi per la nostalgia, chi per i debiti.»",
+        {
+          "text": "Abbassa la voce e accenna al tavolo vicino alla porta. «Quel signore col cappello duro non beve niente. Uno che non beve prima di imbarcarsi, o ha il mal di mare o ha paura di parlare.»",
+          "when": {
+            "flag": "arrest",
+            "value": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "look-piroscafo",
+      "target": "piroscafo",
+      "label": "Guarda il vapore",
+      "text": [
+        "Facchini salgono e scendono la passerella con le casse sulle spalle. Un ufficiale di bordo controlla i biglietti e conta i bagagli. Sul ponte di prima classe, un signore con il cappello a cilindro fuma guardando la città come se l'avesse già dimenticata.",
+        {
+          "text": "Le casse per la stiva, ti dice un facchino, arrivano dal magazzino della calata dopo le otto, con il piombino della dogana.",
+          "when": {
+            "flag": "arrest",
+            "value": false
+          }
+        }
+      ]
+    },
+    {
+      "id": "talk-brigadiere",
+      "target": "brigadiere",
+      "label": "Presentati al brigadiere",
+      "when": {
+        "flag": "convinced",
+        "value": false
+      },
+      "text": [
+        "«Un giornalista.» Il brigadiere non ti stringe la mano. «Sul molo, oggi, c'è il vapore postale, e il vapore postale è affare mio. Se ha qualcosa da dirmi, me lo dica. Se ha qualcosa da chiedermi, legga i giornali domani.»",
+        "«E sappia una cosa: io non arresto nessuno per sentito dire. Voglio i fatti. Chi ha visto, chi ha scritto, chi certifica. Il resto sono chiacchiere da caffè.»"
+      ]
+    },
+    {
+      "id": "show-stampa-mallena",
+      "target": "mallena",
+      "item": "stampa",
+      "label": "Mostra la fotografia a Tzia Mallena",
+      "text": [
+        "Tzia Mallena prende la fotografia con tutte e due le mani, come si prende un'immagine sacra. «Il 17. Me lo ricordo: l'ho pettinata io, quella mattina, e le ho messo la spilla con i granati. Voleva sembrare in salute, per il ritratto. Diceva: così all'Ospedale si ricorderanno di me com'ero, non come sono.»",
+        "Ti restituisce la stampa e si asciuga gli occhi con il dorso della mano."
+      ]
+    },
+    {
+      "id": "show-stampa-vittorio",
+      "target": "vittorio",
+      "item": "stampa",
+      "label": "Mostra la fotografia a Vittorio",
+      "text": [
+        "Vittorio guarda la zia per un tempo lunghissimo. «La stecca. Gliel'ha messa Ledda, la sera che è caduta. Io reggevo il lume e piangevo come un bambino.» Si passa una mano sulla faccia. «Il 15, scrivere? Non riusciva a tenere il cucchiaio. Come ho fatto a non pensarci?»",
+        "«Perché ero contento», si risponde da solo. «Quando uno è contento non pensa.»"
+      ]
+    },
+    {
+      "id": "read-testamento87",
+      "target": "testamento87",
+      "label": "Rileggi il testamento del 1887",
+      "text": [
+        "«…lascio il mio palazzo di Castello all'Ospedale Civile, perché i poveri di questa città abbiano un letto pulito e un medico che li guardi in faccia. Ho visto troppi morire per strada, nel colera del cinquantacinque.»",
+        "La grafia è ferma, inclinata, regolare: la grafia di una mano sana. Niente a che vedere con quella del foglio del notaio, larga e tremante, come di qualcuno che cercava di imitare una vecchia."
+      ]
+    },
+    {
+      "id": "show-stampa-teresa",
+      "target": "teresa",
+      "item": "stampa",
+      "label": "Mostra la fotografia a Teresa",
+      "when": {
+        "at": "corsia"
+      },
+      "text": [
+        "Teresa guarda la fotografia, poi suo fratello. «L'ha fatta lui? È bella. È come se la signora fosse ancora viva.» La porge a Gavino, che la guarda e annuisce. «Il polso», sussurra lui. «Si vede, no? Lo vedono tutti.»"
+      ]
+    },
+    {
+      "id": "talk-custode-2",
+      "target": "custode",
+      "label": "Chiedi al custode chi passa di sera",
+      "when": {
+        "all": [
+          {
+            "flag": "notaryRead"
+          },
+          {
+            "flag": "ch4",
+            "value": false
+          }
+        ]
+      },
+      "text": [
+        "«Di sera? I canonici che tornano dal vespro, i camerieri dei signori, qualche studente ubriaco.» Ci pensa. «E l'amministratore di casa Pinna, che va e viene giù per le scalette di Villanova più spesso di un cappellano. Che ci va a fare un uomo così, laggiù fra gli orti e il mattatoio?»"
+      ]
+    }
+  ],
+  "clues": [
+    {
+      "id": "incarico",
+      "title": "Fatto · L'uomo del molo",
+      "text": [
+        "Nella notte fra il 28 e il 29 dicembre una guardia ha trovato al Molo della Dogana un uomo svenuto, con la testa ferita, senza documenti. È all'Ospedale Civile e nel delirio ripete «diciassette».",
+        "L'Avvenire di Sardegna lo chiama «contrabbandiere», senza sapere chi sia.",
+        "In Castello: donna Rosalia Pinna è morta il 20 dicembre. Il notaio Floris ha il suo testamento."
+      ]
+    },
+    {
+      "id": "nome",
+      "title": "Fatto · Gavino Atzeni",
+      "text": [
+        "Il frammento di lastra viene dallo studio Cadoni. Il ferito è Gavino Atzeni, assistente del fotografo. Sua sorella Teresa vende arance al mercato di Largo Carlo Felice."
+      ]
+    },
+    {
+      "id": "registro",
+      "title": "Fatto · Il registro delle lastre",
+      "text": [
+        "Nel registro di Cadoni: «N. 17/XII — 17 dicembre — donna Rosalia Pinna, ritratto a domicilio, Castello — operatore: G. Atzeni». Cadoni segna ogni lastra con il numero e il mese in cifre romane.",
+        "La lastra 17/XII manca dallo scaffale. Gavino aveva detto a Cadoni che si era rotta."
+      ]
+    },
+    {
+      "id": "lucchetto",
+      "title": "Testimonianza · Teresa",
+      "text": [
+        "Teresa dice che Gavino, ai suoi lucchetti, mette sempre il numero e il mese di una lastra a cui tiene, come li segna Cadoni. Nel delirio Gavino ripete: «diciassette… dodici… non a lui»."
+      ]
+    },
+    {
+      "id": "ritratto",
+      "title": "Fatto · Il ritratto del 17 dicembre",
+      "text": [
+        "Nella fotografia scattata da Gavino il 17 dicembre, donna Rosalia ha il polso destro stretto in una stecca fasciata. Tiene il rosario con la sinistra."
+      ]
+    },
+    {
+      "id": "polso",
+      "title": "Fatto · La dichiarazione del medico",
+      "text": [
+        "Il dottor Ledda ha ridotto la frattura del polso destro di donna Rosalia il 10 dicembre. Per almeno sei settimane non avrebbe potuto tenere una penna. Lo ha messo per iscritto."
+      ]
+    },
+    {
+      "id": "gavino",
+      "title": "Testimonianza · Gavino",
+      "text": [
+        "Il 27 Gavino legge del testamento e va dall'amministratore Usai per avvertirlo che la signora, il 15, non poteva scrivere. Usai si offre di comprare la lastra e gli dà appuntamento alla calata, alle 11 di sera del 28. Scrive l'ora sul retro di un biglietto di Cadoni.",
+        "Gavino nasconde la lastra vera nel baule alla stazione e porta con sé una lastra rotta. Lo colpiscono da dietro. Non ha visto chi."
+      ]
+    },
+    {
+      "id": "testamento",
+      "title": "Fatto · Il testamento del 15 dicembre",
+      "text": [
+        "Datato 15 dicembre 1889, «scritto tutto di mio pugno». Presentato al notaio il 22 dal nipote Vittorio, che l'ha ricevuto da Usai. Lascia ogni bene al nipote e nomina esecutore Usai.",
+        "Ultima riga: «…e che il palazzo resti affidato, sino all'apertura della successione, alla vigilanza delle Guardie di città»."
+      ]
+    },
+    {
+      "id": "anacronismo",
+      "title": "Inferenza · Un nome che non esisteva",
+      "text": [
+        "Il Corpo delle Guardie di città è stato istituito con il decreto del 21 dicembre: prima quelle guardie si chiamavano di pubblica sicurezza. Donna Rosalia è morta il 20. Chi ha scritto quella riga l'ha scritta dopo il 21: il testamento è falso."
+      ]
+    },
+    {
+      "id": "fortezza",
+      "title": "Fatto · L'anno della fortezza",
+      "text": [
+        "Il custode della Torre dell'Elefante racconta che nel 1861 Cagliari fu tolta dall'elenco delle piazzeforti del Regno. Da allora le mura vengono abbattute un pezzo alla volta."
+      ]
+    },
+    {
+      "id": "voce",
+      "title": "Voce · Buon Cammino",
+      "text": [
+        "Facendo is ascurtus a Buon Cammino, due signori di passaggio: «Usai ha comprato il biglietto per il vapore di Genova, quello del trentuno. Prima classe». È una voce sentita per strada, da verificare."
+      ]
+    },
+    {
+      "id": "mallena",
+      "title": "Testimonianza · Tzia Mallena",
+      "text": [
+        "Dopo la caduta la signora non poteva nemmeno abbottonarsi il vestito. Aveva già un testamento, in cassaforte nello studio. Usai non conosceva la combinazione: «l'anno in cui la città smise di essere una fortezza».",
+        "La sera del 28, alle dieci passate, Tzia Mallena ha visto Usai caricare una cassa pesante sul carro di Tziu Bachis, il carrettiere del mattatoio."
+      ]
+    },
+    {
+      "id": "bachis",
+      "title": "Testimonianza · Tziu Bachis",
+      "text": [
+        "La sera del 28 Usai ha noleggiato il carro di Tziu Bachis per portare una cassa pesante dal vicolo di palazzo Pinna al magazzino della calata. Alla calata aspettava un giovanotto. Usai ha mandato via il carrettiere, che dopo cento passi ha sentito un grido."
+      ]
+    },
+    {
+      "id": "nipote",
+      "title": "Testimonianza · Vittorio Pinna",
+      "text": [
+        "Il nipote dice di aver ricevuto il testamento da Usai il 22, senza leggerlo. Deve a Usai trentaseimila lire in dodici cambiali: se eredita lui, il palazzo finisce all'amministratore."
+      ]
+    },
+    {
+      "id": "polizza",
+      "title": "Fatto · La polizza della dogana",
+      "text": [
+        "Sul vapore per Genova del 31 dicembre, alle 22: una cassa contrassegnata R·U·, «libri usati», kg 38, speditore R. Usai, in deposito al magazzino della calata. Usai ha anche un biglietto di prima classe."
+      ]
+    },
+    {
+      "id": "cassa",
+      "title": "Fatto · La cassa R·U·",
+      "text": [
+        "Nella cassa da 38 chili c'erano i gioielli e l'argenteria di casa Pinna. Usai è stato arrestato alla locanda, prima dell'imbarco."
+      ]
+    }
+  ],
+  "words": [],
+  "endings": [
+    {
+      "id": "primo-gennaio",
+      "title": "Primo gennaio 1890",
+      "text": [
+        "A mezzanotte le campane di Sant'Eulalia, di Sant'Anna e della Cattedrale suonano tutte insieme, e dal porto i vapori rispondono con la sirena. È il 1890. Da questo momento in tutto il Regno vale il nuovo codice penale, e la pena di morte non c'è più.",
+        "Alle due di notte il torchio comincia a girare. Alle sei i primi strilloni corrono giù per la Marina con le copie ancora umide: «Il testamento di donna Rosalia era falso! Arrestato l'amministratore!» L'Avvenire, quella mattina, esce con il discorso del sindaco sul nuovo anno.",
+        "Nei giorni seguenti il tribunale apre il testamento del 1887. Il palazzo di Castello va all'Ospedale Civile, che ne ricava una rendita per i poveri e, dicono, qualche letto in più nelle cliniche nuove. Tzia Mallena ha il suo vitalizio e torna a vivere in Villanova, a due passi da San Giacomo, dove cuce gonfaloni per tutta la confraternita. Vittorio Pinna riceve un anello. Lo porta al dito, e per un po' non lo perde a carte.",
+        "Usai viene giudicato con il codice vecchio, perché il falso, il furto e l'agguato sono tutti del 1889. Al processo Tziu Bachis dice quello che ha sentito, eja, davanti a tutti, con il toscano spento in tasca.",
+        "Gavino esce dall'ospedale a metà gennaio, con la testa ancora fasciata. La prima cosa che fa è stampare la lastra 17/XII su carta grande, la più grande che Cadoni abbia in laboratorio. La porta all'Ospedale Civile, come voleva lei. Oggi è appesa nell'atrio, fra il colonnato e il cantiere: una signora vestita di nero con il polso nella stecca, che guarda dritto chiunque entri.",
+        "Una sera di gennaio passi da Largo Carlo Felice, e il lustrascarpe ti guarda le scarpe. «Sporche», dice. «Ma da giornalista vero.»"
+      ]
+    }
+  ]
+}
